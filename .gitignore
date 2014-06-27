@@ -24,9 +24,9 @@ DerivedData
 *.hmap
 *.xccheckout
 .iTunesArtwork
-MyProj.xcodeproj/project.xcworkspace
-MyProj.xcodeproj/xcshareddata
-MyProj.xcodeproj/xcuserdata
+SeminarAssistant.xcodeproj/project.xcworkspace
+SeminarAssistant.xcodeproj/xcshareddata
+SeminarAssistant.xcodeproj/xcuserdata
 
 #CocoaPods
 Pods
