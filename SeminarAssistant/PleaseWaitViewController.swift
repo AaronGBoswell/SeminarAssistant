@@ -81,8 +81,8 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
         activityMoniter.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
         activityMoniter.color = UIColor.darkGrayColor()
         searchTitle.text = "Checking you in, please wait..."
-        
-        var seminarID:String = currRegion!.valueForKey("ID") as String;
+        currRegion = selSem
+        var seminarID:String = selSem.valueForKey("ID") as String;
         var url = NSURL(string: "http://www.seminarassistant.com/appinterac/authenticate.php?SeminarID=\(seminarID)&Email=\(email)");
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
@@ -98,14 +98,11 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     func didEnterSeminar(seminar:NSDictionary, seminarArray:NSDictionary[]){
        searchTitle.text = "Please select nearby seminar"
 
-        currRegion = seminar
         searchSeminarArray = seminarArray
         seminarTable.reloadData()
     }
     func didExitSeminar(seminar:NSDictionary,seminarArray:NSDictionary[]){
         searchTitle.text = "Searching for nearby seminars"
-
-        currRegion = nil
         searchSeminarArray = seminarArray
         seminarTable.reloadData()
 

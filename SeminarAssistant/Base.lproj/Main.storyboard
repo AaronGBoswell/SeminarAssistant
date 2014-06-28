@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cAf-lS-Fx4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9U-Cm-WZu">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9U-Cm-WZu">
                                 <rect key="frame" x="170" y="113" width="140" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="UyP-7s-GQ5"/>
@@ -24,15 +24,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-B9-4VJ">
-                                <rect key="frame" x="216" y="151" width="49" height="30"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Qf1-Dt-rnW" kind="show" identifier="EmailEntered" id="kP1-UH-gEB"/>
-                                </connections>
-                            </button>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your email address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs0-08-96L">
                                 <rect key="frame" x="137" y="88" width="206" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -45,15 +36,56 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOc-Eo-uTk">
+                                <rect key="frame" x="416" y="430" width="44" height="30"/>
+                                <state key="normal" title="Admin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="adminButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xm3-V9-hBv"/>
+                                </connections>
+                            </button>
+                            <textField hidden="YES" appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ukE-Uh-cwF">
+                                <rect key="frame" x="170" y="151" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="bWE-Ic-5O9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button hidden="YES" appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQO-NG-7NL">
+                                <rect key="frame" x="221" y="202" width="38" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vlV-op-r6S"/>
+                                </connections>
+                            </button>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-B9-4VJ">
+                                <rect key="frame" x="216" y="151" width="49" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Qf1-Dt-rnW" kind="show" identifier="EmailEntered" id="kP1-UH-gEB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eQO-NG-7NL" firstAttribute="top" secondItem="ukE-Uh-cwF" secondAttribute="bottom" constant="21" id="45q-Zv-TaH"/>
+                            <constraint firstItem="ukE-Uh-cwF" firstAttribute="top" secondItem="f9U-Cm-WZu" secondAttribute="bottom" constant="8" symbolic="YES" id="59s-1F-yaT"/>
                             <constraint firstAttribute="centerX" secondItem="C0A-pO-OIs" secondAttribute="centerX" id="Q2k-Ew-Nlg"/>
+                            <constraint firstAttribute="centerX" secondItem="ukE-Uh-cwF" secondAttribute="centerX" id="WYO-UU-Xyz"/>
+                            <constraint firstAttribute="centerX" secondItem="eQO-NG-7NL" secondAttribute="centerX" id="bAr-Mw-Xco"/>
                             <constraint firstItem="C0A-pO-OIs" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="cXJ-dd-p0o"/>
                             <constraint firstItem="f9U-Cm-WZu" firstAttribute="top" secondItem="fs0-08-96L" secondAttribute="bottom" constant="8" symbolic="YES" id="fCW-h3-ELF"/>
                             <constraint firstAttribute="centerX" secondItem="fs0-08-96L" secondAttribute="centerX" id="j0r-1i-umE"/>
                             <constraint firstItem="mDd-B9-4VJ" firstAttribute="top" secondItem="f9U-Cm-WZu" secondAttribute="bottom" constant="8" symbolic="YES" id="n8e-Yp-cf9"/>
                             <constraint firstItem="fs0-08-96L" firstAttribute="top" secondItem="C0A-pO-OIs" secondAttribute="bottom" constant="8" symbolic="YES" id="ntV-cd-ZUi"/>
+                            <constraint firstAttribute="trailing" secondItem="GOc-Eo-uTk" secondAttribute="trailing" constant="20" id="rFc-GV-Deb"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="GOc-Eo-uTk" secondAttribute="bottom" constant="20" id="sPq-71-vBz"/>
                             <constraint firstAttribute="centerX" secondItem="f9U-Cm-WZu" secondAttribute="centerX" id="ue3-uB-Vs6"/>
                             <constraint firstAttribute="centerX" secondItem="mDd-B9-4VJ" secondAttribute="centerX" id="xvr-3s-Nte"/>
                         </constraints>
@@ -63,12 +95,15 @@
                     <connections>
                         <outlet property="emailLabel" destination="fs0-08-96L" id="et2-ug-bf8"/>
                         <outlet property="emailTextView" destination="f9U-Cm-WZu" id="EYN-5X-ppD"/>
+                        <outlet property="loginButton" destination="eQO-NG-7NL" id="F7G-SX-JfV"/>
+                        <outlet property="passwordText" destination="ukE-Uh-cwF" id="yEr-F4-6V4"/>
+                        <outlet property="submitButton" destination="mDd-B9-4VJ" id="KSn-0b-2ye"/>
                         <segue destination="cAf-lS-Fx4" kind="show" identifier="accountData" id="muV-tU-wOl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1132" y="432"/>
+            <point key="canvasLocation" x="1141" y="454"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="fZy-nJ-HZq">
