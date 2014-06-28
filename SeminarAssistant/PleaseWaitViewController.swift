@@ -72,6 +72,10 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         selectSeminar(nearBySeminars[indexPath.row])
     }
+    
+    
+    
+    
     func selectSeminar(selSem:NSDictionary){
         
         activityMoniter.startAnimating();

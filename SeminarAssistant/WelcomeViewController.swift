@@ -50,6 +50,14 @@ class WelcomeViewController: UIViewController {
             (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
 
         }
+        if(segue.destinationViewController is AccountViewController){
+            var destVC  = segue.destinationViewController as AccountViewController
+            destVC.email = emailTextView.text
+            (UIApplication.sharedApplication().delegate as AppDelegate).email = emailTextView.text
+            (UIApplication.sharedApplication().delegate as AppDelegate).startFetches()
+            (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
+            
+        }
     }
 
 }
