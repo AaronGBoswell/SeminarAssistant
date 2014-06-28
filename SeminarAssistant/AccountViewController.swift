@@ -66,42 +66,37 @@ class AccountViewController: UITableViewController {
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
         
-        /*
-        var ident = "nearbySeminar";
-        var cell = seminarTable.dequeueReusableCellWithIdentifier(ident) as UITableViewCell
+        
+        var ident = "SeminarCell";
+        var cell = self.tableView.dequeueReusableCellWithIdentifier(ident) as UITableViewCell
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ident)
         }
-        var title = searchSeminarArray[indexPath.row].valueForKey("Title") as String
+        var title = seminars[indexPath.row].valueForKey("Title") as String
         cell.textLabel.text = title
         return cell
         
-        */
-        return nil
+        
+        
         
     }
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int{
         
-        /*
+        
         var x = 0
-        //nearBySeminars = []
-        for dic in searchSeminarArray{
-            if dic.valueForKey("count") as Int > 0{
-                nearBySeminars.append(dic)
-                x++
-            }
-        }
+       
+        x = seminars.count
         println(x)
         return x
 
-*/
-        return 0
+
     }
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
-        //selectSeminar(nearBySeminars[indexPath.row])
+        selectSeminar(seminars[indexPath.row])
     }
 
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

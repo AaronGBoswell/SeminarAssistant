@@ -44,7 +44,7 @@ class WelcomeViewController: UIViewController {
         if(segue.destinationViewController is PleaseWaitViewController){
             var destVC  = segue.destinationViewController as PleaseWaitViewController
             destVC.email = emailTextView.text
-            (UIApplication.sharedApplication().delegate as AppDelegate).pwvc = destVC
+            (UIApplication.sharedApplication().delegate as AppDelegate).bND = destVC
             (UIApplication.sharedApplication().delegate as AppDelegate).email = emailTextView.text
             (UIApplication.sharedApplication().delegate as AppDelegate).startFetches()
             (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
