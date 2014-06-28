@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AccountViewController: UITableViewController {
+class AccountViewController: UITableViewController,BeaconNotificationDelegate {
     
     var email:String = "henry@lakejoe.com"
     var seminars:NSDictionary[] = []
@@ -103,6 +103,11 @@ class AccountViewController: UITableViewController {
     }
 
 
+    func didEnterSeminar(seminar:NSDictionary, seminarArray:NSDictionary[]){
+    }
+    func didExitSeminar(seminar:NSDictionary,seminarArray:NSDictionary[]){
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
