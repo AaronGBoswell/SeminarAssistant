@@ -15,7 +15,7 @@ import CoreBluetooth
 class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegate, NSURLSessionDownloadDelegate {
                             
     var window: UIWindow?
-    var pwvc:PleaseWaitViewController? = nil
+    var bND:BeaconNotificationDelegate? = nil
     var sesh:NSURLSession?
     var email:String = "aaron@lakejoe.com"
     
@@ -145,8 +145,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegat
         noty!.alertBody = "You are in range of the seminar"
         noty!.fireDate = NSDate.date()
         UIApplication.sharedApplication().scheduleLocalNotification(noty)
-        if(pwvc){
-            pwvc!.didEnterSeminar(reg!, seminarArray: seminarArray)
+        if(bND){
+            bND!.didEnterSeminar(reg!, seminarArray: seminarArray)
         }
         
     }
@@ -163,8 +163,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegat
         noty!.alertBody = "You left the seminar"
         noty!.fireDate = NSDate.date()
         UIApplication.sharedApplication().scheduleLocalNotification(noty)
-        if(pwvc){
-            pwvc!.didExitSeminar(reg!, seminarArray: seminarArray)
+        if(bND){
+            bND!.didExitSeminar(reg!, seminarArray: seminarArray)
         }
         if(nextVC! is InSeminarViewController){
             nextVC!.performSegueWithIdentifier("LeaveSeminar", sender: nextVC!)

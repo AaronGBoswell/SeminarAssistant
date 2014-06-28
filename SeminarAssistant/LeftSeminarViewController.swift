@@ -23,7 +23,7 @@ class LeftSeminarViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if(segue.destinationViewController is PleaseWaitViewController){
             var destVC  = segue.destinationViewController as PleaseWaitViewController
-            (UIApplication.sharedApplication().delegate as AppDelegate).pwvc = destVC
+            (UIApplication.sharedApplication().delegate as AppDelegate).bND = destVC
             (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
 
         }
