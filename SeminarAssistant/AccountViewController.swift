@@ -13,6 +13,8 @@ class AccountViewController: UITableViewController,BeaconNotificationDelegate {
     
     var email:String = "henry@lakejoe.com"
     var seminars:NSDictionary[] = []
+    var clickedSeminar:NSDictionary = NSDictionary()
+    
     
     
     
@@ -39,6 +41,7 @@ class AccountViewController: UITableViewController,BeaconNotificationDelegate {
         for obj in jsonArray{
             var dic = obj as NSDictionary
             var title:String = dic.valueForKey("Title") as String
+            var ID:String = dic.valueForKey("ID") as String
             print("Adding: ")
             
             print((dic.valueForKey("Title")))
@@ -94,6 +97,27 @@ class AccountViewController: UITableViewController,BeaconNotificationDelegate {
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         selectSeminar(seminars[indexPath.row])
+    }
+    
+    
+    func selectSeminar(cs:NSDictionary){
+        
+        //activityMoniter.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
+        //activityMoniter.color = UIColor.darkGrayColor()
+        //searchTitle.text = "Checking you in, please wait..."
+        
+        clickedSeminar = cs
+        self.performSegueWithIdentifier("seminarData", sender: self)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        var destVC  = segue.destinationViewController as SeminarViewController
+        var seminarID:String = clickedSeminar.valueForKey("ID") as String;
+        destVC.email = email
+        destVC.ID = seminarID
+        
+
     }
 
     
