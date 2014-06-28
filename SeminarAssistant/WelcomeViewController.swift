@@ -11,7 +11,10 @@ import UIKit
 class WelcomeViewController: UIViewController {
     @IBOutlet var emailTextView : UITextField = nil
     @IBOutlet var emailLabel : UILabel = nil
-                            
+    @IBOutlet var loginButton : UIButton = nil
+    @IBOutlet var submitButton : UIButton = nil
+    @IBOutlet var passwordText : UITextField = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,7 +41,33 @@ class WelcomeViewController: UIViewController {
         var emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegex)
         return emailTest.evaluateWithObject(email)
     }
+    @IBAction func adminButtonClicked(sender : AnyObject) {
+        emailLabel.text = "Enter email and password"
+        passwordText.hidden = false
+        loginButton.hidden = false;
+        submitButton.hidden = true;
+    }
     
+    @IBAction func loginButtonClicked(sender : AnyObject) {
+        
+        emailLabel.text = "Checking you in, please wait..."
+        passwordText.enabled = false
+        emailTextView.enabled = false
+        loginButton.enabled = false
+        var email = emailTextView.text
+        
+        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/login.php?Email=\(email)&pass=\(passwordText.text)");
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
+            var s = NSString(data: data, encoding: NSUTF8StringEncoding)
+            var str:String = s
+            if(str.compare("good") == 0){
+                dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                    self.performSegueWithIdentifier("accountData", sender: self)
+                });
+            }
+        }
+        task.resume()
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if(segue.destinationViewController is PleaseWaitViewController){
