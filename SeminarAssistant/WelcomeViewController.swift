@@ -56,6 +56,8 @@ class WelcomeViewController: UIViewController {
             (UIApplication.sharedApplication().delegate as AppDelegate).email = emailTextView.text
             (UIApplication.sharedApplication().delegate as AppDelegate).startFetches()
             (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
+            (UIApplication.sharedApplication().delegate as AppDelegate).bND = destVC
+
             
         }
     }
