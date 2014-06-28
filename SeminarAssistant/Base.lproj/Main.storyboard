@@ -119,9 +119,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView appearanceType="aqua" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dyR-w3-7rO">
-                                <rect key="frame" x="230" y="108" width="20" height="20"/>
-                            </activityIndicatorView>
                             <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-bI-tZI">
                                 <rect key="frame" x="120" y="136" width="240" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,14 +139,18 @@
                                     <outlet property="delegate" destination="Qf1-Dt-rnW" id="rph-oT-8bR"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView appearanceType="aqua" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="dyR-w3-7rO">
+                                <rect key="frame" x="230" y="82" width="20" height="20"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dyR-w3-7rO" firstAttribute="top" secondItem="hSh-gy-FGh" secondAttribute="bottom" constant="60" id="0iE-N5-xhE"/>
-                            <constraint firstItem="vq7-bI-tZI" firstAttribute="top" secondItem="dyR-w3-7rO" secondAttribute="bottom" constant="8" id="0wB-uT-uS1"/>
                             <constraint firstItem="hSh-gy-FGh" firstAttribute="top" secondItem="QIt-wh-OaS" secondAttribute="bottom" constant="20" symbolic="YES" id="Cdn-9W-MWa"/>
                             <constraint firstAttribute="centerX" secondItem="vq7-bI-tZI" secondAttribute="centerX" id="Fd4-x8-ag5"/>
+                            <constraint firstItem="vq7-bI-tZI" firstAttribute="top" secondItem="hSh-gy-FGh" secondAttribute="bottom" constant="88" id="IDh-pj-m9a"/>
                             <constraint firstAttribute="centerX" secondItem="hSh-gy-FGh" secondAttribute="centerX" id="QNr-gO-KSu"/>
+                            <constraint firstItem="dyR-w3-7rO" firstAttribute="top" secondItem="QIt-wh-OaS" secondAttribute="bottom" constant="62" id="d7z-Od-cWm"/>
                             <constraint firstAttribute="centerX" secondItem="dyR-w3-7rO" secondAttribute="centerX" id="dra-PE-KIa"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

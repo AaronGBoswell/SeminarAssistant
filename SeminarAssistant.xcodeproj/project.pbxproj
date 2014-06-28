@@ -11,6 +11,7 @@
 		BD239511195CFFB700AAA401 /* LeftSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */; };
 		BD526B07195E15AC00932E82 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526B06195E15AC00932E82 /* AccountViewController.swift */; };
 		BD526B09195E170100932E82 /* SeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526B08195E170100932E82 /* SeminarViewController.swift */; };
+		BD6E0DE8195F29E0002D6219 /* BeaconNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E0DE7195F29E0002D6219 /* BeaconNotificationDelegate.swift */; };
 		BD8E99A2195B3B8A003BAED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99A1195B3B8A003BAED1 /* AppDelegate.swift */; };
 		BD8E99A4195B3B8A003BAED1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99A3195B3B8A003BAED1 /* WelcomeViewController.swift */; };
 		BD8E99A7195B3B8A003BAED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8E99A5195B3B8A003BAED1 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSeminarViewController.swift; sourceTree = "<group>"; };
 		BD526B06195E15AC00932E82 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		BD526B08195E170100932E82 /* SeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeminarViewController.swift; sourceTree = "<group>"; };
+		BD6E0DE7195F29E0002D6219 /* BeaconNotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconNotificationDelegate.swift; sourceTree = "<group>"; };
 		BD8E999C195B3B89003BAED1 /* SeminarAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeminarAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8E99A0195B3B8A003BAED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD8E99A1195B3B8A003BAED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				BD8E99A1195B3B8A003BAED1 /* AppDelegate.swift */,
+				BD6E0DE7195F29E0002D6219 /* BeaconNotificationDelegate.swift */,
 				BD8E99A3195B3B8A003BAED1 /* WelcomeViewController.swift */,
 				BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */,
 				BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */,
@@ -230,6 +233,7 @@
 			files = (
 				BD8E99BF195B4750003BAED1 /* PleaseWaitViewController.swift in Sources */,
 				BD239511195CFFB700AAA401 /* LeftSeminarViewController.swift in Sources */,
+				BD6E0DE8195F29E0002D6219 /* BeaconNotificationDelegate.swift in Sources */,
 				BD526B07195E15AC00932E82 /* AccountViewController.swift in Sources */,
 				BD1EFD1E195B8E04001A026A /* InSeminarViewController.swift in Sources */,
 				BD8E99A4195B3B8A003BAED1 /* WelcomeViewController.swift in Sources */,

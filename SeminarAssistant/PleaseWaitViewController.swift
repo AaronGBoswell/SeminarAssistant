@@ -11,7 +11,7 @@ import UIKit
 import CoreLocation
 import CoreBluetooth
 
-class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,BeaconNotificationDelegate {
     
     @IBOutlet var searchTitle : UILabel = nil
     @IBOutlet var activityMoniter : UIActivityIndicatorView = nil
@@ -25,7 +25,7 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
 
 
     override func viewDidLoad() {
-
+        super.viewDidLoad()
     }
 
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
@@ -52,7 +52,7 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ident)
         }
-        var title = searchSeminarArray[indexPath.row].valueForKey("Title") as String
+        var title = nearBySeminars[indexPath.row].valueForKey("Title") as String
         cell.textLabel.text = title
         return cell
     }
@@ -65,7 +65,7 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
                 x++
             }
         }
-        println(x)
+        println(nearBySeminars)
         return x
     }
     
@@ -78,7 +78,8 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     
     func selectSeminar(selSem:NSDictionary){
         
-        activityMoniter.startAnimating();
+        activityMoniter.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
+        activityMoniter.color = UIColor.darkGrayColor()
         searchTitle.text = "Checking you in, please wait..."
         
         var seminarID:String = currRegion!.valueForKey("ID") as String;
@@ -95,18 +96,15 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
 
     
     func didEnterSeminar(seminar:NSDictionary, seminarArray:NSDictionary[]){
-       var key = "Title"
-       searchTitle.text = "Please select nearby seminar\n from the list below"
-        activityMoniter.stopAnimating();
-        activityMoniter.hidesWhenStopped = true;
+       searchTitle.text = "Please select nearby seminar"
+
         currRegion = seminar
         searchSeminarArray = seminarArray
         seminarTable.reloadData()
     }
     func didExitSeminar(seminar:NSDictionary,seminarArray:NSDictionary[]){
         searchTitle.text = "Searching for nearby seminars"
-        activityMoniter.startAnimating();
-        activityMoniter.hidesWhenStopped = true;
+
         currRegion = nil
         searchSeminarArray = seminarArray
         seminarTable.reloadData()
