@@ -17,6 +17,8 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordText.secureTextEntry = true
+        emailTextView.keyboardType = UIKeyboardType.EmailAddress
         // Do any additional setup after loading the view, typically from a nib.
     }
 
