@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 
-class SeminarViewController: UITableViewController {
+class SeminarViewController: UIViewController {
     
     
     var email:String = "henry@lakejoe.com"
     var ID:String = "1"
     var clickedSeminar:NSDictionary = NSDictionary()
+    @IBOutlet var tableView : UITableView = nil
     var invites:NSDictionary[] = []
     
     
@@ -63,7 +64,7 @@ class SeminarViewController: UITableViewController {
     
     
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
         
         
         var ident = "inviteSeminar";
@@ -81,7 +82,7 @@ class SeminarViewController: UITableViewController {
         
     }
     
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int{
+    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int{
         
         
         var x = 0
@@ -93,7 +94,7 @@ class SeminarViewController: UITableViewController {
         
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         selectSeminar(invites[indexPath.row])
     }
     

@@ -153,11 +153,12 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="fyg-mv-Tah" id="PP2-eq-cfA"/>
+                        <segue destination="ULc-w3-8Zs" kind="show" id="tQ1-oX-1iu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhA-VJ-ouY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740" y="-200"/>
+            <point key="canvasLocation" x="1843" y="-200"/>
         </scene>
         <!--Please Wait View Controller-->
         <scene sceneID="6aL-WV-NDd">
@@ -247,6 +248,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ULc-w3-8Zs" id="496-b5-rv7"/>
+                                    <outlet property="delegate" destination="ULc-w3-8Zs" id="ot0-BS-IBD"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -258,6 +263,9 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="giE-Ae-hwu" id="QKX-iJ-9kV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXH-zn-bg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
