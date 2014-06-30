@@ -41,7 +41,7 @@ class SeminarViewController: UIViewController {
                 var CheckedIn:String = dic.valueForKey("CheckedIn") as String
                 print("Adding: ")
                 
-                print((dic.valueForKey("Email")))
+                println((dic.valueForKey("Email")))
                 
             }
             dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
@@ -67,11 +67,10 @@ class SeminarViewController: UIViewController {
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
         
         
-        var ident = "inviteSeminar";
+        var ident = "inviteCell";
         var cell = self.tableView.dequeueReusableCellWithIdentifier(ident) as UITableViewCell
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ident)
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
         var title = invites[indexPath.row].valueForKey("Email") as String
         cell.textLabel.text = title

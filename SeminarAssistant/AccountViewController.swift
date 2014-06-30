@@ -45,7 +45,7 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
             var ID:String = dic.valueForKey("ID") as String
             print("Adding: ")
             
-            print((dic.valueForKey("Title")))
+            println((dic.valueForKey("Title")))
 
         }
         dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
