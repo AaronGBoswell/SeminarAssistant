@@ -17,7 +17,7 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var activityMoniter : UIActivityIndicatorView = nil
     @IBOutlet var seminarTable : UITableView = nil
     
-    var email:String = "aaron@lakejoe.com"
+    var email:String = ""
     var currRegion:NSDictionary? = nil
     
     var searchSeminarArray:NSDictionary[] = []
@@ -26,6 +26,7 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        println(email)
     }
 
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {

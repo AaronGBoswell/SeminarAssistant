@@ -14,7 +14,10 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var loginButton : UIButton = nil
     @IBOutlet var submitButton : UIButton = nil
     @IBOutlet var passwordText : UITextField = nil
+    @IBOutlet var adminButton : UIButton = nil
+    @IBOutlet var signUpButton : UIButton = nil
     
+    var adminMode = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordText.secureTextEntry = true
@@ -30,6 +33,9 @@ class WelcomeViewController: UIViewController {
         if(identifier.compare("LeaveSeminar") == 0){
             return false
         }
+        else if(identifier.compare("showSignUp") == 0){
+            return true
+        }
         else if(stringIsValidEmail(emailTextView.text)){
             return true
         }
@@ -44,15 +50,19 @@ class WelcomeViewController: UIViewController {
         return emailTest.evaluateWithObject(email)
     }
     @IBAction func adminButtonClicked(sender : AnyObject) {
+
+        adminButton.hidden = true
+        signUpButton.hidden = false
         emailLabel.text = "Enter email and password"
         passwordText.hidden = false
         loginButton.hidden = false;
         submitButton.hidden = true;
+        adminMode = 1;
     }
     
     @IBAction func loginButtonClicked(sender : AnyObject) {
         
-        emailLabel.text = "Checking you in, please wait..."
+        emailLabel.text = "Authenticating, please wait..."
         passwordText.enabled = false
         emailTextView.enabled = false
         loginButton.enabled = false
@@ -73,6 +83,17 @@ class WelcomeViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if(segue.destinationViewController is UINavigationController){
+            var destVC:AnyObject?  = (segue.destinationViewController as UINavigationController).viewControllers[0]
+            if(destVC is AccountViewController){
+                var dvc = destVC as AccountViewController
+                dvc.email = emailTextView.text
+                (UIApplication.sharedApplication().delegate as AppDelegate).email = emailTextView.text
+                (UIApplication.sharedApplication().delegate as AppDelegate).startFetches()
+                (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = dvc
+                (UIApplication.sharedApplication().delegate as AppDelegate).bND = dvc
+            }
+        }
         if(segue.destinationViewController is PleaseWaitViewController){
             var destVC  = segue.destinationViewController as PleaseWaitViewController
             destVC.email = emailTextView.text
@@ -82,15 +103,9 @@ class WelcomeViewController: UIViewController {
             (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
 
         }
-        if(segue.destinationViewController is AccountViewController){
-            var destVC  = segue.destinationViewController as AccountViewController
-            destVC.email = emailTextView.text
-            (UIApplication.sharedApplication().delegate as AppDelegate).email = emailTextView.text
-            (UIApplication.sharedApplication().delegate as AppDelegate).startFetches()
-            (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
-            (UIApplication.sharedApplication().delegate as AppDelegate).bND = destVC
-
-            
+        if(segue.destinationViewController is SignUpViewController){
+            var destVC  = segue.destinationViewController as SignUpViewController
+            destVC.wel = self
         }
     }
 

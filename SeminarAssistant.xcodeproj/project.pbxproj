@@ -18,6 +18,7 @@
 		BD8E99A9195B3B8A003BAED1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8E99A8195B3B8A003BAED1 /* Images.xcassets */; };
 		BD8E99B5195B3B8A003BAED1 /* SeminarAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99B4195B3B8A003BAED1 /* SeminarAssistantTests.swift */; };
 		BD8E99BF195B4750003BAED1 /* PleaseWaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */; };
+		BDC446021961F2F900D103F1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC446011961F2F900D103F1 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		BD8E99B3195B3B8A003BAED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD8E99B4195B3B8A003BAED1 /* SeminarAssistantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeminarAssistantTests.swift; sourceTree = "<group>"; };
 		BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PleaseWaitViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		BDC446011961F2F900D103F1 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */,
 				BD1EFD1D195B8E04001A026A /* InSeminarViewController.swift */,
 				BD8E99A5195B3B8A003BAED1 /* Main.storyboard */,
+				BDC446011961F2F900D103F1 /* SignUpViewController.swift */,
 				BD526B06195E15AC00932E82 /* AccountViewController.swift */,
 				BD526B08195E170100932E82 /* SeminarViewController.swift */,
 				BD8E99A8195B3B8A003BAED1 /* Images.xcassets */,
@@ -237,6 +240,7 @@
 				BD526B07195E15AC00932E82 /* AccountViewController.swift in Sources */,
 				BD1EFD1E195B8E04001A026A /* InSeminarViewController.swift in Sources */,
 				BD8E99A4195B3B8A003BAED1 /* WelcomeViewController.swift in Sources */,
+				BDC446021961F2F900D103F1 /* SignUpViewController.swift in Sources */,
 				BD8E99A2195B3B8A003BAED1 /* AppDelegate.swift in Sources */,
 				BD526B09195E170100932E82 /* SeminarViewController.swift in Sources */,
 			);

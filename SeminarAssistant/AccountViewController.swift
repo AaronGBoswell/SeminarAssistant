@@ -11,20 +11,18 @@ import UIKit
 
 class AccountViewController: UIViewController,BeaconNotificationDelegate {
     
-    var email:String = "henry@lakejoe.com"
     var seminars:NSDictionary[] = []
     @IBOutlet var tableView : UITableView = nil
     var clickedSeminar:NSDictionary = NSDictionary()
-    
+    var email:String = ""
+
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-       
-      getSeminars()
+        println(email)
+        getSeminars()
         
         
     }
