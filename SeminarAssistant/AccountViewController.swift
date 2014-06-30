@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
-class AccountViewController: UITableViewController,BeaconNotificationDelegate {
+class AccountViewController: UIViewController,BeaconNotificationDelegate {
     
     var email:String = "henry@lakejoe.com"
     var seminars:NSDictionary[] = []
+    @IBOutlet var tableView : UITableView = nil
     var clickedSeminar:NSDictionary = NSDictionary()
     
     
@@ -67,13 +68,14 @@ class AccountViewController: UITableViewController,BeaconNotificationDelegate {
 
     
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
         
         
         var ident = "SeminarCell";
         var cell = self.tableView.dequeueReusableCellWithIdentifier(ident) as UITableViewCell
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ident)
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
         var title = seminars[indexPath.row].valueForKey("Title") as String
         cell.textLabel.text = title
@@ -83,7 +85,7 @@ class AccountViewController: UITableViewController,BeaconNotificationDelegate {
         
         
     }
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int{
+    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int{
         
         
         var x = 0
@@ -95,7 +97,7 @@ class AccountViewController: UITableViewController,BeaconNotificationDelegate {
 
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         selectSeminar(seminars[indexPath.row])
     }
     

@@ -60,6 +60,7 @@ class WelcomeViewController: UIViewController {
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             var s = NSString(data: data, encoding: NSUTF8StringEncoding)
             var str:String = s
+            println(str)
             if(str.compare("good") == 0){
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
                     self.performSegueWithIdentifier("accountData", sender: self)
