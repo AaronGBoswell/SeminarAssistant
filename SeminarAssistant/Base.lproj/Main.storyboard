@@ -255,6 +255,15 @@
                                     <outlet property="delegate" destination="MJi-cL-7ly" id="Hux-zq-V22"/>
                                 </connections>
                             </tableView>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-4h-HsS">
+                                <rect key="frame" x="217" y="154" width="46" height="30"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ml5-Bb-gan" kind="show" identifier="toCreateSeminar" id="tDf-3j-lVc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -368,6 +377,15 @@
                                     <outlet property="delegate" destination="ULc-w3-8Zs" id="ot0-BS-IBD"/>
                                 </connections>
                             </tableView>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz4-2u-1E1">
+                                <rect key="frame" x="202" y="145" width="77" height="30"/>
+                                <state key="normal" title="Add Invites">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addInvites:" destination="ULc-w3-8Zs" eventType="touchUpInside" id="euK-Yn-TIs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -375,6 +393,8 @@
                             <constraint firstAttribute="bottom" secondItem="giE-Ae-hwu" secondAttribute="bottom" id="5J8-Md-1CU"/>
                             <constraint firstItem="giE-Ae-hwu" firstAttribute="top" secondItem="5nJ-vU-zKd" secondAttribute="bottom" constant="168" id="6rw-MM-4u2"/>
                             <constraint firstItem="giE-Ae-hwu" firstAttribute="leading" secondItem="rpt-Lp-Ac0" secondAttribute="leading" id="9oK-LE-BzR"/>
+                            <constraint firstAttribute="centerY" secondItem="gz4-2u-1E1" secondAttribute="centerY" constant="80" id="LXH-cQ-Xtt"/>
+                            <constraint firstAttribute="centerX" secondItem="gz4-2u-1E1" secondAttribute="centerX" constant="-0.5" id="ul9-Kh-mC8"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
