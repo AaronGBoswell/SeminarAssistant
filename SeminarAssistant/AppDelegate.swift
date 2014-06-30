@@ -57,13 +57,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegat
         
         var url = NSURL(string: "http://seminarassistant.com/appinterac/FechIDs.php?Email=\(email)");
         // println(url)
+        if(sesh){
+            let task = sesh!.downloadTaskWithURL(url)
+            task.taskDescription = "fetchRegions"
+            println("fetching")
+            task.resume()
+            complet = completionHandler
+        }
         
-        let task = sesh!.downloadTaskWithURL(url)
-        
-        task.taskDescription = "fetchRegions"
-        println("fetching")
-        task.resume()
-        complet = completionHandler
+
         
         
     }

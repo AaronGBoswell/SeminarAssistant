@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import AddressBookUI
 
-class SeminarViewController: UIViewController {
+class SeminarViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate {
     
     
     var email:String = "henry@lakejoe.com"
@@ -24,6 +25,72 @@ class SeminarViewController: UIViewController {
         getInvites()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    @IBAction func addInvites(sender : AnyObject) {
+        
+        var picker = ABPeoplePickerNavigationController()
+        
+        picker.peoplePickerDelegate = self
+        self.presentModalViewController(picker, animated: true)
+    }
+    
+    
+    
+    func peoplePickerNavigationControllerDidCancel(peoplePicker:ABPeoplePickerNavigationController!)
+    {
+        println( "here")
+        self.dismissModalViewControllerAnimated(true)
+        
+    }
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!,shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool{
+        println( "here")
+        displayPerson(person)
+        
+        dismissModalViewControllerAnimated(true)
+        
+        
+        return true
+    }
+    
+    
+    
+    
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!, property property: ABPropertyID, identifier identifier: ABMultiValueIdentifier) -> Bool{
+        println( "here")
+        return true
+    }
+
+    
+    
+    func displayPerson(person:ABRecordRef)
+    {
+        
+       // NSString* name = (__bridge_transfer NSString*) ABRecordCopyValue(person,kABPersonFirstNameProperty);
+        
+        
+        var un = ABRecordCopyValue(person, kABPersonEmailProperty)
+        var email = Unmanaged<NSString>.fromOpaque(un.toOpaque()).takeUnretainedValue()
+        
+        
+        println(email)
+        /*
+        self.firstName.text = name;
+
+        NSString* phone = nil;
+        ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
+        kABPersonPhoneProperty);
+        if (ABMultiValueGetCount(phoneNumbers) > 0) {
+        phone = (__bridge_transfer NSString*)
+        ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
+        } else {
+        phone = @"[None]";
+        }
+        self.phoneNumber.text = phone;
+        CFRelease(phoneNumbers);
+        */
+    }
+
+    
     
     
     func  getInvites(){
