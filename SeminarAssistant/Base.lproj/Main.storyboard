@@ -153,7 +153,6 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="fyg-mv-Tah" id="PP2-eq-cfA"/>
-                        <segue destination="hqh-jM-lvn" kind="show" identifier="seminarData" id="uKU-QB-7Lw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhA-VJ-ouY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -226,29 +225,41 @@
             <point key="canvasLocation" x="1843" y="432"/>
         </scene>
         <!--Seminar View Controller-->
-        <scene sceneID="dKr-dU-Fae">
+        <scene sceneID="3xF-iY-nbj">
             <objects>
-                <tableViewController id="hqh-jM-lvn" customClass="SeminarViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3O9-eL-XgV">
+                <viewController id="ULc-w3-8Zs" customClass="SeminarViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5nJ-vU-zKd"/>
+                        <viewControllerLayoutGuide type="bottom" id="gTL-v8-IG2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rpt-Lp-Ac0">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="giE-Ae-hwu">
+                                <rect key="frame" x="0.0" y="188" width="480" height="292"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" id="2Py-fq-XxD">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Py-fq-XxD" id="PZD-Dg-eGl">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="giE-Ae-hwu" secondAttribute="trailing" id="25J-J4-LdB"/>
+                            <constraint firstAttribute="bottom" secondItem="giE-Ae-hwu" secondAttribute="bottom" id="5J8-Md-1CU"/>
+                            <constraint firstItem="giE-Ae-hwu" firstAttribute="top" secondItem="5nJ-vU-zKd" secondAttribute="bottom" constant="168" id="6rw-MM-4u2"/>
+                            <constraint firstItem="giE-Ae-hwu" firstAttribute="leading" secondItem="rpt-Lp-Ac0" secondAttribute="leading" id="9oK-LE-BzR"/>
+                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" id="2Py-fq-XxD">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Py-fq-XxD" id="PZD-Dg-eGl">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="hqh-jM-lvn" id="J4L-k6-VsY"/>
-                            <outlet property="delegate" destination="hqh-jM-lvn" id="msv-5M-I6a"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ag9-52-nfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tXH-zn-bg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2524" y="-200"/>
         </scene>
