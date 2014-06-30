@@ -42,24 +42,57 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         self.dismissModalViewControllerAnimated(true)
         
     }
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!,shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool{
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!,didSelectPerson person: ABRecordRef!) {
         println( "here")
-        displayPerson(person)
-        
-        dismissModalViewControllerAnimated(true)
+        //displayPerson(person)
         
         
-        return true
+        var emailAddress = "no email address"
+        
+       // ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
+        
+        var un = ABRecordCopyValue(person, kABPersonEmailProperty)
+        var emails : ABMultiValueRef? = un //Unmanaged<ABMultiValueRef>.fromOpaque(un.toOpaque()).takeUnretainedValue()
+        if (emails)
+        {
+            if (ABMultiValueGetCount(emails) > 0)
+            {
+                var index = 0 as CFIndex
+
+                emailAddress = CFBridgingRelease(ABMultiValueCopyValueAtIndex(emails, index)) as String
+                
+                println(emailAddress)
+                
+            }
+            CFRelease(emails);
+        }
+        
+        
+        //getInvites()
+        
+      
     }
     
+    /*
     
-    
+    - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person
+    {
+    NSString *contactName = CFBridgingRelease(ABRecordCopyCompositeName(person));
+    self.resultLabel.text = [NSString stringWithFormat:@"Picked %@", contactName ? contactName : @"No Name"];
+    }
+ */
     
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!, property property: ABPropertyID, identifier identifier: ABMultiValueIdentifier) -> Bool{
         println( "here")
         return true
+        
+        
+        
+        
     }
-
+    
+    
+    
     
     
     func displayPerson(person:ABRecordRef)
