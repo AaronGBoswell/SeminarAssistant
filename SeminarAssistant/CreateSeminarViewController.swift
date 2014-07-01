@@ -10,6 +10,16 @@ import UIKit
 
 class CreateSeminarViewController: UIViewController {
 
+    var x:Int?
+
+    @IBOutlet var newSeminarLabel : UILabel = nil
+    @IBOutlet var uuidText : UITextField = nil
+    @IBOutlet var urlText : UITextField = nil
+    @IBOutlet var titleText : UITextField = nil
+    @IBOutlet var disText : UITextField = nil
+    @IBOutlet var csvText : UITextField = nil
+    @IBOutlet var doneButton : UIBarButtonItem = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,30 +36,37 @@ class CreateSeminarViewController: UIViewController {
         var emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegex)
         return emailTest.evaluateWithObject(email)
     }
-    
-//    @IBAction func signUpButtonClicked(sender : AnyObject) {
-//        
-//        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/signup.php?Email=\(email)&pass=\(password)&fname=\(fname)&lname=\(lname)");
-//        println(url)
-//        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
-//            var s = NSString(data: data, encoding: NSUTF8StringEncoding)
-//            var str:String = s
-//            println(str)
-//            if(str.compare("good") == 0){
-//                dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
-//                    self.wel!.emailTextView.text = email
-//                    self.wel!.passwordText.text = password
-//                    self.dismissViewControllerAnimated(true, completion: nil)
-//                    });
-//            }
-//            else{
-//                dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
-//                    self.titleLabel.text = str
-//                    });
-//            }
-//        }
-//        task.resume()
-//    }
+    @IBAction func doneButtonClicked(sender : AnyObject) {
+        uuidText.enabled = false
+        urlText.enabled = false
+        titleText.enabled = false
+        disText.enabled = false
+        csvText.enabled = false
+        doneButton.enabled = false
+        newSeminarLabel.text = "Creating..."
+        var email =  (UIApplication.sharedApplication().delegate as AppDelegate).email
+        
+        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/addseminar?Email=\(email)&URL=\(urlText.text)&UUID=\(uuidText.text)&Title=\(titleText.text)&DIS=\(disText.text)&CSV=\(csvText.text)");
+        println(url)
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
+            var s = NSString(data: data, encoding: NSUTF8StringEncoding)
+            var str:String = s
+            println(str)
+            if(str.compare("good") == 0){
+                dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                    self.navigationController.popViewControllerAnimated(true)
+                    self.navigationController.popViewControllerAnimated(true)
+                    });
+            }
+            else{
+                dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                    self.newSeminarLabel.text = str
+                });
+            }
+        }
+        task.resume()
+    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         
