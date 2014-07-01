@@ -50,7 +50,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         var emailAddress = "no email address"
         
        // ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
-        
+        var used = false;
         var un = ABRecordCopyValue(person, kABPersonEmailProperty)
         var emails : ABMultiValueRef? = un //Unmanaged<ABMultiValueRef>.fromOpaque(un.toOpaque()).takeUnretainedValue()
         if (emails)
@@ -63,12 +63,47 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
                 
                 println(emailAddress)
                 
+                
+                for obj in invites{
+                    print("check: ")
+                    var dic = obj as NSDictionary
+                    var Email:String = dic.valueForKey("Email") as String
+                   
+                    if(Email == emailAddress)
+                    {
+                        print("used")
+                        used = true
+                        break
+                    }
+                    
+                }
+                print("unused ")
+
+                
+                if (used == false){
+                    
+                    
+                    var url = NSURL(string: "http://www.seminarassistant.com/appinterac/addpeople.php?ID=\(ID)&Email=\(email)&CSV=\(emailAddress)")
+                    print(url)
+                    let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
+
+                        self.getInvites()
+                    }
+                    task.resume()
+                    
+                    
+                }else{
+                    used = false
+                }
+                
+                
+                
             }
             CFRelease(emails);
         }
         
         
-        //getInvites()
+        //
         
       
     }
