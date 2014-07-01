@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		94B5655B1961EEC300DF31F1 /* CreateSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5655A1961EEC300DF31F1 /* CreateSeminarViewController.swift */; };
 		BD1EFD1E195B8E04001A026A /* InSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EFD1D195B8E04001A026A /* InSeminarViewController.swift */; };
 		BD239511195CFFB700AAA401 /* LeftSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */; };
 		BD526B07195E15AC00932E82 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526B06195E15AC00932E82 /* AccountViewController.swift */; };
@@ -19,6 +18,7 @@
 		BD8E99A9195B3B8A003BAED1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8E99A8195B3B8A003BAED1 /* Images.xcassets */; };
 		BD8E99B5195B3B8A003BAED1 /* SeminarAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99B4195B3B8A003BAED1 /* SeminarAssistantTests.swift */; };
 		BD8E99BF195B4750003BAED1 /* PleaseWaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */; };
+		BD96C72E1962262700107A85 /* CreateSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C72D1962262700107A85 /* CreateSeminarViewController.swift */; };
 		BDC446021961F2F900D103F1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC446011961F2F900D103F1 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		94B5655A1961EEC300DF31F1 /* CreateSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSeminarViewController.swift; sourceTree = "<group>"; };
 		BD1EFD1D195B8E04001A026A /* InSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InSeminarViewController.swift; sourceTree = "<group>"; };
 		BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSeminarViewController.swift; sourceTree = "<group>"; };
 		BD526B06195E15AC00932E82 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		BD8E99B3195B3B8A003BAED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD8E99B4195B3B8A003BAED1 /* SeminarAssistantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeminarAssistantTests.swift; sourceTree = "<group>"; };
 		BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PleaseWaitViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		BD96C72D1962262700107A85 /* CreateSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSeminarViewController.swift; sourceTree = "<group>"; };
 		BDC446011961F2F900D103F1 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 /* End PBXFileReference section */
 
@@ -95,6 +95,7 @@
 				BD6E0DE7195F29E0002D6219 /* BeaconNotificationDelegate.swift */,
 				BD8E99A3195B3B8A003BAED1 /* WelcomeViewController.swift */,
 				BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */,
+				BD96C72D1962262700107A85 /* CreateSeminarViewController.swift */,
 				BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */,
 				BD1EFD1D195B8E04001A026A /* InSeminarViewController.swift */,
 				BD8E99A5195B3B8A003BAED1 /* Main.storyboard */,
@@ -237,8 +238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8E99BF195B4750003BAED1 /* PleaseWaitViewController.swift in Sources */,
+				BD96C72E1962262700107A85 /* CreateSeminarViewController.swift in Sources */,
 				BD239511195CFFB700AAA401 /* LeftSeminarViewController.swift in Sources */,
-				94B5655B1961EEC300DF31F1 /* CreateSeminarViewController.swift in Sources */,
 				BD6E0DE8195F29E0002D6219 /* BeaconNotificationDelegate.swift in Sources */,
 				BD526B07195E15AC00932E82 /* AccountViewController.swift in Sources */,
 				BD1EFD1E195B8E04001A026A /* InSeminarViewController.swift in Sources */,

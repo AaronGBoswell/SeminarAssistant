@@ -112,11 +112,12 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        var destVC  = segue.destinationViewController as SeminarViewController
-        var seminarID:String = clickedSeminar.valueForKey("ID") as String;
-        destVC.email = email
-        destVC.ID = seminarID
-        
+        if(segue.destinationViewController is SeminarViewController){
+            var destVC  = segue.destinationViewController as SeminarViewController
+            var seminarID:String = clickedSeminar.valueForKey("ID") as String;
+            destVC.email = email
+            destVC.ID = seminarID
+        }
 
     }
 
