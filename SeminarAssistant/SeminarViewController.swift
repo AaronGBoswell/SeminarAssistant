@@ -219,7 +219,10 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ident)
         }
         var title = invites[indexPath.row].valueForKey("Email") as String
+        var checked = invites[indexPath.row].valueForKey("CheckedIn") as String
         cell.textLabel.text = title
+        cell.detailTextLabel.text = checked
+        
 
 
         return cell
@@ -240,7 +243,9 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         
         
     }
-    
+    //func tableView(tableView:UIITableView!, canEditRowAtIndexPath indexPath::NSIndexPath!){
+    //    return true
+    //}
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         selectSeminar(invites[indexPath.row])
     }
