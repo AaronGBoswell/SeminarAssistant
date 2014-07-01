@@ -89,7 +89,7 @@ class WelcomeViewController: UIViewController {
                 var dvc = destVC as AccountViewController
                 dvc.email = emailTextView.text
                 (UIApplication.sharedApplication().delegate as AppDelegate).email = emailTextView.text
-                (UIApplication.sharedApplication().delegate as AppDelegate).startFetches()
+                //(UIApplication.sharedApplication().delegate as AppDelegate).startFetches()
                 (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = dvc
                 (UIApplication.sharedApplication().delegate as AppDelegate).bND = dvc
             }

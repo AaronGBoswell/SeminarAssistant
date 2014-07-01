@@ -20,9 +20,13 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     var invites:NSDictionary[] = []
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("get")
         getInvites()
+        println("got")
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -31,7 +35,10 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         var picker = ABPeoplePickerNavigationController()
         
         picker.peoplePickerDelegate = self
-        self.presentModalViewController(picker, animated: true)
+        self.presentViewController(picker, animated: true, completion: {()in
+                println("fuck you")
+            });
+       // self.presentModalViewController(picker, animated: true, completion)
     }
     
     
@@ -42,21 +49,29 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         self.dismissModalViewControllerAnimated(true)
         
     }
+    func peoplePickerNavigationController(peoplePicker:ABPeoplePickerNavigationController!,didSelectPerson didSelectPerson:ABRecordRef!,property property:ABPropertyID!,identifier identifier:ABMultiValueIdentifier!){
+        println( "!!!!!!!!!!!!!!!!!!!!!!!")
+
+    }
+    
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!,didSelectPerson person: ABRecordRef!) {
         println( "here")
         //displayPerson(person)
         
-        
+    
         var emailAddress = "no email address"
         
        // ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
         var used = false;
-        var un = ABRecordCopyValue(person, kABPersonEmailProperty)
-        var emails : ABMultiValueRef? = un //Unmanaged<ABMultiValueRef>.fromOpaque(un.toOpaque()).takeUnretainedValue()
-        if (emails)
-        {
-            if (ABMultiValueGetCount(emails) > 0)
-            {
+        
+        //var emails:ABMultiValueRef? = ABRecordCopyValue(person, kABPersonEmailProperty)
+        
+        var emails:ABMultiValueRef? = ABRecordCopyValue(person, kABPersonEmailProperty)
+
+        println(ABMultiValueGetCount(emails))
+        
+        if (emails){
+            if (ABMultiValueGetCount(emails) > 0){
                 var index = 0 as CFIndex
 
                 emailAddress = CFBridgingRelease(ABMultiValueCopyValueAtIndex(emails, index)) as String
@@ -77,7 +92,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
                     }
                     
                 }
-                print("unused ")
+                println("unused ")
 
                 
                 if (used == false){
@@ -85,27 +100,35 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
                     
                     var url = NSURL(string: "http://www.seminarassistant.com/appinterac/addpeople.php?ID=\(ID)&Email=\(email)&CSV=\(emailAddress)")
                     print(url)
-                    let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
+                    let task = NSURLSession.sharedSession().dataTaskWithURL((url), {(data, response, error) in
+                        println("task")
+                        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                            
+                            println("task")
 
-                        self.getInvites()
-                    }
+                            self.getInvites()
+                        });
+                    })
                     task.resume()
-                    
-                    
+                    println("resumed")
                 }else{
                     used = false
                 }
-                
-                
+
                 
             }
-            CFRelease(emails);
+            println("prerelease")
+
+            CFRelease(emails)
+            
+            println("released")
+
         }
-        
-        
-        //
-        
-      
+       //CFRelease(emails)
+
+
+        println("fullStop")
+
     }
     
     /*
@@ -117,19 +140,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     }
  */
     
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!, property property: ABPropertyID, identifier identifier: ABMultiValueIdentifier) -> Bool{
-        println( "here")
-        return true
-        
-        
-        
-        
-    }
-    
-    
-    
-    
-    
+
     func displayPerson(person:ABRecordRef)
     {
         
@@ -209,6 +220,8 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         }
         var title = invites[indexPath.row].valueForKey("Email") as String
         cell.textLabel.text = title
+
+
         return cell
         
         
