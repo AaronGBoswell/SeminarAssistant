@@ -78,6 +78,14 @@ class WelcomeViewController: UIViewController {
                     self.performSegueWithIdentifier("accountData", sender: self)
                 });
             }
+            else{
+                dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                    self.emailLabel.text = "Invalid username or password"
+                    self.passwordText.enabled = true
+                    self.emailTextView.enabled = true
+                    self.loginButton.enabled = true
+                });
+            }
         }
         task.resume()
     }

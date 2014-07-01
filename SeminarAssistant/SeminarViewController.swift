@@ -119,7 +119,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
             }
             println("prerelease")
 
-            CFRelease(emails)
+            //CFRelease(emails)
             
             println("released")
 

@@ -44,18 +44,33 @@ class CreateSeminarViewController: UIViewController {
         csvText.enabled = false
         doneButton.enabled = false
         newSeminarLabel.text = "Creating..."
-        var email =  (UIApplication.sharedApplication().delegate as AppDelegate).email
+        println("creating")
         
-        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/addseminar?Email=\(email)&URL=\(urlText.text)&UUID=\(uuidText.text)&Title=\(titleText.text)&DIS=\(disText.text)&CSV=\(csvText.text)");
+        var uuid = uuidText.text
+        var title = titleText.text
+        var urltxt = urlText.text
+        var dis = disText.text
+        var csv = csvText.text
+        
+        var email =  (UIApplication.sharedApplication().delegate as AppDelegate).email
+        println(email)
+        var ur = "http://www.seminarassistant.com/appinterac/addseminar?Email=\(email)&URL=\(urltxt)&UUID=\(uuid)&Title=\(title)&DIS=\(dis)&CSV=\(csv)"
+        ur = ur.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
+        var url = NSURL(string: ur)
+        println(ur)
+
         println(url)
+        
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             var s = NSString(data: data, encoding: NSUTF8StringEncoding)
             var str:String = s
             println(str)
             if(str.compare("good") == 0){
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                    
                     self.navigationController.popViewControllerAnimated(true)
                     self.navigationController.popViewControllerAnimated(true)
+                    
                     });
             }
             else{

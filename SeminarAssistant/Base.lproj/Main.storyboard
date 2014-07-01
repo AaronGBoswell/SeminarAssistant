@@ -131,16 +131,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gs-LJ-G7j">
-                                <rect key="frame" x="208" y="20" width="65" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="cXi-Z3-57C"/>
-                                    <constraint firstAttribute="height" constant="21" id="urq-iU-895"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hWb-dk-lrA">
                                 <rect key="frame" x="192" y="49" width="97" height="30"/>
                                 <constraints>
@@ -181,6 +171,16 @@
                                     <action selector="signUpButtonClicked:" destination="OVr-6t-kO9" eventType="touchUpInside" id="hnx-H8-G5k"/>
                                 </connections>
                             </button>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Account Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gs-LJ-G7j">
+                                <rect key="frame" x="117" y="20" width="247" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="cXi-Z3-57C"/>
+                                    <constraint firstAttribute="height" constant="21" id="urq-iU-895"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -231,16 +231,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Seminar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78L-Q3-zQy">
-                                <rect key="frame" x="207" y="134" width="65" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="GbW-1O-Ekv"/>
-                                    <constraint firstAttribute="width" constant="65" id="dh4-o2-Abe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UUID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-lf-pFD">
                                 <rect key="frame" x="115" y="163" width="250" height="30"/>
                                 <constraints>
@@ -269,6 +259,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Seminar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78L-Q3-zQy">
+                                <rect key="frame" x="160" y="134" width="160" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="GbW-1O-Ekv"/>
+                                    <constraint firstAttribute="width" constant="160" id="dh4-o2-Abe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -311,86 +311,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwW-ES-DZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2535" y="-758"/>
-        </scene>
-        <!--View Controller - New Seminar-->
-        <scene sceneID="We1-Ie-Yot">
-            <objects>
-                <viewController id="ISi-OR-iqo" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tCA-UL-W6B"/>
-                        <viewControllerLayoutGuide type="bottom" id="IHs-Ao-8id"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QC4-ub-oQe">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Seminar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdG-RL-NlA">
-                                <rect key="frame" x="208" y="86" width="65" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="lsS-SD-7DS"/>
-                                    <constraint firstAttribute="width" constant="65" id="xnP-0h-vyY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UUID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UvD-A4-BG6">
-                                <rect key="frame" x="115.5" y="115" width="250" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="3uw-aJ-d0R"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GXR-fk-ync">
-                                <rect key="frame" x="115.5" y="153" width="250" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gce-VT-V2g">
-                                <rect key="frame" x="115.5" y="191" width="250" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CSV" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WTN-fw-R02">
-                                <rect key="frame" x="115.5" y="267" width="250" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DIS" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zFu-pf-tgs">
-                                <rect key="frame" x="115.5" y="229" width="250" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="GXR-fk-ync" firstAttribute="leading" secondItem="UvD-A4-BG6" secondAttribute="leading" id="1Sf-ab-hT6"/>
-                            <constraint firstItem="zFu-pf-tgs" firstAttribute="top" secondItem="gce-VT-V2g" secondAttribute="bottom" constant="8" symbolic="YES" id="3wU-Ml-4Zv"/>
-                            <constraint firstItem="gce-VT-V2g" firstAttribute="trailing" secondItem="GXR-fk-ync" secondAttribute="trailing" id="Ck6-ce-GEW"/>
-                            <constraint firstAttribute="centerX" secondItem="IdG-RL-NlA" secondAttribute="centerX" constant="-0.5" id="GJN-BZ-m6w"/>
-                            <constraint firstItem="gce-VT-V2g" firstAttribute="top" secondItem="GXR-fk-ync" secondAttribute="bottom" constant="8" symbolic="YES" id="JzD-BI-m0C"/>
-                            <constraint firstItem="WTN-fw-R02" firstAttribute="leading" secondItem="zFu-pf-tgs" secondAttribute="leading" id="LqH-Y6-Yna"/>
-                            <constraint firstItem="UvD-A4-BG6" firstAttribute="top" secondItem="IdG-RL-NlA" secondAttribute="bottom" constant="8" symbolic="YES" id="Q6T-3g-5Yu"/>
-                            <constraint firstItem="zFu-pf-tgs" firstAttribute="trailing" secondItem="gce-VT-V2g" secondAttribute="trailing" id="Yxe-92-q5O"/>
-                            <constraint firstItem="IdG-RL-NlA" firstAttribute="top" secondItem="tCA-UL-W6B" secondAttribute="bottom" constant="22" id="dAp-fZ-dEF"/>
-                            <constraint firstItem="zFu-pf-tgs" firstAttribute="trailing" secondItem="WTN-fw-R02" secondAttribute="trailing" id="lzV-lD-W4m"/>
-                            <constraint firstItem="GXR-fk-ync" firstAttribute="top" secondItem="UvD-A4-BG6" secondAttribute="bottom" constant="8" symbolic="YES" id="mhm-ea-EiX"/>
-                            <constraint firstItem="GXR-fk-ync" firstAttribute="trailing" secondItem="UvD-A4-BG6" secondAttribute="trailing" id="pME-hI-nuR"/>
-                            <constraint firstItem="IdG-RL-NlA" firstAttribute="centerX" secondItem="UvD-A4-BG6" secondAttribute="centerX" id="pfB-bb-GiP"/>
-                            <constraint firstItem="gce-VT-V2g" firstAttribute="leading" secondItem="GXR-fk-ync" secondAttribute="leading" id="tGt-Mx-gZ8"/>
-                            <constraint firstItem="WTN-fw-R02" firstAttribute="top" secondItem="zFu-pf-tgs" secondAttribute="bottom" constant="8" symbolic="YES" id="tdI-D1-Tsz"/>
-                            <constraint firstItem="gce-VT-V2g" firstAttribute="leading" secondItem="zFu-pf-tgs" secondAttribute="leading" id="xeK-XA-v7q"/>
-                        </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="New Seminar" id="7jg-Tc-Dbz">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="nmy-b7-ncN"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qyu-xX-WNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3249" y="-758"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="VxA-8U-V2K">

@@ -42,7 +42,18 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonClicked(sender : AnyObject) {
         
-        titleLabel.text = "Checking you in, please wait..."
+        if !stringIsValidEmail(emailText.text){
+            titleLabel.text = "Enter a valid Email"
+
+            return
+        }
+        if(confirmPasswordText.text.compare(passwordText.text) != 0){
+            titleLabel.text = "Passwords do not match"
+
+            return
+        }
+        
+        titleLabel.text = "Signing you up..."
         passwordText.enabled = false
         firstNameText.enabled = false
         emailText.enabled = false
@@ -50,12 +61,7 @@ class SignUpViewController: UIViewController {
         lastNameText.enabled = false
         signUpButton.enabled = false
         
-        if !stringIsValidEmail(emailText.text){
-            return
-        }
-        if(confirmPasswordText.text.compare(passwordText.text) != 0){
-            return
-        }
+
         var fname = firstNameText.text
         var lname = lastNameText.text
         var email = emailText.text
@@ -78,6 +84,12 @@ class SignUpViewController: UIViewController {
             else{
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
                     self.titleLabel.text = str
+                    self.passwordText.enabled = true
+                    self.firstNameText.enabled = true
+                    self.emailText.enabled = true
+                    self.confirmPasswordText.enabled = true
+                    self.lastNameText.enabled = true
+                   self.signUpButton.enabled = true
                 });
             }
         }
