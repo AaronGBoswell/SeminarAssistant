@@ -450,7 +450,7 @@
             </objects>
             <point key="canvasLocation" x="1843" y="432"/>
         </scene>
-        <!--Seminar View Controller - Invitees-->
+        <!--Seminar View Controller - Seminar-->
         <scene sceneID="3xF-iY-nbj">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="ULc-w3-8Zs" customClass="SeminarViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
@@ -525,7 +525,7 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Invitees" id="mAm-yr-BeV"/>
+                    <navigationItem key="navigationItem" title="Seminar" id="kJn-Rf-yia"/>
                     <connections>
                         <outlet property="tableView" destination="giE-Ae-hwu" id="QKX-iJ-9kV"/>
                     </connections>
