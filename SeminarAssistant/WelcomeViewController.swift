@@ -22,9 +22,15 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         passwordText.secureTextEntry = true
         emailTextView.keyboardType = UIKeyboardType.EmailAddress
+        
+        var tap = UITapGestureRecognizer(target: self, action: "dismiss")
+        self.view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    func dismiss(){
+        println("diss")
+        view.endEditing(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

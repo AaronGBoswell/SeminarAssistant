@@ -21,8 +21,6 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     override func viewWillAppear(animated: Bool){
         println(email)
