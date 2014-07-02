@@ -12,6 +12,7 @@ import UIKit
 class LeftSeminarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -19,12 +20,12 @@ class LeftSeminarViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if(segue.destinationViewController is PleaseWaitViewController){
-            var destVC  = segue.destinationViewController as PleaseWaitViewController
-            (UIApplication.sharedApplication().delegate as AppDelegate).bND = destVC
-            (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
-
+    @IBAction func leaveButtonClicked(sender : AnyObject) {
+        for vc in navigationController.viewControllers{
+            if vc is PleaseWaitViewController{
+                //(vc as PleaseWaitViewController).seminarTable
+                navigationController.popToViewController(vc as UIViewController, animated: true)
+            }
         }
     }
     
