@@ -129,7 +129,8 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
     }
     func didExitSeminar(seminar:NSDictionary,seminarArray:NSDictionary[]){
     }
-    
+    func didUpdateSeminarList(seminarArray:NSDictionary[]){
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

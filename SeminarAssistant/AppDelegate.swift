@@ -106,6 +106,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegat
             mDic.setValue((0 as Int), forKey: "count")
             seminarArray[index] = mDic
         }
+        if(bND){
+            bND!.didUpdateSeminarList(seminarArray)
+        }
         if(complet){
             complet!(UIBackgroundFetchResult.NewData);
         }

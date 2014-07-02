@@ -20,13 +20,37 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     var email:String = ""
     var currRegion:NSDictionary? = nil
     
-    var searchSeminarArray:NSDictionary[] = []
+    var spoof:NSDictionary[] = []
+
+    var searchSeminarArray:NSDictionary[]{
+        get{
+            return spoof
+        }
+        set{
+            spoof = sort(newValue, { (d1: NSDictionary, d2: NSDictionary) -> Bool in
+                if(d1.valueForKey("count") as Int > d2.valueForKey("count") as Int ){
+                    return true
+                }
+                else if((d1.valueForKey("count") as Int) < (d2.valueForKey("count") as Int) ){
+                    return false
+                }
+                return (d1.valueForKey("Title") as String) < (d2.valueForKey("Title") as String)
+                })
+        }
+    }
+        
+        
+    
     var nearBySeminars:NSDictionary[] = []
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         println(email)
+    }
+    override func viewDidAppear(animated: Bool){
+        println(email)
+        seminarTable.reloadData()
     }
 
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
@@ -53,8 +77,20 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ident)
         }
-        var title = nearBySeminars[indexPath.row].valueForKey("Title") as String
+        var title = searchSeminarArray[indexPath.row].valueForKey("Title") as String
+        if(searchSeminarArray[indexPath.row].valueForKey("count") as Int == 0){
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+        else{
+            cell.selectionStyle = UITableViewCellSelectionStyle.Blue
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+
+
+        }
+        
         cell.textLabel.text = title
+        println("req")
         return cell
     }
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int{
@@ -66,12 +102,16 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
                 x++
             }
         }
-        println(nearBySeminars)
-        return x
+        println(searchSeminarArray.count)
+        return searchSeminarArray.count
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
-        selectSeminar(nearBySeminars[indexPath.row])
+        var cell = tableView.cellForRowAtIndexPath(indexPath)
+        if(cell.selectionStyle == UITableViewCellSelectionStyle.None){
+            return
+        }
+        selectSeminar(searchSeminarArray[indexPath.row])
     }
     
     
@@ -108,7 +148,11 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
         seminarTable.reloadData()
 
     }
-    
+    func didUpdateSeminarList(seminarArray:NSDictionary[]){
+        searchSeminarArray = seminarArray
+        seminarTable.reloadData()
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
