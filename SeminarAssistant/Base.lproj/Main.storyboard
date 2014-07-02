@@ -312,7 +312,7 @@
         <!--Account View Controller-->
         <scene sceneID="VxA-8U-V2K">
             <objects>
-                <viewController id="MJi-cL-7ly" customClass="AccountViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="MJi-cL-7ly" customClass="AccountViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NOb-pj-MmR"/>
                         <viewControllerLayoutGuide type="bottom" id="P99-bn-00j"/>
@@ -322,7 +322,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fyg-mv-Tah">
-                                <rect key="frame" x="0.0" y="154" width="480" height="326"/>
+                                <rect key="frame" x="0.0" y="187" width="480" height="326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SeminarCell" textLabel="jKm-Wt-mWq" style="IBUITableViewCellStyleDefault" id="0Oh-cU-Igu">
@@ -346,7 +346,7 @@
                                 </connections>
                             </tableView>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-4h-HsS">
-                                <rect key="frame" x="217" y="154" width="46" height="30"/>
+                                <rect key="frame" x="181" y="136" width="46" height="30"/>
                                 <state key="normal" title="Create">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -440,7 +440,7 @@
         <!--Seminar View Controller-->
         <scene sceneID="3xF-iY-nbj">
             <objects>
-                <viewController id="ULc-w3-8Zs" customClass="SeminarViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ULc-w3-8Zs" customClass="SeminarViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5nJ-vU-zKd"/>
                         <viewControllerLayoutGuide type="bottom" id="gTL-v8-IG2"/>
@@ -449,9 +449,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="giE-Ae-hwu">
-                                <rect key="frame" x="0.0" y="188" width="480" height="292"/>
+                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="giE-Ae-hwu">
+                                <rect key="frame" x="0.0" y="232" width="480" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="inviteCell" textLabel="5vf-Yg-Gq0" detailTextLabel="1Vz-ye-10U" style="IBUITableViewCellStyleSubtitle" id="2Py-fq-XxD">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -479,9 +480,18 @@
                                     <outlet property="delegate" destination="ULc-w3-8Zs" id="ot0-BS-IBD"/>
                                 </connections>
                             </tableView>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz4-2u-1E1">
-                                <rect key="frame" x="202" y="145" width="77" height="30"/>
-                                <state key="normal" title="Add Invites">
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invitees" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtJ-2G-PvD">
+                                <rect key="frame" x="20" y="203" width="66" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="5fW-5a-Cru"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz4-2u-1E1">
+                                <rect key="frame" x="94" y="202" width="22" height="22"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -495,8 +505,10 @@
                             <constraint firstAttribute="bottom" secondItem="giE-Ae-hwu" secondAttribute="bottom" id="5J8-Md-1CU"/>
                             <constraint firstItem="giE-Ae-hwu" firstAttribute="top" secondItem="5nJ-vU-zKd" secondAttribute="bottom" constant="168" id="6rw-MM-4u2"/>
                             <constraint firstItem="giE-Ae-hwu" firstAttribute="leading" secondItem="rpt-Lp-Ac0" secondAttribute="leading" id="9oK-LE-BzR"/>
-                            <constraint firstAttribute="centerY" secondItem="gz4-2u-1E1" secondAttribute="centerY" constant="80" id="LXH-cQ-Xtt"/>
-                            <constraint firstAttribute="centerX" secondItem="gz4-2u-1E1" secondAttribute="centerX" constant="-0.5" id="ul9-Kh-mC8"/>
+                            <constraint firstItem="FtJ-2G-PvD" firstAttribute="leading" secondItem="rpt-Lp-Ac0" secondAttribute="leading" constant="20" symbolic="YES" id="VOm-Fc-SpS"/>
+                            <constraint firstItem="gz4-2u-1E1" firstAttribute="leading" secondItem="FtJ-2G-PvD" secondAttribute="trailing" constant="8" symbolic="YES" id="X6U-gL-v0I"/>
+                            <constraint firstItem="giE-Ae-hwu" firstAttribute="top" secondItem="gz4-2u-1E1" secondAttribute="bottom" constant="8" symbolic="YES" id="oJO-MM-LLr"/>
+                            <constraint firstItem="giE-Ae-hwu" firstAttribute="top" secondItem="FtJ-2G-PvD" secondAttribute="bottom" constant="8" symbolic="YES" id="tEW-KB-K5c"/>
                         </constraints>
                     </view>
                     <connections>
