@@ -26,6 +26,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         println("get")
         getInvites()
         println("got")
+        self.tableView.allowsMultipleSelectionDuringEditing = false;
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -41,6 +42,39 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
        // self.presentModalViewController(picker, animated: true, completion)
     }
     
+    /*
+    - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+    }
+    */
+    
+    func tableView(tableView: UITableView!, canMoveRowAtIndexPath indexPath: NSIndexPath!) -> Bool{
+            return true
+    }
+    
+    func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!)
+    {
+        
+        
+        var deleteEmail = invites[indexPath.row].valueForKey("Email") as String
+        var deleteID = invites[indexPath.row].valueForKey("ID") as String
+        
+        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/deletepeople.php?ID=\(deleteID)&Email=\(deleteEmail)")
+        print(url)
+        let task = NSURLSession.sharedSession().dataTaskWithURL((url), {(data, response, error) in
+            println("task")
+            dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                
+                println("task")
+                
+                self.getInvites()
+                });
+            })
+        task.resume()
+        println("resumed")
+        println("deleted")
+    }
     
     
     func peoplePickerNavigationControllerDidCancel(peoplePicker:ABPeoplePickerNavigationController!)
@@ -185,6 +219,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
                 var dic = obj as NSDictionary
                 var Email:String = dic.valueForKey("Email") as String
                 var CheckedIn:String = dic.valueForKey("CheckedIn") as String
+                 var unitID:String = dic.valueForKey("ID") as String
                 print("Adding: ")
                 
                 println((dic.valueForKey("Email")))

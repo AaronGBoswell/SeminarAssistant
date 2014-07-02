@@ -28,7 +28,34 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
         println(email)
         getSeminars()
     }
+    func tableView(tableView: UITableView!, canMoveRowAtIndexPath indexPath: NSIndexPath!) -> Bool{
+        return true
+    }
     
+    func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!)
+    {
+        
+        
+        
+        var deleteID = seminars[indexPath.row].valueForKey("ID") as String
+        
+        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/deleteseminar.php?ID=\(deleteID)")
+        print(url)
+        let task = NSURLSession.sharedSession().dataTaskWithURL((url), {(data, response, error) in
+            println("task")
+            dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                
+                println("task")
+                
+                self.getSeminars()
+                });
+            })
+        task.resume()
+        println("resumed")
+        println("deleted")
+    }
+    
+
     
     func  getSeminars(){
     print("ran")
