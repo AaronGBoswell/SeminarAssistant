@@ -317,8 +317,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fyg-mv-Tah">
-                                <rect key="frame" x="0.0" y="187" width="480" height="326"/>
+                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fyg-mv-Tah">
+                                <rect key="frame" x="0.0" y="198" width="480" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SeminarCell" textLabel="jKm-Wt-mWq" style="IBUITableViewCellStyleDefault" id="0Oh-cU-Igu">
@@ -341,9 +341,18 @@
                                     <outlet property="delegate" destination="MJi-cL-7ly" id="Hux-zq-V22"/>
                                 </connections>
                             </tableView>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-4h-HsS">
-                                <rect key="frame" x="181" y="136" width="46" height="30"/>
-                                <state key="normal" title="Create">
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Seminars" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbp-B9-5di">
+                                <rect key="frame" x="20" y="168" width="120" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="XQD-kE-qfN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-4h-HsS">
+                                <rect key="frame" x="148" y="168" width="22" height="22"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -353,9 +362,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fyg-mv-Tah" firstAttribute="top" secondItem="8UO-4h-HsS" secondAttribute="bottom" constant="8" symbolic="YES" id="MF5-Yh-9H4"/>
+                            <constraint firstItem="8UO-4h-HsS" firstAttribute="leading" secondItem="jbp-B9-5di" secondAttribute="trailing" constant="8" symbolic="YES" id="WR6-4V-aCi"/>
+                            <constraint firstItem="jbp-B9-5di" firstAttribute="top" secondItem="8UO-4h-HsS" secondAttribute="top" id="WvA-Ga-Mm7"/>
                             <constraint firstAttribute="bottom" secondItem="fyg-mv-Tah" secondAttribute="bottom" id="bzu-IH-uNH"/>
                             <constraint firstAttribute="trailing" secondItem="fyg-mv-Tah" secondAttribute="trailing" id="dKh-i3-fWg"/>
                             <constraint firstItem="fyg-mv-Tah" firstAttribute="leading" secondItem="Rq1-SH-zIW" secondAttribute="leading" id="hQy-Lm-b8e"/>
+                            <constraint firstItem="jbp-B9-5di" firstAttribute="leading" secondItem="Rq1-SH-zIW" secondAttribute="leading" constant="20" symbolic="YES" id="hf6-ZV-oJA"/>
+                            <constraint firstItem="fyg-mv-Tah" firstAttribute="top" secondItem="jbp-B9-5di" secondAttribute="bottom" constant="9" id="x16-rz-HHM"/>
                             <constraint firstItem="fyg-mv-Tah" firstAttribute="top" secondItem="NOb-pj-MmR" secondAttribute="bottom" constant="134" id="yJv-Bs-Quf"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

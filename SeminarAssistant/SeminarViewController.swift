@@ -15,6 +15,10 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     
     var email:String = "henry@lakejoe.com"
     var ID:String = "1"
+    var titlePassed:String = "Invitees"
+    var UUID:String = " "
+    var URL:String = " "
+    var DIS:String = " "
     var clickedSeminar:NSDictionary = NSDictionary()
     @IBOutlet var tableView : UITableView = nil
     var invites:NSDictionary[] = []
@@ -27,6 +31,8 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         getInvites()
         println("got")
         self.tableView.allowsMultipleSelectionDuringEditing = false;
+        self.title = titlePassed
+        
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -49,6 +55,8 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     }
     */
     
+    
+    
     func tableView(tableView: UITableView!, canMoveRowAtIndexPath indexPath: NSIndexPath!) -> Bool{
             return true
     }
@@ -57,8 +65,15 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     {
         
         
+       // indexPath.
+        
+        
+        
         var deleteEmail = invites[indexPath.row].valueForKey("Email") as String
         var deleteID = invites[indexPath.row].valueForKey("ID") as String
+        
+        invites.removeAtIndex(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
         
         var url = NSURL(string: "http://www.seminarassistant.com/appinterac/deletepeople.php?ID=\(deleteID)&Email=\(deleteEmail)")
         print(url)

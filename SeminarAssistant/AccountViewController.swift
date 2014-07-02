@@ -37,6 +37,9 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
         
         var deleteID = seminars[indexPath.row].valueForKey("ID") as String
         
+        seminars.removeAtIndex(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+        
         var url = NSURL(string: "http://www.seminarassistant.com/appinterac/deleteseminar.php?ID=\(deleteID)")
         print(url)
         let task = NSURLSession.sharedSession().dataTaskWithURL((url), {(data, response, error) in
@@ -144,6 +147,10 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
             var seminarID:String = clickedSeminar.valueForKey("ID") as String;
             destVC.email = email
             destVC.ID = seminarID
+            destVC.titlePassed = clickedSeminar.valueForKey("Title") as String
+            destVC.URl = clickedSeminar.valueForKey("url") as String
+            destVC.DIS = clickedSeminar.valueForKey("DIS") as String
+            destVC.UUID = clickedSeminar.valueForKey("UUID") as String
         }
 
     }
