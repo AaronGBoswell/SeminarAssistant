@@ -101,7 +101,6 @@
                             <constraint firstAttribute="centerX" secondItem="mDd-B9-4VJ" secondAttribute="centerX" id="xvr-3s-Nte"/>
                             <constraint firstItem="qmt-tA-Hpj" firstAttribute="centerX" secondItem="GOc-Eo-uTk" secondAttribute="centerX" id="zzl-4d-IaS"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="iy2-aL-PZm"/>
                     <connections>
@@ -203,7 +202,6 @@
                             <constraint firstItem="0Gs-LJ-G7j" firstAttribute="top" secondItem="HH5-j2-WXy" secondAttribute="top" constant="20" symbolic="YES" id="wnf-3P-fKb"/>
                             <constraint firstItem="aYi-tR-arh" firstAttribute="top" secondItem="A8e-kv-xdw" secondAttribute="bottom" constant="8" symbolic="YES" id="yzh-Us-N26"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
                         <outlet property="confirmPasswordText" destination="uha-dI-QDu" id="aOI-WN-nYq"/>
@@ -289,7 +287,6 @@
                             <constraint firstItem="m4z-JP-Uur" firstAttribute="trailing" secondItem="Z7m-5t-2Al" secondAttribute="trailing" id="zdJ-46-IIc"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="leading" secondItem="m4z-JP-Uur" secondAttribute="leading" id="zyX-cE-59G"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Seminar" id="ZcR-m5-FpO">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Qqh-Kl-I9r">
@@ -365,7 +362,6 @@
                             <constraint firstItem="fyg-mv-Tah" firstAttribute="leading" secondItem="Rq1-SH-zIW" secondAttribute="leading" id="hQy-Lm-b8e"/>
                             <constraint firstItem="fyg-mv-Tah" firstAttribute="top" secondItem="NOb-pj-MmR" secondAttribute="bottom" constant="134" id="yJv-Bs-Quf"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Vg-uG-0am"/>
                     <connections>
@@ -429,7 +425,6 @@
                             <constraint firstItem="dyR-w3-7rO" firstAttribute="top" secondItem="QIt-wh-OaS" secondAttribute="bottom" constant="62" id="d7z-Od-cWm"/>
                             <constraint firstAttribute="centerX" secondItem="dyR-w3-7rO" secondAttribute="centerX" id="dra-PE-KIa"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
                         <outlet property="activityMoniter" destination="dyR-w3-7rO" id="kRT-Fm-B0T"/>
@@ -503,7 +498,6 @@
                             <constraint firstAttribute="centerY" secondItem="gz4-2u-1E1" secondAttribute="centerY" constant="80" id="LXH-cQ-Xtt"/>
                             <constraint firstAttribute="centerX" secondItem="gz4-2u-1E1" secondAttribute="centerX" constant="-0.5" id="ul9-Kh-mC8"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="giE-Ae-hwu" id="QKX-iJ-9kV"/>
@@ -573,7 +567,6 @@
                             <constraint firstAttribute="centerX" secondItem="mZo-Du-yra" secondAttribute="centerX" id="clM-fM-2vf"/>
                             <constraint firstItem="Ja1-6y-Bo8" firstAttribute="top" secondItem="VdU-Mb-Ezk" secondAttribute="bottom" constant="8" id="iMN-R4-fMx"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="mZo-Du-yra" id="aME-G2-HfM"/>
@@ -622,7 +615,6 @@
                             <constraint firstItem="F4L-uY-Weq" firstAttribute="top" secondItem="GcC-eb-2AI" secondAttribute="bottom" constant="193" id="9gc-l4-hGT"/>
                             <constraint firstItem="GcC-eb-2AI" firstAttribute="top" secondItem="CAJ-EC-p7A" secondAttribute="bottom" constant="32" id="mum-a2-XHD"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHL-Nz-5bQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
