@@ -108,6 +108,19 @@ class WelcomeViewController: UIViewController {
                 (UIApplication.sharedApplication().delegate as AppDelegate).bND = dvc
             }
         }
+        if(segue.destinationViewController is AccountViewController){
+            var dvc = segue.destinationViewController as AccountViewController
+            dvc.email = emailTextView.text
+            (UIApplication.sharedApplication().delegate as AppDelegate).email = emailTextView.text
+            //(UIApplication.sharedApplication().delegate as AppDelegate).startFetches()
+            (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = dvc
+            (UIApplication.sharedApplication().delegate as AppDelegate).bND = dvc
+            
+            
+            var bbbi = UIBarButtonItem()
+            bbbi.title = "Signout"
+            navigationItem.backBarButtonItem = bbbi
+        }
         if(segue.destinationViewController is PleaseWaitViewController){
             var destVC  = segue.destinationViewController as PleaseWaitViewController
             destVC.email = emailTextView.text
