@@ -177,10 +177,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegat
     }
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: AnyObject[]!,inRegion region: CLBeaconRegion!){
         println("rangin\(beacons.count)")
-        if(inRange<beacons.count){
-            inRange = beacons.count
-            locationManager(locationManager,didEnterRegion:region)
-        }
         var reg:NSDictionary?
         for dic in seminarArray{
             if((dic.valueForKey("Title")as String).compare(region.identifier) == 0 ){
