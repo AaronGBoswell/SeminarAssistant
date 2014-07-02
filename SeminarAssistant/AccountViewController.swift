@@ -150,7 +150,7 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
             destVC.email = email
             destVC.ID = seminarID
             destVC.titlePassed = clickedSeminar.valueForKey("Title") as String
-            destVC.URl = clickedSeminar.valueForKey("url") as String
+            destVC.URL = clickedSeminar.valueForKey("URL") as String
             destVC.DIS = clickedSeminar.valueForKey("DIS") as String
             destVC.UUID = clickedSeminar.valueForKey("UUID") as String
         }

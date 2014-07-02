@@ -13,6 +13,9 @@ import AddressBookUI
 class SeminarViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate {
     
     
+    @IBOutlet var UUIDLabel : UILabel
+    @IBOutlet var dataLocLabel : UILabel
+    @IBOutlet var textFieldDis : UITextView
     var email:String = "henry@lakejoe.com"
     var ID:String = "1"
     var titlePassed:String = "Invitees"
@@ -32,8 +35,10 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         println("got")
         self.tableView.allowsMultipleSelectionDuringEditing = false;
         self.title = titlePassed
+        //textFieldDis.text = DIS
+        UUIDLabel.text = UUID
+        dataLocLabel.text = URL
         
-
         // Do any additional setup after loading the view, typically from a nib.
     }
     
