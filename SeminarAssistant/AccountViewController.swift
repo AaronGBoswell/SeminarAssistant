@@ -21,8 +21,9 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        var bbbi = UIBarButtonItem()
+        bbbi.title = "Account"
+        navigationItem.backBarButtonItem = bbbi
     }
     override func viewWillAppear(animated: Bool){
         println(email)
@@ -61,35 +62,35 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
 
     
     func  getSeminars(){
-    print("ran")
+        print("ran")
         
-    var url = NSURL(string: "http://www.seminarassistant.com/appinterac/returntitles.php?Email=\(email)");
-    let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
+        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/returntitles.php?Email=\(email)");
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
       
-        var jsonArray:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary[]
+            var jsonArray:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary[]
 
         
-        for obj in jsonArray{
-            var dic = obj as NSDictionary
-            var title:String = dic.valueForKey("Title") as String
-            var ID:String = dic.valueForKey("ID") as String
-            print("Adding: ")
+            for obj in jsonArray{
+                var dic = obj as NSDictionary
+                var title:String = dic.valueForKey("Title") as String
+                var ID:String = dic.valueForKey("ID") as String
+                print("Adding: ")
             
-            println((dic.valueForKey("Title")))
+                println((dic.valueForKey("Title")))
 
-        }
-        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
-            self.seminars = jsonArray
-            self.tableView.reloadData()
+            }
+            dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                self.seminars = jsonArray
+                self.tableView.reloadData()
             
             
             
-        });
+            });
     
         
         
-    }
-    task.resume()
+        }
+        task.resume()
     
         
     
@@ -153,6 +154,14 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
             destVC.URL = clickedSeminar.valueForKey("URL") as String
             destVC.DIS = clickedSeminar.valueForKey("DIS") as String
             destVC.UUID = clickedSeminar.valueForKey("UUID") as String
+            var bbbi = UIBarButtonItem()
+            bbbi.title = "Account"
+            navigationItem.backBarButtonItem = bbbi
+        }
+        else{
+            var bbbi = UIBarButtonItem()
+            bbbi.title = "Cancel"
+            navigationItem.backBarButtonItem = bbbi
         }
 
     }

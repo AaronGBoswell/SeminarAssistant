@@ -23,7 +23,6 @@ class LeftSeminarViewController: UIViewController {
     @IBAction func leaveButtonClicked(sender : AnyObject) {
         for vc in navigationController.viewControllers{
             if vc is PleaseWaitViewController{
-                //(vc as PleaseWaitViewController).seminarTable
                 navigationController.popToViewController(vc as UIViewController, animated: true)
             }
         }

@@ -22,9 +22,15 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         passwordText.secureTextEntry = true
         emailTextView.keyboardType = UIKeyboardType.EmailAddress
+        
+        var tap = UITapGestureRecognizer(target: self, action: "dismiss")
+        self.view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    func dismiss(){
+        println("diss")
+        view.endEditing(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -102,6 +108,19 @@ class WelcomeViewController: UIViewController {
                 (UIApplication.sharedApplication().delegate as AppDelegate).bND = dvc
             }
         }
+        if(segue.destinationViewController is AccountViewController){
+            var dvc = segue.destinationViewController as AccountViewController
+            dvc.email = emailTextView.text
+            (UIApplication.sharedApplication().delegate as AppDelegate).email = emailTextView.text
+            //(UIApplication.sharedApplication().delegate as AppDelegate).startFetches()
+            (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = dvc
+            (UIApplication.sharedApplication().delegate as AppDelegate).bND = dvc
+            
+            
+            var bbbi = UIBarButtonItem()
+            bbbi.title = "Signout"
+            navigationItem.backBarButtonItem = bbbi
+        }
         if(segue.destinationViewController is PleaseWaitViewController){
             var destVC  = segue.destinationViewController as PleaseWaitViewController
             destVC.email = emailTextView.text
@@ -115,6 +134,20 @@ class WelcomeViewController: UIViewController {
             var destVC  = segue.destinationViewController as SignUpViewController
             destVC.wel = self
         }
+        self.emailLabel.text = "Please enter your email address"
+        self.passwordText.enabled = true
+        self.emailTextView.enabled = true
+        self.loginButton.enabled = true
+        
+        self.passwordText.text = ""
+        self.emailTextView.text = ""
+        
+        adminButton.hidden = false
+        signUpButton.hidden = true
+        passwordText.hidden = true
+        loginButton.hidden = true;
+        submitButton.hidden = false;
+        adminMode = 0;
     }
 
 }
