@@ -134,6 +134,16 @@ class WelcomeViewController: UIViewController {
             var destVC  = segue.destinationViewController as SignUpViewController
             destVC.wel = self
         }
+        self.emailLabel.text = "Please enter your email address"
+        self.passwordText.enabled = true
+        self.emailTextView.enabled = true
+        self.loginButton.enabled = true
+        adminButton.hidden = false
+        signUpButton.hidden = true
+        passwordText.hidden = true
+        loginButton.hidden = true;
+        submitButton.hidden = false;
+        adminMode = 0;
     }
 
 }
