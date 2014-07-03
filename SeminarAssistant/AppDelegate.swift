@@ -116,8 +116,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegat
     }
     func newRegion(with uuid:String, andid title:String){
         var err: NSError?
+        var uu = uuid
+        uu = uuid.uppercaseString
         var regex = NSRegularExpression(pattern:"\\A[A-F0-9]{8}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{12}\\Z" , options: NSRegularExpressionOptions.AnchorsMatchLines, error:&err )
-        var x = regex.numberOfMatchesInString(uuid, options: NSMatchingOptions.Anchored, range: NSMakeRange(0, uuid.utf16count))
+        var x = regex.numberOfMatchesInString(uu, options: NSMatchingOptions.Anchored, range: NSMakeRange(0, uuid.utf16count))
         if(x == 0){
             println(" .. Failed, badd UUID: \(uuid)")
             return

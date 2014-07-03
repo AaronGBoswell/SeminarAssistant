@@ -23,12 +23,14 @@ class WelcomeViewController: UIViewController {
         passwordText.secureTextEntry = true
         emailTextView.keyboardType = UIKeyboardType.EmailAddress
         
-        var tap = UITapGestureRecognizer(target: self, action: "dismiss")
+        var tap = UITapGestureRecognizer(target: self, action: "dismisss")
         self.view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view, typically from a nib.
     }
-    func dismiss(){
-        println("diss")
+    override func viewWillAppear(animated: Bool) {
+        dismisss()
+    }
+    func dismisss(){
         view.endEditing(true)
     }
     override func didReceiveMemoryWarning() {
@@ -74,7 +76,7 @@ class WelcomeViewController: UIViewController {
         loginButton.enabled = false
         var email = emailTextView.text
         
-        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/login.php?Email=\(email)&pass=\(passwordText.text)");
+        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/login.php?Email=\(email)&pass=\(passwordText.text)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding));
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             var s = NSString(data: data, encoding: NSUTF8StringEncoding)
             var str:String = s
@@ -134,6 +136,14 @@ class WelcomeViewController: UIViewController {
             var destVC  = segue.destinationViewController as SignUpViewController
             destVC.wel = self
         }
+        else{
+            adminButton.hidden = false
+            signUpButton.hidden = true
+            passwordText.hidden = true
+            loginButton.hidden = true;
+            submitButton.hidden = false;
+            adminMode = 0;
+        }
         self.emailLabel.text = "Please enter your email address"
         self.passwordText.enabled = true
         self.emailTextView.enabled = true
@@ -142,12 +152,7 @@ class WelcomeViewController: UIViewController {
         self.passwordText.text = ""
         self.emailTextView.text = ""
         
-        adminButton.hidden = false
-        signUpButton.hidden = true
-        passwordText.hidden = true
-        loginButton.hidden = true;
-        submitButton.hidden = false;
-        adminMode = 0;
+
     }
 
 }

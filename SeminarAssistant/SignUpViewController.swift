@@ -68,20 +68,25 @@ class SignUpViewController: UIViewController {
 
         var password = passwordText.text
         
-        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/signup.php?Email=\(email)&pass=\(password)&fname=\(fname)&lname=\(lname)");
+        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/signup.php?Email=\(email)&pass=\(password)&fname=\(fname)&lname=\(lname)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding))
+
         println(url)
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             var s = NSString(data: data, encoding: NSUTF8StringEncoding)
             var str:String = s
             println(str)
             if(str.compare("good") == 0){
+                println("g")
+
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
                     self.wel!.emailTextView.text = email
                     self.wel!.passwordText.text = password
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.navigationController.popViewControllerAnimated(true)
                 });
             }
             else{
+                println("b")
+
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
                     self.titleLabel.text = str
                     self.passwordText.enabled = true

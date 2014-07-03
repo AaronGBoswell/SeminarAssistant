@@ -51,6 +51,8 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidAppear(animated: Bool){
         println(email)
         seminarTable.reloadData()
+        (UIApplication.sharedApplication().delegate as AppDelegate).regionFetch(nil)
+
     }
 
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
