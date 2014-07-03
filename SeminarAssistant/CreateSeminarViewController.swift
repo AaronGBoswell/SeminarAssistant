@@ -50,28 +50,46 @@ class CreateSeminarViewController: UIViewController {
         var title = titleText.text
         var urltxt = urlText.text
         var dis = disText.text
-        var csv = csvText.text
+        var csv = ""
         
         var email =  (UIApplication.sharedApplication().delegate as AppDelegate).email
         println(email)
-        var ur = "http://www.seminarassistant.com/appinterac/addseminar?Email=\(email)&URL=\(urltxt)&UUID=\(uuid)&Title=\(title)&DIS=\(dis)&CSV=\(csv)"
+        var ur = "http://www.seminarassistant.com/appinterac/addseminar.php?Email=\(email)&URL=\(urltxt)&UUID=\(uuid)&Title=\(title)&DIS=\(dis)&CSV=\(csv)"
         ur = ur.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
         var url = NSURL(string: ur)
         println(ur)
 
-        println(url)
+
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             var s = NSString(data: data, encoding: NSUTF8StringEncoding)
             var str:String = s
-            println(str)
-            if(str.compare("good") == 0){
+            //finish line below
+            var responseDic:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary[]
+            
+            
+           // var jsonArray:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: //nil) as NSDictionary[]
+            
+            
+            for obj in responseDic{
+                var dic = obj as NSDictionary
+            }
+    
+            println(responseDic)
+            if(str.compare("") != 0){
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
-                    
                     self.navigationController.popViewControllerAnimated(true)
                     self.navigationController.popViewControllerAnimated(true)
+                    for vc : AnyObject in self.navigationController.viewControllers{
+                        if vc is AccountViewController{
+                            var acViewController = vc as AccountViewController
+                            acViewController.clickedSeminar = responseDic[0]
+                            
                     
-                    });
+                            acViewController.performSegueWithIdentifier("seminarData", sender: self)
+                        }
+                    }
+                });
             }
             else{
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
@@ -84,6 +102,8 @@ class CreateSeminarViewController: UIViewController {
 
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        
+        
         
     }
     
