@@ -41,15 +41,20 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+    @IBAction func doneButtonClicked(sender : AnyObject) {
+        for vc in navigationController.viewControllers{
+            if vc is AccountViewController{
+                navigationController.popToViewController(vc as UIViewController, animated: true)
+            }
+        }
+    }
     
     @IBAction func addInvites(sender : AnyObject) {
         
         var picker = ABPeoplePickerNavigationController()
         
         picker.peoplePickerDelegate = self
-        self.presentViewController(picker, animated: true, completion: {()in
-                println("fuck you")
-            });
+        self.presentViewController(picker, animated: true, completion: nil)
        // self.presentModalViewController(picker, animated: true, completion)
     }
     

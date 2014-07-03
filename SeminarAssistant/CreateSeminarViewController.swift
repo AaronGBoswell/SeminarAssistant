@@ -16,13 +16,15 @@ class CreateSeminarViewController: UIViewController {
     @IBOutlet var uuidText : UITextField = nil
     @IBOutlet var urlText : UITextField = nil
     @IBOutlet var titleText : UITextField = nil
-    @IBOutlet var disText : UITextField = nil
-    @IBOutlet var csvText : UITextField = nil
+    @IBOutlet var disText : UITextView = nil
+    
     @IBOutlet var doneButton : UIBarButtonItem = nil
+    var clickedSeminar : NSDictionary?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        disText.editable = true
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -40,8 +42,7 @@ class CreateSeminarViewController: UIViewController {
         uuidText.enabled = false
         urlText.enabled = false
         titleText.enabled = false
-        disText.enabled = false
-        csvText.enabled = false
+        disText.editable = false
         doneButton.enabled = false
         newSeminarLabel.text = "Creating..."
         println("creating")
@@ -50,11 +51,10 @@ class CreateSeminarViewController: UIViewController {
         var title = titleText.text
         var urltxt = urlText.text
         var dis = disText.text
-        var csv = ""
         
         var email =  (UIApplication.sharedApplication().delegate as AppDelegate).email
         println(email)
-        var ur = "http://www.seminarassistant.com/appinterac/addseminar.php?Email=\(email)&URL=\(urltxt)&UUID=\(uuid)&Title=\(title)&DIS=\(dis)&CSV=\(csv)"
+        var ur = "http://www.seminarassistant.com/appinterac/addseminar.php?Email=\(email)&URL=\(urltxt)&UUID=\(uuid)&Title=\(title)&DIS=\(dis)"
         ur = ur.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
         var url = NSURL(string: ur)
         println(ur)
@@ -78,17 +78,10 @@ class CreateSeminarViewController: UIViewController {
             println(responseDic)
             if(str.compare("") != 0){
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
-                    self.navigationController.popViewControllerAnimated(true)
-                    self.navigationController.popViewControllerAnimated(true)
-                    for vc : AnyObject in self.navigationController.viewControllers{
-                        if vc is AccountViewController{
-                            var acViewController = vc as AccountViewController
-                            acViewController.clickedSeminar = responseDic[0]
-                            
+
+                    self.clickedSeminar = responseDic[0]
+                    self.performSegueWithIdentifier("creatingNewSeminar", sender: self)
                     
-                            acViewController.performSegueWithIdentifier("seminarData", sender: self)
-                        }
-                    }
                 });
             }
             else{
@@ -102,7 +95,17 @@ class CreateSeminarViewController: UIViewController {
 
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        
+        if(segue.destinationViewController is SeminarViewController){
+            var destVC  = segue.destinationViewController as SeminarViewController
+            println(clickedSeminar)
+            destVC.email = clickedSeminar!.valueForKey("Owner") as String
+            destVC.ID = clickedSeminar!.valueForKey("ID") as String;
+            destVC.titlePassed = clickedSeminar!.valueForKey("Title") as String
+            destVC.URL = clickedSeminar!.valueForKey("URL") as String
+            destVC.DIS = clickedSeminar!.valueForKey("DIS") as String
+            destVC.UUID = clickedSeminar!.valueForKey("UUID") as String
+            navigationItem.backBarButtonItem = nil
+        }
         
         
     }

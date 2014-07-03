@@ -67,7 +67,7 @@
                             </button>
                             <button hidden="YES" appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmt-tA-Hpj">
                                 <rect key="frame" x="402" y="430" width="72" height="30"/>
-                                <state key="normal" title="SignUp">
+                                <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -224,63 +224,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UUID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-lf-pFD">
-                                <rect key="frame" x="115" y="163" width="250" height="30"/>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="iBeacon UUID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-lf-pFD">
+                                <rect key="frame" x="115" y="101" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="btB-DT-kJW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="51M-u0-glO">
-                                <rect key="frame" x="115" y="201" width="250" height="30"/>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Content URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="51M-u0-glO">
+                                <rect key="frame" x="115" y="139" width="250" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gix-tJ-ET1">
-                                <rect key="frame" x="115" y="239" width="250" height="30"/>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seminar Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gix-tJ-ET1">
+                                <rect key="frame" x="115" y="177" width="250" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CSV" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z7m-5t-2Al">
-                                <rect key="frame" x="115" y="315" width="250" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DIS" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m4z-JP-Uur">
-                                <rect key="frame" x="115" y="277" width="250" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Seminar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78L-Q3-zQy">
-                                <rect key="frame" x="160" y="134" width="160" height="21"/>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Seminar Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78L-Q3-zQy">
+                                <rect key="frame" x="139" y="72" width="201" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="GbW-1O-Ekv"/>
-                                    <constraint firstAttribute="width" constant="160" id="dh4-o2-Abe"/>
+                                    <constraint firstAttribute="width" constant="201" id="dh4-o2-Abe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Sd-cr-X4z">
+                                <rect key="frame" x="120" y="215" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="LHE-It-PiT"/>
+                                    <constraint firstAttribute="width" constant="240" id="TkG-9O-P5k"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="51M-u0-glO" firstAttribute="top" secondItem="CX1-lf-pFD" secondAttribute="bottom" constant="8" symbolic="YES" id="3EX-Bd-c1y"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="trailing" secondItem="CX1-lf-pFD" secondAttribute="trailing" id="COr-vf-pb7"/>
                             <constraint firstItem="CX1-lf-pFD" firstAttribute="top" secondItem="78L-Q3-zQy" secondAttribute="bottom" constant="8" symbolic="YES" id="E5H-aZ-aKc"/>
-                            <constraint firstItem="Z7m-5t-2Al" firstAttribute="top" secondItem="m4z-JP-Uur" secondAttribute="bottom" constant="8" symbolic="YES" id="FIc-qb-aQ7"/>
-                            <constraint firstItem="m4z-JP-Uur" firstAttribute="top" secondItem="gix-tJ-ET1" secondAttribute="bottom" constant="8" symbolic="YES" id="H4Y-Rf-gsE"/>
                             <constraint firstItem="78L-Q3-zQy" firstAttribute="centerX" secondItem="CX1-lf-pFD" secondAttribute="centerX" id="Ml2-sb-GbS"/>
-                            <constraint firstItem="m4z-JP-Uur" firstAttribute="trailing" secondItem="gix-tJ-ET1" secondAttribute="trailing" id="R9c-Gu-6Ky"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="top" secondItem="51M-u0-glO" secondAttribute="bottom" constant="8" symbolic="YES" id="Zzz-Hh-pI6"/>
-                            <constraint firstItem="78L-Q3-zQy" firstAttribute="top" secondItem="QPH-Rz-O5p" secondAttribute="bottom" constant="70" id="ba8-YN-Lhm"/>
-                            <constraint firstItem="Z7m-5t-2Al" firstAttribute="leading" secondItem="m4z-JP-Uur" secondAttribute="leading" id="c9Y-A3-YLq"/>
+                            <constraint firstItem="78L-Q3-zQy" firstAttribute="top" secondItem="QPH-Rz-O5p" secondAttribute="bottom" constant="20" symbolic="YES" id="ba8-YN-Lhm"/>
+                            <constraint firstItem="9Sd-cr-X4z" firstAttribute="centerX" secondItem="gix-tJ-ET1" secondAttribute="centerX" id="fCS-6n-XO4"/>
+                            <constraint firstItem="9Sd-cr-X4z" firstAttribute="top" secondItem="gix-tJ-ET1" secondAttribute="bottom" constant="8" symbolic="YES" id="hlw-cm-fkI"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="leading" secondItem="51M-u0-glO" secondAttribute="leading" id="kUj-Ao-YQ7"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="centerX" secondItem="JEU-ox-82p" secondAttribute="centerX" id="nIZ-TM-14V"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="leading" secondItem="CX1-lf-pFD" secondAttribute="leading" id="shf-gL-2on"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="trailing" secondItem="51M-u0-glO" secondAttribute="trailing" id="uSm-sr-Gt8"/>
-                            <constraint firstItem="m4z-JP-Uur" firstAttribute="trailing" secondItem="Z7m-5t-2Al" secondAttribute="trailing" id="zdJ-46-IIc"/>
-                            <constraint firstItem="gix-tJ-ET1" firstAttribute="leading" secondItem="m4z-JP-Uur" secondAttribute="leading" id="zyX-cE-59G"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -292,18 +289,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="csvText" destination="Z7m-5t-2Al" id="W9h-Cy-VJX"/>
-                        <outlet property="disText" destination="m4z-JP-Uur" id="kDv-Ly-2vN"/>
+                        <outlet property="disText" destination="9Sd-cr-X4z" id="XfG-O1-tdg"/>
                         <outlet property="doneButton" destination="Qqh-Kl-I9r" id="88s-nL-w4h"/>
                         <outlet property="newSeminarLabel" destination="78L-Q3-zQy" id="ZAS-KI-cr4"/>
                         <outlet property="titleText" destination="gix-tJ-ET1" id="rgA-yI-5bE"/>
                         <outlet property="urlText" destination="51M-u0-glO" id="Yt6-QL-wA1"/>
                         <outlet property="uuidText" destination="CX1-lf-pFD" id="m9u-9H-khp"/>
+                        <segue destination="ULc-w3-8Zs" kind="show" identifier="creatingNewSeminar" id="MVm-KN-YIL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwW-ES-DZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2180" y="-776"/>
+            <point key="canvasLocation" x="2316" y="-898"/>
         </scene>
         <!--Account View Controller - Account-->
         <scene sceneID="VxA-8U-V2K">
@@ -598,7 +595,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Seminar" id="kJn-Rf-yia"/>
+                    <navigationItem key="navigationItem" title="Seminar" id="kJn-Rf-yia">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ObB-RS-Tq9">
+                            <connections>
+                                <action selector="doneButtonClicked:" destination="ULc-w3-8Zs" id="eZU-42-Kf1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="UUIDLabel" destination="kVO-Of-BOh" id="d3j-Tz-f7H"/>
                         <outlet property="dataLocLabel" destination="AFn-0Z-xCa" id="vfb-1T-P9f"/>
@@ -608,7 +611,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXH-zn-bg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2535" y="-201"/>
+            <point key="canvasLocation" x="2791" y="-201"/>
         </scene>
         <!--In Seminar View Controller - Welcome to the Seminar-->
         <scene sceneID="hdx-YE-0UZ">
@@ -741,4 +744,7 @@
             <point key="canvasLocation" x="188" y="432"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tQ1-oX-1iu"/>
+    </inferredMetricsTieBreakers>
 </document>
