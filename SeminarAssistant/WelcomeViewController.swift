@@ -138,6 +138,10 @@ class WelcomeViewController: UIViewController {
         self.passwordText.enabled = true
         self.emailTextView.enabled = true
         self.loginButton.enabled = true
+        
+        self.passwordText.text = ""
+        self.emailTextView.text = ""
+        
         adminButton.hidden = false
         signUpButton.hidden = true
         passwordText.hidden = true
