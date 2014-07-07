@@ -93,6 +93,7 @@
                             <constraint firstAttribute="centerX" secondItem="mDd-B9-4VJ" secondAttribute="centerX" id="xvr-3s-Nte"/>
                             <constraint firstItem="qmt-tA-Hpj" firstAttribute="centerX" secondItem="GOc-Eo-uTk" secondAttribute="centerX" id="zzl-4d-IaS"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Getting Started" id="acA-EZ-uFY"/>
                     <connections>
@@ -194,6 +195,7 @@
                             <constraint firstItem="0Gs-LJ-G7j" firstAttribute="top" secondItem="HH5-j2-WXy" secondAttribute="top" constant="98" id="wnf-3P-fKb"/>
                             <constraint firstItem="aYi-tR-arh" firstAttribute="top" secondItem="A8e-kv-xdw" secondAttribute="bottom" constant="8" symbolic="YES" id="yzh-Us-N26"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create an Account" id="obj-XD-bT0"/>
                     <connections>
@@ -277,6 +279,7 @@
                             <constraint firstItem="51M-u0-glO" firstAttribute="leading" secondItem="CX1-lf-pFD" secondAttribute="leading" id="shf-gL-2on"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="trailing" secondItem="51M-u0-glO" secondAttribute="trailing" id="uSm-sr-Gt8"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Seminar" id="ZcR-m5-FpO">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Qqh-Kl-I9r">
@@ -366,6 +369,7 @@
                             <constraint firstItem="fyg-mv-Tah" firstAttribute="top" secondItem="jbp-B9-5di" secondAttribute="bottom" constant="9" id="x16-rz-HHM"/>
                             <constraint firstItem="fyg-mv-Tah" firstAttribute="top" secondItem="NOb-pj-MmR" secondAttribute="bottom" constant="134" id="yJv-Bs-Quf"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="dTc-4I-1EX"/>
                     <connections>
@@ -429,6 +433,7 @@
                             <constraint firstItem="dyR-w3-7rO" firstAttribute="top" secondItem="QIt-wh-OaS" secondAttribute="bottom" constant="62" id="d7z-Od-cWm"/>
                             <constraint firstAttribute="centerX" secondItem="dyR-w3-7rO" secondAttribute="centerX" id="dra-PE-KIa"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Your Seminars" id="Fbb-1U-WMs"/>
                     <connections>
@@ -503,8 +508,32 @@
                                     <action selector="addInvites:" destination="ULc-w3-8Zs" eventType="touchUpInside" id="euK-Yn-TIs"/>
                                 </connections>
                             </button>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad7-lg-AnH">
+                                <rect key="frame" x="379" y="194" width="81" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="dRt-vx-ZcV"/>
+                                </constraints>
+                                <state key="normal" title="Broadcast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="broadcastButtonClicked:" destination="ULc-w3-8Zs" eventType="touchUpInside" id="Qsl-Na-I9d"/>
+                                </connections>
+                            </button>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFn-0Z-xCa">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVO-Of-BOh">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAj-Rz-Tq8">
-                                <rect key="frame" x="120" y="130" width="240" height="70"/>
+                                <rect key="frame" x="131" y="131" width="240" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="7zm-hH-iIx"/>
@@ -522,18 +551,6 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFn-0Z-xCa">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVO-Of-BOh">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -546,6 +563,7 @@
                                 <variation key="heightClass=regular" constant="20" symbolic="YES"/>
                             </constraint>
                             <constraint firstItem="FtJ-2G-PvD" firstAttribute="leading" secondItem="rpt-Lp-Ac0" secondAttribute="leading" constant="20" symbolic="YES" id="VOm-Fc-SpS"/>
+                            <constraint firstItem="giE-Ae-hwu" firstAttribute="top" secondItem="ad7-lg-AnH" secondAttribute="bottom" constant="8" symbolic="YES" id="X6H-N6-fVH"/>
                             <constraint firstItem="gz4-2u-1E1" firstAttribute="leading" secondItem="FtJ-2G-PvD" secondAttribute="trailing" constant="8" symbolic="YES" id="X6U-gL-v0I"/>
                             <constraint firstItem="iAj-Rz-Tq8" firstAttribute="top" secondItem="AFn-0Z-xCa" secondAttribute="bottom" constant="8" symbolic="YES" id="e8y-b5-fge"/>
                             <constraint firstItem="kVO-Of-BOh" firstAttribute="leading" secondItem="AFn-0Z-xCa" secondAttribute="leading" id="eXK-r7-8xr"/>
@@ -555,7 +573,9 @@
                             <constraint firstItem="giE-Ae-hwu" firstAttribute="top" secondItem="FtJ-2G-PvD" secondAttribute="bottom" constant="8" symbolic="YES" id="tEW-KB-K5c"/>
                             <constraint firstItem="iAj-Rz-Tq8" firstAttribute="centerX" secondItem="giE-Ae-hwu" secondAttribute="centerX" id="v0Y-yx-IeW"/>
                             <constraint firstItem="iAj-Rz-Tq8" firstAttribute="centerX" secondItem="kVO-Of-BOh" secondAttribute="centerX" id="xTO-QH-5QJ"/>
+                            <constraint firstAttribute="trailing" secondItem="ad7-lg-AnH" secondAttribute="trailing" constant="20" symbolic="YES" id="yqq-8g-nch"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="AFn-0Z-xCa"/>
@@ -598,6 +618,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="UUIDLabel" destination="kVO-Of-BOh" id="d3j-Tz-f7H"/>
+                        <outlet property="broadcastButton" destination="ad7-lg-AnH" id="RiH-v9-jzt"/>
                         <outlet property="dataLocLabel" destination="AFn-0Z-xCa" id="vfb-1T-P9f"/>
                         <outlet property="tableView" destination="giE-Ae-hwu" id="QKX-iJ-9kV"/>
                         <outlet property="textFieldDis" destination="iAj-Rz-Tq8" id="FHB-L4-zVr"/>
@@ -667,6 +688,7 @@
                             <constraint firstAttribute="centerX" secondItem="mZo-Du-yra" secondAttribute="centerX" id="clM-fM-2vf"/>
                             <constraint firstItem="Ja1-6y-Bo8" firstAttribute="top" secondItem="VdU-Mb-Ezk" secondAttribute="bottom" constant="8" id="iMN-R4-fMx"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome to the Seminar" id="g8Q-Zh-RXb"/>
                     <connections>
@@ -708,6 +730,7 @@
                             <constraint firstAttribute="centerX" secondItem="F4L-uY-Weq" secondAttribute="centerX" constant="-7" id="3Th-cQ-DRh"/>
                             <constraint firstAttribute="centerY" secondItem="F4L-uY-Weq" secondAttribute="centerY" constant="-41" id="jBi-0s-75s"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="You have left" id="Uff-d3-1YR">
                         <barButtonItem key="backBarButtonItem" title="hide" id="04a-lf-xsp"/>

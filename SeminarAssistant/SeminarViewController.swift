@@ -27,8 +27,12 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     var invites:NSDictionary[] = []
     var checkcount = 0
     
+    @IBOutlet var broadcastButton : UIButton = nil
     
     
+    @IBAction func broadcastButtonClicked(sender : UIButton) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         println("get")
