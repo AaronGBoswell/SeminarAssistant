@@ -154,6 +154,9 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
             destVC.URL = clickedSeminar.valueForKey("URL") as String
             destVC.DIS = clickedSeminar.valueForKey("DIS") as String
             destVC.UUID = clickedSeminar.valueForKey("UUID") as String
+            destVC.Date = clickedSeminar.valueForKey("Date") as String
+            destVC.Time = clickedSeminar.valueForKey("Time") as String
+            destVC.Location = clickedSeminar.valueForKey("Location") as String
             var bbbi = UIBarButtonItem()
             bbbi.title = "Account"
             navigationItem.backBarButtonItem = bbbi
