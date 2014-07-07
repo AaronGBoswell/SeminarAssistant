@@ -93,7 +93,6 @@
                             <constraint firstAttribute="centerX" secondItem="mDd-B9-4VJ" secondAttribute="centerX" id="xvr-3s-Nte"/>
                             <constraint firstItem="qmt-tA-Hpj" firstAttribute="centerX" secondItem="GOc-Eo-uTk" secondAttribute="centerX" id="zzl-4d-IaS"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Getting Started" id="acA-EZ-uFY"/>
                     <connections>
@@ -195,7 +194,6 @@
                             <constraint firstItem="0Gs-LJ-G7j" firstAttribute="top" secondItem="HH5-j2-WXy" secondAttribute="top" constant="98" id="wnf-3P-fKb"/>
                             <constraint firstItem="aYi-tR-arh" firstAttribute="top" secondItem="A8e-kv-xdw" secondAttribute="bottom" constant="8" symbolic="YES" id="yzh-Us-N26"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create an Account" id="obj-XD-bT0"/>
                     <connections>
@@ -279,7 +277,6 @@
                             <constraint firstItem="51M-u0-glO" firstAttribute="leading" secondItem="CX1-lf-pFD" secondAttribute="leading" id="shf-gL-2on"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="trailing" secondItem="51M-u0-glO" secondAttribute="trailing" id="uSm-sr-Gt8"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Seminar" id="ZcR-m5-FpO">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Qqh-Kl-I9r">
@@ -369,7 +366,6 @@
                             <constraint firstItem="fyg-mv-Tah" firstAttribute="top" secondItem="jbp-B9-5di" secondAttribute="bottom" constant="9" id="x16-rz-HHM"/>
                             <constraint firstItem="fyg-mv-Tah" firstAttribute="top" secondItem="NOb-pj-MmR" secondAttribute="bottom" constant="134" id="yJv-Bs-Quf"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="dTc-4I-1EX"/>
                     <connections>
@@ -433,7 +429,6 @@
                             <constraint firstItem="dyR-w3-7rO" firstAttribute="top" secondItem="QIt-wh-OaS" secondAttribute="bottom" constant="62" id="d7z-Od-cWm"/>
                             <constraint firstAttribute="centerX" secondItem="dyR-w3-7rO" secondAttribute="centerX" id="dra-PE-KIa"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Your Seminars" id="Fbb-1U-WMs"/>
                     <connections>
@@ -561,7 +556,6 @@
                             <constraint firstItem="iAj-Rz-Tq8" firstAttribute="centerX" secondItem="giE-Ae-hwu" secondAttribute="centerX" id="v0Y-yx-IeW"/>
                             <constraint firstItem="iAj-Rz-Tq8" firstAttribute="centerX" secondItem="kVO-Of-BOh" secondAttribute="centerX" id="xTO-QH-5QJ"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="AFn-0Z-xCa"/>
@@ -673,7 +667,6 @@
                             <constraint firstAttribute="centerX" secondItem="mZo-Du-yra" secondAttribute="centerX" id="clM-fM-2vf"/>
                             <constraint firstItem="Ja1-6y-Bo8" firstAttribute="top" secondItem="VdU-Mb-Ezk" secondAttribute="bottom" constant="8" id="iMN-R4-fMx"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome to the Seminar" id="g8Q-Zh-RXb"/>
                     <connections>
@@ -715,7 +708,6 @@
                             <constraint firstAttribute="centerX" secondItem="F4L-uY-Weq" secondAttribute="centerX" constant="-7" id="3Th-cQ-DRh"/>
                             <constraint firstAttribute="centerY" secondItem="F4L-uY-Weq" secondAttribute="centerY" constant="-41" id="jBi-0s-75s"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="You have left" id="Uff-d3-1YR">
                         <barButtonItem key="backBarButtonItem" title="hide" id="04a-lf-xsp"/>
@@ -745,6 +737,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tQ1-oX-1iu"/>
+        <segue reference="MVm-KN-YIL"/>
     </inferredMetricsTieBreakers>
 </document>

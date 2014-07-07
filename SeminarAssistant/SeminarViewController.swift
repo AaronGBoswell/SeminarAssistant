@@ -35,7 +35,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         println("got")
         self.tableView.allowsMultipleSelectionDuringEditing = false;
         self.title = titlePassed
-        //textFieldDis.text = DIS
+        textFieldDis.text = DIS
         UUIDLabel.text = UUID
         dataLocLabel.text = URL
         
