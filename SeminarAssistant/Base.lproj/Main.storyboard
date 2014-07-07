@@ -409,8 +409,8 @@
                                 <rect key="frame" x="230" y="126" width="20" height="20"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for nearby seminars" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-gy-FGh">
-                                <rect key="frame" x="127" y="72" width="227" height="20"/>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading your seminar list..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-gy-FGh">
+                                <rect key="frame" x="121" y="72" width="238" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -435,15 +435,28 @@
                                     <outlet property="delegate" destination="Qf1-Dt-rnW" id="rph-oT-8bR"/>
                                 </connections>
                             </tableView>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-Xq-1vR">
+                                <rect key="frame" x="121" y="100" width="238" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5It-CC-7cj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dyR-w3-7rO" firstAttribute="top" secondItem="Ftv-Xq-1vR" secondAttribute="bottom" constant="5" id="BNL-aC-DgS"/>
                             <constraint firstItem="hSh-gy-FGh" firstAttribute="top" secondItem="QIt-wh-OaS" secondAttribute="bottom" constant="20" symbolic="YES" id="Cdn-9W-MWa"/>
                             <constraint firstAttribute="centerX" secondItem="vq7-bI-tZI" secondAttribute="centerX" id="Fd4-x8-ag5"/>
                             <constraint firstItem="vq7-bI-tZI" firstAttribute="top" secondItem="hSh-gy-FGh" secondAttribute="bottom" constant="88" id="IDh-pj-m9a"/>
                             <constraint firstAttribute="centerX" secondItem="hSh-gy-FGh" secondAttribute="centerX" id="QNr-gO-KSu"/>
+                            <constraint firstItem="Ftv-Xq-1vR" firstAttribute="trailing" secondItem="hSh-gy-FGh" secondAttribute="trailing" id="Wqh-8M-iTQ"/>
+                            <constraint firstItem="Ftv-Xq-1vR" firstAttribute="leading" secondItem="hSh-gy-FGh" secondAttribute="leading" id="ZGA-Ze-tPq"/>
                             <constraint firstItem="dyR-w3-7rO" firstAttribute="top" secondItem="QIt-wh-OaS" secondAttribute="bottom" constant="62" id="d7z-Od-cWm"/>
                             <constraint firstAttribute="centerX" secondItem="dyR-w3-7rO" secondAttribute="centerX" id="dra-PE-KIa"/>
+                            <constraint firstItem="Ftv-Xq-1vR" firstAttribute="top" secondItem="hSh-gy-FGh" secondAttribute="bottom" constant="8" symbolic="YES" id="r9K-AF-Uzb"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -452,6 +465,7 @@
                         <outlet property="activityMoniter" destination="dyR-w3-7rO" id="kRT-Fm-B0T"/>
                         <outlet property="searchTitle" destination="hSh-gy-FGh" id="dyp-X4-3ya"/>
                         <outlet property="seminarTable" destination="vq7-bI-tZI" id="H4a-xN-Yp7"/>
+                        <outlet property="underLabel" destination="Ftv-Xq-1vR" id="XfU-p2-tt7"/>
                         <segue destination="ncO-7G-gFC" kind="show" identifier="CheckIn" id="OEa-IT-bhr"/>
                     </connections>
                 </viewController>

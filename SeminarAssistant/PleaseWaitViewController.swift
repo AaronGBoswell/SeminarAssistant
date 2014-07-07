@@ -17,10 +17,36 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var activityMoniter : UIActivityIndicatorView = nil
     @IBOutlet var seminarTable : UITableView = nil
     
+    @IBOutlet var underLabel : UILabel = nil
     var email:String = ""
     var currRegion:NSDictionary? = nil
-    
-    var spoof:NSDictionary[] = []
+    var spoof:NSDictionary[] = []{
+        didSet{
+            var x = 0
+            for dic in searchSeminarArray{
+                if dic.valueForKey("count") as Int > 0{
+                    x++
+                }
+            }
+            var ulText = ""
+            var titleText = "No seminars are nearby"
+            if(x == 0){
+                
+            }else if (x == 1){
+                ulText = "Tap the seminar to check in."
+                titleText = "You are in range of 1 seminar"
+                
+            }else{
+                ulText = "Tap a seminar to check in."
+                titleText = "You are in range of \(x) seminar"
+            }
+
+            dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                self.searchTitle.text = titleText
+                self.underLabel.text = ulText
+            });
+        }
+    }
 
     var searchSeminarArray:NSDictionary[]{
         get{
@@ -38,20 +64,24 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
                 })
         }
     }
-        
+    
         
     
     var nearBySeminars:NSDictionary[] = []
 
 
     override func viewDidLoad() {
+        activityMoniter.hidesWhenStopped = true
         super.viewDidLoad()
         println(email)
+        self.underLabel.text = ""
+
     }
     override func viewDidAppear(animated: Bool){
         println(email)
         seminarTable.reloadData()
         (UIApplication.sharedApplication().delegate as AppDelegate).regionFetch(nil)
+        self.activityMoniter.startAnimating()
 
     }
 
@@ -120,16 +150,18 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     
     
     func selectSeminar(selSem:NSDictionary){
-        
-        activityMoniter.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
-        activityMoniter.color = UIColor.darkGrayColor()
+        self.activityMoniter.startAnimating()
+
         searchTitle.text = "Checking you in, please wait..."
         currRegion = selSem
         var seminarID:String = selSem.valueForKey("ID") as String;
         var url = NSURL(string: "http://www.seminarassistant.com/appinterac/authenticate.php?SeminarID=\(seminarID)&Email=\(email)");
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                
                 self.performSegueWithIdentifier("CheckIn", sender: self)
+                self.activityMoniter.stopAnimating()
+
                 });
         }
         task.resume()
@@ -151,8 +183,12 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
 
     }
     func didUpdateSeminarList(seminarArray:NSDictionary[]){
+        
         searchSeminarArray = seminarArray
-        seminarTable.reloadData()
+        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+            self.activityMoniter.stopAnimating()
+            self.seminarTable.reloadData()
+        });
     }
 
     
