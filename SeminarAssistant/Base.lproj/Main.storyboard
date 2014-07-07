@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GXR-sG-1yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
@@ -237,11 +237,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seminar Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gix-tJ-ET1">
-                                <rect key="frame" x="115" y="177" width="250" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Seminar Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78L-Q3-zQy">
                                 <rect key="frame" x="139" y="72" width="201" height="21"/>
                                 <constraints>
@@ -253,7 +248,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXM-sh-b2o">
-                                <rect key="frame" x="30" y="101" width="77" height="30"/>
+                                <rect key="frame" x="77" y="101" width="30" height="30"/>
                                 <state key="normal" title="G">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -261,12 +256,6 @@
                                     <action selector="genButtonClicked:" destination="MPA-EB-Vlv" eventType="touchUpInside" id="Ttg-oZ-ATN"/>
                                 </connections>
                             </button>
-                            <datePicker appearanceType="aqua" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-GV-kN1">
-                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="426458362.57344198">
-                                    <!--<__NSDate Class=2014-07-07 20:39:22 +0000 timeInterval=426458362.573442 ISO8601=2014-07-07T16:39:22.573-0400>-->
-                                </date>
-                            </datePicker>
                             <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBc-Y3-OfD">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -283,25 +272,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seminar Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gix-tJ-ET1">
+                                <rect key="frame" x="115" y="177" width="250" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker appearanceType="aqua" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-GV-kN1">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="426458362.57344198">
+                                    <!--<__NSDate Class=2014-07-07 20:39:22 +0000 timeInterval=426458362.573442 ISO8601=2014-07-07T16:39:22.573-0400>-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="51M-u0-glO" firstAttribute="top" secondItem="CX1-lf-pFD" secondAttribute="bottom" constant="8" symbolic="YES" id="3EX-Bd-c1y"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="trailing" secondItem="CX1-lf-pFD" secondAttribute="trailing" id="COr-vf-pb7"/>
                             <constraint firstItem="CX1-lf-pFD" firstAttribute="top" secondItem="78L-Q3-zQy" secondAttribute="bottom" constant="8" symbolic="YES" id="E5H-aZ-aKc"/>
-                            <constraint firstItem="RBc-Y3-OfD" firstAttribute="centerX" secondItem="4wH-GV-kN1" secondAttribute="centerX" id="EGR-A3-cLn"/>
-                            <constraint firstItem="4wH-GV-kN1" firstAttribute="leading" secondItem="JEU-ox-82p" secondAttribute="leading" id="FZk-f9-SxK"/>
                             <constraint firstItem="RBc-Y3-OfD" firstAttribute="trailing" secondItem="gix-tJ-ET1" secondAttribute="trailing" id="GRG-JN-rrK"/>
+                            <constraint firstItem="4wH-GV-kN1" firstAttribute="centerX" secondItem="9Sd-cr-X4z" secondAttribute="centerX" id="IMp-cV-rUX"/>
                             <constraint firstItem="RBc-Y3-OfD" firstAttribute="top" secondItem="gix-tJ-ET1" secondAttribute="bottom" constant="8" symbolic="YES" id="M1k-mE-KI0"/>
                             <constraint firstItem="RBc-Y3-OfD" firstAttribute="leading" secondItem="gix-tJ-ET1" secondAttribute="leading" id="MYx-5x-qyj"/>
                             <constraint firstItem="78L-Q3-zQy" firstAttribute="centerX" secondItem="CX1-lf-pFD" secondAttribute="centerX" id="Ml2-sb-GbS"/>
+                            <constraint firstItem="4wH-GV-kN1" firstAttribute="leading" secondItem="JEU-ox-82p" secondAttribute="leading" id="Tx9-Gd-7RZ"/>
+                            <constraint firstAttribute="bottom" secondItem="4wH-GV-kN1" secondAttribute="bottom" id="UrK-fL-u2w"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="top" secondItem="51M-u0-glO" secondAttribute="bottom" constant="8" symbolic="YES" id="Zzz-Hh-pI6"/>
                             <constraint firstItem="78L-Q3-zQy" firstAttribute="top" secondItem="QPH-Rz-O5p" secondAttribute="bottom" constant="20" symbolic="YES" id="ba8-YN-Lhm"/>
                             <constraint firstItem="9Sd-cr-X4z" firstAttribute="centerX" secondItem="gix-tJ-ET1" secondAttribute="centerX" id="fCS-6n-XO4"/>
                             <constraint firstItem="9Sd-cr-X4z" firstAttribute="top" secondItem="gix-tJ-ET1" secondAttribute="bottom" constant="8" symbolic="YES" id="hlw-cm-fkI">
                                 <variation key="heightClass=regular" constant="49"/>
                             </constraint>
-                            <constraint firstItem="4wH-GV-kN1" firstAttribute="top" secondItem="9Sd-cr-X4z" secondAttribute="bottom" constant="8" symbolic="YES" id="iID-bD-CX9"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="leading" secondItem="51M-u0-glO" secondAttribute="leading" id="kUj-Ao-YQ7"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="centerX" secondItem="JEU-ox-82p" secondAttribute="centerX" id="nIZ-TM-14V"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="leading" secondItem="CX1-lf-pFD" secondAttribute="leading" id="shf-gL-2on"/>
@@ -314,30 +314,30 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="4wH-GV-kN1"/>
                                 <exclude reference="RBc-Y3-OfD"/>
+                                <exclude reference="4wH-GV-kN1"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="EGR-A3-cLn"/>
                                 <exclude reference="GRG-JN-rrK"/>
                                 <exclude reference="M1k-mE-KI0"/>
                                 <exclude reference="MYx-5x-qyj"/>
-                                <exclude reference="FZk-f9-SxK"/>
-                                <exclude reference="iID-bD-CX9"/>
+                                <exclude reference="IMp-cV-rUX"/>
+                                <exclude reference="Tx9-Gd-7RZ"/>
+                                <exclude reference="UrK-fL-u2w"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
-                                <include reference="4wH-GV-kN1"/>
                                 <include reference="RBc-Y3-OfD"/>
+                                <include reference="4wH-GV-kN1"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="EGR-A3-cLn"/>
                                 <include reference="GRG-JN-rrK"/>
                                 <include reference="M1k-mE-KI0"/>
                                 <include reference="MYx-5x-qyj"/>
-                                <include reference="FZk-f9-SxK"/>
-                                <include reference="iID-bD-CX9"/>
+                                <include reference="IMp-cV-rUX"/>
+                                <include reference="Tx9-Gd-7RZ"/>
+                                <include reference="UrK-fL-u2w"/>
                             </mask>
                         </variation>
                     </view>
@@ -362,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwW-ES-DZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2316" y="-898.5"/>
+            <point key="canvasLocation" x="2316" y="-908.25"/>
         </scene>
         <!--Account View Controller - Account-->
         <scene sceneID="VxA-8U-V2K">
