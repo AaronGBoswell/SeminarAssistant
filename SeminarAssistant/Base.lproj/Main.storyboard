@@ -252,6 +252,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXM-sh-b2o">
+                                <rect key="frame" x="30" y="101" width="77" height="30"/>
+                                <state key="normal" title="G">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="genButtonClicked:" destination="MPA-EB-Vlv" eventType="touchUpInside" id="Ttg-oZ-ATN"/>
+                                </connections>
+                            </button>
+                            <datePicker appearanceType="aqua" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-GV-kN1">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="426458362.57344198">
+                                    <!--<__NSDate Class=2014-07-07 20:39:22 +0000 timeInterval=426458362.573442 ISO8601=2014-07-07T16:39:22.573-0400>-->
+                                </date>
+                            </datePicker>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBc-Y3-OfD">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Sd-cr-X4z">
                                 <rect key="frame" x="120" y="215" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -263,35 +283,63 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXM-sh-b2o">
-                                <rect key="frame" x="30" y="101" width="77" height="30"/>
-                                <state key="normal" title="Generate">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="genButtonClicked:" destination="MPA-EB-Vlv" eventType="touchUpInside" id="Ttg-oZ-ATN"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="51M-u0-glO" firstAttribute="top" secondItem="CX1-lf-pFD" secondAttribute="bottom" constant="8" symbolic="YES" id="3EX-Bd-c1y"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="trailing" secondItem="CX1-lf-pFD" secondAttribute="trailing" id="COr-vf-pb7"/>
                             <constraint firstItem="CX1-lf-pFD" firstAttribute="top" secondItem="78L-Q3-zQy" secondAttribute="bottom" constant="8" symbolic="YES" id="E5H-aZ-aKc"/>
+                            <constraint firstItem="RBc-Y3-OfD" firstAttribute="centerX" secondItem="4wH-GV-kN1" secondAttribute="centerX" id="EGR-A3-cLn"/>
+                            <constraint firstItem="4wH-GV-kN1" firstAttribute="leading" secondItem="JEU-ox-82p" secondAttribute="leading" id="FZk-f9-SxK"/>
+                            <constraint firstItem="RBc-Y3-OfD" firstAttribute="trailing" secondItem="gix-tJ-ET1" secondAttribute="trailing" id="GRG-JN-rrK"/>
+                            <constraint firstItem="RBc-Y3-OfD" firstAttribute="top" secondItem="gix-tJ-ET1" secondAttribute="bottom" constant="8" symbolic="YES" id="M1k-mE-KI0"/>
+                            <constraint firstItem="RBc-Y3-OfD" firstAttribute="leading" secondItem="gix-tJ-ET1" secondAttribute="leading" id="MYx-5x-qyj"/>
                             <constraint firstItem="78L-Q3-zQy" firstAttribute="centerX" secondItem="CX1-lf-pFD" secondAttribute="centerX" id="Ml2-sb-GbS"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="top" secondItem="51M-u0-glO" secondAttribute="bottom" constant="8" symbolic="YES" id="Zzz-Hh-pI6"/>
                             <constraint firstItem="78L-Q3-zQy" firstAttribute="top" secondItem="QPH-Rz-O5p" secondAttribute="bottom" constant="20" symbolic="YES" id="ba8-YN-Lhm"/>
                             <constraint firstItem="9Sd-cr-X4z" firstAttribute="centerX" secondItem="gix-tJ-ET1" secondAttribute="centerX" id="fCS-6n-XO4"/>
-                            <constraint firstItem="9Sd-cr-X4z" firstAttribute="top" secondItem="gix-tJ-ET1" secondAttribute="bottom" constant="8" symbolic="YES" id="hlw-cm-fkI"/>
+                            <constraint firstItem="9Sd-cr-X4z" firstAttribute="top" secondItem="gix-tJ-ET1" secondAttribute="bottom" constant="8" symbolic="YES" id="hlw-cm-fkI">
+                                <variation key="heightClass=regular" constant="49"/>
+                            </constraint>
+                            <constraint firstItem="4wH-GV-kN1" firstAttribute="top" secondItem="9Sd-cr-X4z" secondAttribute="bottom" constant="8" symbolic="YES" id="iID-bD-CX9"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="leading" secondItem="51M-u0-glO" secondAttribute="leading" id="kUj-Ao-YQ7"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="centerX" secondItem="JEU-ox-82p" secondAttribute="centerX" id="nIZ-TM-14V"/>
-                            <constraint firstItem="ZXM-sh-b2o" firstAttribute="leading" secondItem="JEU-ox-82p" secondAttribute="leading" constant="30" id="oTB-VP-50T"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="leading" secondItem="CX1-lf-pFD" secondAttribute="leading" id="shf-gL-2on"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="trailing" secondItem="51M-u0-glO" secondAttribute="trailing" id="uSm-sr-Gt8"/>
-                            <constraint firstItem="CX1-lf-pFD" firstAttribute="leading" secondItem="ZXM-sh-b2o" secondAttribute="trailing" constant="8" symbolic="YES" id="ydA-br-7vx"/>
+                            <constraint firstItem="CX1-lf-pFD" firstAttribute="leading" secondItem="ZXM-sh-b2o" secondAttribute="trailing" constant="8" symbolic="YES" id="ydA-br-7vx">
+                                <variation key="heightClass=regular" constant="1"/>
+                            </constraint>
                             <constraint firstItem="ZXM-sh-b2o" firstAttribute="top" secondItem="CX1-lf-pFD" secondAttribute="top" id="yki-5X-9dv"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="4wH-GV-kN1"/>
+                                <exclude reference="RBc-Y3-OfD"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="EGR-A3-cLn"/>
+                                <exclude reference="GRG-JN-rrK"/>
+                                <exclude reference="M1k-mE-KI0"/>
+                                <exclude reference="MYx-5x-qyj"/>
+                                <exclude reference="FZk-f9-SxK"/>
+                                <exclude reference="iID-bD-CX9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="4wH-GV-kN1"/>
+                                <include reference="RBc-Y3-OfD"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="EGR-A3-cLn"/>
+                                <include reference="GRG-JN-rrK"/>
+                                <include reference="M1k-mE-KI0"/>
+                                <include reference="MYx-5x-qyj"/>
+                                <include reference="FZk-f9-SxK"/>
+                                <include reference="iID-bD-CX9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="New Seminar" id="ZcR-m5-FpO">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Qqh-Kl-I9r">
@@ -301,8 +349,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateDecider" destination="4wH-GV-kN1" id="mnk-XZ-dUK"/>
                         <outlet property="disText" destination="9Sd-cr-X4z" id="XfG-O1-tdg"/>
                         <outlet property="doneButton" destination="Qqh-Kl-I9r" id="88s-nL-w4h"/>
+                        <outlet property="locationText" destination="RBc-Y3-OfD" id="hws-2p-50f"/>
                         <outlet property="newSeminarLabel" destination="78L-Q3-zQy" id="ZAS-KI-cr4"/>
                         <outlet property="titleText" destination="gix-tJ-ET1" id="rgA-yI-5bE"/>
                         <outlet property="urlText" destination="51M-u0-glO" id="Yt6-QL-wA1"/>
@@ -312,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwW-ES-DZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2316" y="-898"/>
+            <point key="canvasLocation" x="2316" y="-898.5"/>
         </scene>
         <!--Account View Controller - Account-->
         <scene sceneID="VxA-8U-V2K">

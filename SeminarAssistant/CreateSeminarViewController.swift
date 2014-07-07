@@ -17,6 +17,8 @@ class CreateSeminarViewController: UIViewController {
     @IBOutlet var urlText : UITextField = nil
     @IBOutlet var titleText : UITextField = nil
     @IBOutlet var disText : UITextView = nil
+    @IBOutlet var dateDecider : UIDatePicker
+    @IBOutlet var locationText : UITextField
     
     @IBOutlet var doneButton : UIBarButtonItem = nil
     var clickedSeminar : NSDictionary?
@@ -26,8 +28,20 @@ class CreateSeminarViewController: UIViewController {
         disText.editable = true
 
         // Do any additional setup after loading the view, typically from a nib.
-    }
     
+    
+    
+    var tap = UITapGestureRecognizer(target: self, action: "dismisss")
+    self.view.addGestureRecognizer(tap)
+    // Do any additional setup after loading the view, typically from a nib.
+    }
+    override func viewWillAppear(animated: Bool) {
+        dismisss()
+    }
+    func dismisss(){
+        view.endEditing(true)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,10 +70,12 @@ class CreateSeminarViewController: UIViewController {
         var title = titleText.text
         var urltxt = urlText.text
         var dis = disText.text
+        var loc = locationText.text
+        var date = dateDecider.date
         
         var email =  (UIApplication.sharedApplication().delegate as AppDelegate).email
         println(email)
-        var ur = "http://www.seminarassistant.com/appinterac/addseminar.php?Email=\(email)&URL=\(urltxt)&UUID=\(uuid)&Title=\(title)&DIS=\(dis)"
+        var ur = "http://www.seminarassistant.com/appinterac/addseminar.php?Email=\(email)&URL=\(urltxt)&UUID=\(uuid)&Title=\(title)&DIS=\(dis)&LOC=\(loc)&DT=\(date) "
         ur = ur.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
         var url = NSURL(string: ur)
         println(ur)
@@ -109,8 +125,8 @@ class CreateSeminarViewController: UIViewController {
             destVC.URL = clickedSeminar!.valueForKey("URL") as String
             destVC.DIS = clickedSeminar!.valueForKey("DIS") as String
             destVC.UUID = clickedSeminar!.valueForKey("UUID") as String
-            destVC.Date = clickedSeminar!.valueForKey("Date") as String
-            destVC.Time = clickedSeminar!.valueForKey("Time") as String
+            destVC.dateTime = clickedSeminar!.valueForKey("dateTime") as String
+            //destVC.Time = clickedSeminar!.valueForKey("Time") as String
             destVC.Location = clickedSeminar!.valueForKey("Location") as String
             navigationItem.backBarButtonItem = nil
         }
