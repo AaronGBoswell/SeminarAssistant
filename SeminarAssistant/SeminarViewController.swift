@@ -35,6 +35,8 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     var delete = false
     var checkinRow = -1
     @IBOutlet var broadcastButton : UIButton
+    @IBOutlet var dateAndTime : UILabel
+    @IBOutlet var LocationField : UILabel
     
     
     @IBAction func broadcastButtonClicked(sender : UIButton) {
@@ -69,6 +71,19 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         textFieldDis.text = DIS
         UUIDLabel.text = UUID
         dataLocLabel.text = URL
+        LocationField.text = Location
+        
+        var form = NSDateFormatter()
+        form.dateFormat = "yyyy-MM-dd HH:mm:ss a"
+        var date = form.dateFromString(dateTime)
+        
+        var f = NSDateFormatter()
+        f.dateStyle = NSDateFormatterStyle.MediumStyle
+        println(date)
+        println(dateTime)
+
+        
+        dateAndTime.text = f.stringFromDate(date)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
