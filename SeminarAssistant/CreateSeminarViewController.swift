@@ -33,6 +33,11 @@ class CreateSeminarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func genButtonClicked(sender : AnyObject) {
+        var nsuuid = NSUUID()
+        var id = nsuuid.UUIDString
+        uuidText.text = id
+    }
     func stringIsValidEmail(email:String) -> Bool{
         var emailRegex = ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*"
         var emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegex)

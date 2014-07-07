@@ -9,8 +9,11 @@
 import Foundation
 import UIKit
 import AddressBookUI
+import CoreLocation
+import CoreBluetooth
 
-class SeminarViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate {
+
+class SeminarViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate,CBPeripheralManagerDelegate {
     
     
     @IBOutlet var UUIDLabel : UILabel
@@ -22,16 +25,37 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     var UUID:String = " "
     var URL:String = " "
     var DIS:String = " "
-    var clickedSeminar:NSDictionary = NSDictionary()
     @IBOutlet var tableView : UITableView = nil
     var invites:NSDictionary[] = []
     var checkcount = 0
-    
-    @IBOutlet var broadcastButton : UIButton = nil
+    var peripheralManager : CBPeripheralManager? = nil
+    var delete = false
+    var checkinRow = -1
+    @IBOutlet var broadcastButton : UIButton
     
     
     @IBAction func broadcastButtonClicked(sender : UIButton) {
-        
+        println("click")
+        if(peripheralManager == nil){
+            broadcastButton.setTitle("Stop", forState: UIControlState.Normal)
+            peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
+        }
+        else{
+            broadcastButton.setTitle("Broadcast", forState: UIControlState.Normal)
+
+            peripheralManager!.stopAdvertising()
+            peripheralManager = nil
+        }
+    }
+    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
+        if(peripheral.state == CBPeripheralManagerState.PoweredOn){
+            println("broadcasting")
+            var broaddata = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: UUID), identifier: "broadcast").peripheralDataWithMeasuredPower(nil)
+            peripheralManager!.startAdvertising(broaddata)
+        }
+        else if (peripheral.state == CBPeripheralManagerState.PoweredOff){
+            println("off")
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +85,17 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         var picker = ABPeoplePickerNavigationController()
         
         picker.peoplePickerDelegate = self
+        
+        picker.displayedProperties = [NSNumber(int: kABPersonEmailProperty)]
+        
+        
+        // The people picker will enable selection of persons that have at least one email address.
+        picker.predicateForEnablingPerson = NSPredicate(format: "emailAddresses.@count > 0", nil)
+        // The people picker will select a person that has exactly one email address and call peoplePickerNavigationController:didSelectPerson:,
+        // otherwise the people picker will present an ABPersonViewController for the user to pick one of the email addresses.
+
+        
+        
         self.presentViewController(picker, animated: true, completion: nil)
        // self.presentModalViewController(picker, animated: true, completion)
     }
@@ -99,9 +134,13 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
             dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
                 self.tableView.reloadData()
                 println("task")
+                self.delete = false
                 });
             })
+        delete = true
+
         task.resume()
+        delete = true
         println("resumed")
         println("deleted")
     }
@@ -255,8 +294,6 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
                 if(s == false){
                     same = false
                 }
-                print("Adding: ")
-                println((obj1.valueForKey("Email")))
                 
             }
             for obj1 in self.invites{
@@ -274,13 +311,14 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
             }
             
             if(same == false){
-                dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
-                    self.invites = jsonArray
-                    self.tableView.reloadData()
-                });
+                if(self.delete == false){
+                    dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                        self.invites = jsonArray
+                        self.tableView.reloadData()
+                    });
+                }
             }
             else{
-                print("same")
             }
            
             if(self.isViewLoaded()){
@@ -288,7 +326,6 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                         self.getInvites()
                         self.checkcount++
-                        println("getting\(self.checkcount)\n")
 
                     })
                 }
@@ -297,7 +334,6 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
             
         }
         task.resume()
-        println("getting\(self.checkcount)")
 
         
         
@@ -316,8 +352,28 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         }
         var title = invites[indexPath.row].valueForKey("Email") as String
         var checked = invites[indexPath.row].valueForKey("CheckedIn") as String
+        var dataReceived = invites[indexPath.row].valueForKey("DataRecieved") as String
+        cell.detailTextLabel.text = ""
+
+        if(checked.compare("yes") == 0){
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            
+        }
+        else if(dataReceived.compare("no") == 0){
+            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.selectionStyle = UITableViewCellSelectionStyle.Blue
+            cell.detailTextLabel.text = "Tap to check in"
+        }
+        else{
+            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.detailTextLabel.text = "Invitation received, waiting for check in..."
+        }
+        if(checkinRow == indexPath.row){
+            cell.detailTextLabel.text = "Checking in, please wait..."
+        }
         cell.textLabel.text = title
-        cell.detailTextLabel.text = checked
         
 
 
@@ -327,6 +383,33 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         
         
     }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+        var cell = tableView.cellForRowAtIndexPath(indexPath)
+        if(cell.selectionStyle == UITableViewCellSelectionStyle.None){
+            return
+        }
+        checkinRow = indexPath.row
+        var inviteID:String = invites[indexPath.row].valueForKey("ID") as String;
+        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/checkin.php?ID=\(inviteID)");
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
+            println(data)
+            self.checkinRow = -1
+        }
+        tableView.reloadData()
+        task.resume()
+        
+        
+    }
+    
+    
+    
+    
+    func selectSeminar(selSem:NSDictionary){
+
+    }
+    
+    
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int{
         
@@ -342,21 +425,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     //func tableView(tableView:UIITableView!, canEditRowAtIndexPath indexPath::NSIndexPath!){
     //    return true
     //}
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
-        selectSeminar(invites[indexPath.row])
-    }
-    
-    
-    func selectSeminar(cs:NSDictionary){
-        
-        //activityMoniter.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
-        //activityMoniter.color = UIColor.darkGrayColor()
-        //searchTitle.text = "Checking you in, please wait..."
-        
-        clickedSeminar = cs
-    }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

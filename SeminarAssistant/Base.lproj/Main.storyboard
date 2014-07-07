@@ -263,6 +263,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXM-sh-b2o">
+                                <rect key="frame" x="30" y="101" width="77" height="30"/>
+                                <state key="normal" title="Generate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="genButtonClicked:" destination="MPA-EB-Vlv" eventType="touchUpInside" id="Ttg-oZ-ATN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -276,8 +285,11 @@
                             <constraint firstItem="9Sd-cr-X4z" firstAttribute="top" secondItem="gix-tJ-ET1" secondAttribute="bottom" constant="8" symbolic="YES" id="hlw-cm-fkI"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="leading" secondItem="51M-u0-glO" secondAttribute="leading" id="kUj-Ao-YQ7"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="centerX" secondItem="JEU-ox-82p" secondAttribute="centerX" id="nIZ-TM-14V"/>
+                            <constraint firstItem="ZXM-sh-b2o" firstAttribute="leading" secondItem="JEU-ox-82p" secondAttribute="leading" constant="30" id="oTB-VP-50T"/>
                             <constraint firstItem="51M-u0-glO" firstAttribute="leading" secondItem="CX1-lf-pFD" secondAttribute="leading" id="shf-gL-2on"/>
                             <constraint firstItem="gix-tJ-ET1" firstAttribute="trailing" secondItem="51M-u0-glO" secondAttribute="trailing" id="uSm-sr-Gt8"/>
+                            <constraint firstItem="CX1-lf-pFD" firstAttribute="leading" secondItem="ZXM-sh-b2o" secondAttribute="trailing" constant="8" symbolic="YES" id="ydA-br-7vx"/>
+                            <constraint firstItem="ZXM-sh-b2o" firstAttribute="top" secondItem="CX1-lf-pFD" secondAttribute="top" id="yki-5X-9dv"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
