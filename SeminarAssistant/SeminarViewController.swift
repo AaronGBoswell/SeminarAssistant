@@ -25,13 +25,13 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     var clickedSeminar:NSDictionary = NSDictionary()
     @IBOutlet var tableView : UITableView = nil
     var invites:NSDictionary[] = []
+    var checkcount = 0
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         println("get")
-        getInvites()
         println("got")
         self.tableView.allowsMultipleSelectionDuringEditing = false;
         self.title = titlePassed
@@ -40,6 +40,9 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         dataLocLabel.text = URL
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    override func viewWillAppear(animated: Bool){
+        getInvites()
     }
     @IBAction func doneButtonClicked(sender : AnyObject) {
         for vc in navigationController.viewControllers{
@@ -90,10 +93,8 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         let task = NSURLSession.sharedSession().dataTaskWithURL((url), {(data, response, error) in
             println("task")
             dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
-                
+                self.tableView.reloadData()
                 println("task")
-                
-                self.getInvites()
                 });
             })
         task.resume()
@@ -165,7 +166,6 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
                             
                             println("task")
 
-                            self.getInvites()
                         });
                     })
                     task.resume()
@@ -239,30 +239,62 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
             
             var jsonArray:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary[]
             
-            
-            for obj in jsonArray{
-                var dic = obj as NSDictionary
-                var Email:String = dic.valueForKey("Email") as String
-                var CheckedIn:String = dic.valueForKey("CheckedIn") as String
-                 var unitID:String = dic.valueForKey("ID") as String
+            var same = true
+            for obj1 in jsonArray{
+                var s = false
+                for obj2 in self.invites{
+                    if(obj1.isEqualToDictionary(obj2)){
+                        s = true
+                        break
+                    }
+                }
+                if(s == false){
+                    same = false
+                }
                 print("Adding: ")
-                
-                println((dic.valueForKey("Email")))
+                println((obj1.valueForKey("Email")))
                 
             }
-            dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
-                self.invites = jsonArray
-                self.tableView.reloadData()
+            for obj1 in self.invites{
+                var s = false
+                for obj2 in jsonArray{
+                    if(obj1.isEqualToDictionary(obj2)){
+                        s = true
+                        break
+                    }
+                }
+                if(s == false){
+                    same = false
+                }
                 
-                
-                
-                });
+            }
             
+            if(same == false){
+                dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+                    self.invites = jsonArray
+                    self.tableView.reloadData()
+                });
+            }
+            else{
+                print("same")
+            }
+           
+            if(self.isViewLoaded()){
+                if(self.view.window){
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
+                        self.getInvites()
+                        self.checkcount++
+                        println("getting\(self.checkcount)\n")
+
+                    })
+                }
+            }
             
             
         }
         task.resume()
-        
+        println("getting\(self.checkcount)")
+
         
         
         
