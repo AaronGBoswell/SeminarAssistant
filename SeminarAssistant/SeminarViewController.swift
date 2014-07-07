@@ -25,6 +25,9 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     var UUID:String = " "
     var URL:String = " "
     var DIS:String = " "
+    var Location:String = " "
+    var dateTime:String = " "
+    //var Time:String = " "
     @IBOutlet var tableView : UITableView = nil
     var invites:NSDictionary[] = []
     var checkcount = 0
