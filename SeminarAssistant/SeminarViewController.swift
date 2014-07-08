@@ -74,15 +74,16 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         LocationField.text = Location
         
         var form = NSDateFormatter()
-        form.dateFormat = "yyyy-MM-dd HH:mm:ss a"
+        form.dateFormat = "yyyy-MM-dd HH:mm:ss"
         var date = form.dateFromString(dateTime)
         
         var f = NSDateFormatter()
         f.dateStyle = NSDateFormatterStyle.MediumStyle
+        f.timeStyle = NSDateFormatterStyle.ShortStyle
         println(date)
         println(dateTime)
-
         
+        [
         dateAndTime.text = f.stringFromDate(date)
         
         // Do any additional setup after loading the view, typically from a nib.
