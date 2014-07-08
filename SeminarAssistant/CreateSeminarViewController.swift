@@ -42,6 +42,53 @@ class CreateSeminarViewController: UIViewController {
         view.endEditing(true)
     }
 
+    @IBAction func uuidInfo(sender : AnyObject) {
+        
+        var myAlertView = UIAlertView()
+        
+        myAlertView.title = "iBeacon UUID"
+        myAlertView.message = "This is your iBeacon's unique identifier. If you find yourself without an iBeacon press the \"G\" to generate one. Your phone can later use this generated UUID to be an iBeacon itself. "
+        myAlertView.addButtonWithTitle("Dismiss")
+        
+        myAlertView.show()
+    }
+    @IBAction func urlInfo(sender : AnyObject) {
+        var myAlertView = UIAlertView()
+        
+        myAlertView.title = "Content URL"
+        myAlertView.message = "This is where the information you wish to share with your attendees is stored. As they check in it will automatically be displayed to them within the app."
+        myAlertView.addButtonWithTitle("Dismiss")
+        
+        myAlertView.show()
+    }
+    @IBAction func titleInfo(sender : AnyObject) {
+        var myAlertView = UIAlertView()
+        
+        myAlertView.title = "Seminar Title"
+        myAlertView.message = "This is the title of your seminar, it will be visible by all attendees as they recieve invites."
+        myAlertView.addButtonWithTitle("Dismiss")
+        
+        myAlertView.show()
+    }
+    @IBAction func locInfo(sender : AnyObject) {
+        var myAlertView = UIAlertView()
+        
+        myAlertView.title = "Location"
+        myAlertView.message = "This is the location of your seminar, it will be visible by all atendees."
+        myAlertView.addButtonWithTitle("Dismiss")
+        
+        myAlertView.show()
+    }
+    @IBAction func disInfo(sender : AnyObject) {
+        var myAlertView = UIAlertView()
+        
+        myAlertView.title = "Description"
+        myAlertView.message = "This is the description of your seminar, it makes up the body on an email that is autosent to all invitees"
+        myAlertView.addButtonWithTitle("Dismiss")
+        
+        myAlertView.show()
+    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -39,6 +39,25 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     @IBOutlet var LocationField : UILabel
     
     
+ 
+    @IBAction func invitesInfo(sender : AnyObject) {
+        var myAlertView = UIAlertView()
+        
+        myAlertView.title = "Invites"
+        myAlertView.message = "Rather than adding invites one by one, visit us at SeminarAssistant.com to upload them in CSV format."
+        myAlertView.addButtonWithTitle("Dismiss")
+        
+        myAlertView.show()
+    }
+    @IBAction func broadcastInfo(sender : AnyObject) {
+        var myAlertView = UIAlertView()
+        
+        myAlertView.title = "Broadcast"
+        myAlertView.message = "Clicking this button turns your iPhone into an iBeacon this will allow your attendees to check in if they are in proximity to you."
+        myAlertView.addButtonWithTitle("Dismiss")
+        
+        myAlertView.show()
+    }
     @IBAction func broadcastButtonClicked(sender : UIButton) {
         println("click")
         if(peripheralManager == nil){
@@ -70,8 +89,8 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         self.title = titlePassed
         textFieldDis.text = DIS
         UUIDLabel.text = UUID
-        dataLocLabel.text = URL
-        LocationField.text = Location
+        dataLocLabel.text = "Data URL: \(URL)"
+        LocationField.text = "Location: \(Location)"
         
         var form = NSDateFormatter()
         form.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -83,8 +102,8 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         println(date)
         println(dateTime)
         
-        [
-        dateAndTime.text = f.stringFromDate(date)
+        
+        dateAndTime.text = "Date : \(f.stringFromDate(date))"
         
         // Do any additional setup after loading the view, typically from a nib.
     }
