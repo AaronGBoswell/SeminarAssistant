@@ -83,7 +83,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         println(date)
         println(dateTime)
         
-        [
+        
         dateAndTime.text = f.stringFromDate(date)
         
         // Do any additional setup after loading the view, typically from a nib.
