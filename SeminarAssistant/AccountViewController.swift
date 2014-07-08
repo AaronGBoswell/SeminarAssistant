@@ -16,6 +16,7 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
     @IBOutlet var accountSubTitleText : UILabel
     var clickedSeminar:NSDictionary = NSDictionary()
     var email:String = ""
+    @IBOutlet var textForAccVw : UILabel
 
     
     
@@ -25,6 +26,8 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
         var bbbi = UIBarButtonItem()
         bbbi.title = "Account"
         navigationItem.backBarButtonItem = bbbi
+        textForAccVw.text = "Hello"
+        
     }
     override func viewWillAppear(animated: Bool){
         println(email)
@@ -66,6 +69,7 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
         print("ran")
         
         var url = NSURL(string: "http://www.seminarassistant.com/appinterac/returntitles.php?Email=\(email)");
+        textForAccVw.text = "Hello \n \(email)"
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
       
             var jsonArray:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary[]
