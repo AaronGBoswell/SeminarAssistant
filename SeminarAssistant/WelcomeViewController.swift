@@ -25,10 +25,19 @@ class WelcomeViewController: UIViewController {
         
         var tap = UITapGestureRecognizer(target: self, action: "dismisss")
         self.view.addGestureRecognizer(tap)
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewWillAppear(animated: Bool) {
         dismisss()
+        if(emailTextView.text.compare("") != 0){
+            adminButton.hidden = true
+            signUpButton.hidden = false
+            passwordText.hidden = false
+            loginButton.hidden = false;
+            submitButton.hidden = true;
+            adminMode = 1;
+        }
     }
     func dismisss(){
         view.endEditing(true)
@@ -136,14 +145,14 @@ class WelcomeViewController: UIViewController {
             var destVC  = segue.destinationViewController as SignUpViewController
             destVC.wel = self
         }
-        else{
-            adminButton.hidden = false
-            signUpButton.hidden = true
-            passwordText.hidden = true
-            loginButton.hidden = true;
-            submitButton.hidden = false;
-            adminMode = 0;
-        }
+        
+        adminButton.hidden = false
+        signUpButton.hidden = true
+        passwordText.hidden = true
+        loginButton.hidden = true;
+        submitButton.hidden = false;
+        adminMode = 0;
+        
         self.emailLabel.text = "Please enter your email address"
         self.passwordText.enabled = true
         self.emailTextView.enabled = true
