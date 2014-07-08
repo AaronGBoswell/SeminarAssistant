@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GXR-sG-1yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A283o" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GXR-sG-1yN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
@@ -455,10 +455,10 @@
             </objects>
             <point key="canvasLocation" x="1843" y="-201"/>
         </scene>
-        <!--Please Wait View Controller - Your Seminars-->
+        <!--Please Wait View Controller - showSingleSem-->
         <scene sceneID="6aL-WV-NDd">
             <objects>
-                <viewController id="Qf1-Dt-rnW" customClass="PleaseWaitViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="showSingleSem" id="Qf1-Dt-rnW" customClass="PleaseWaitViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QIt-wh-OaS"/>
                         <viewControllerLayoutGuide type="bottom" id="ZaN-3N-EVb"/>
@@ -528,7 +528,7 @@
                         <outlet property="searchTitle" destination="hSh-gy-FGh" id="dyp-X4-3ya"/>
                         <outlet property="seminarTable" destination="vq7-bI-tZI" id="H4a-xN-Yp7"/>
                         <outlet property="underLabel" destination="Ftv-Xq-1vR" id="XfU-p2-tt7"/>
-                        <segue destination="ncO-7G-gFC" kind="show" identifier="CheckIn" id="OEa-IT-bhr"/>
+                        <segue destination="rj7-Ph-Dgx" kind="show" identifier="inspectSem" id="MIM-P0-s3N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCQ-jV-gzO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -764,6 +764,90 @@
             </objects>
             <point key="canvasLocation" x="2791" y="-201"/>
         </scene>
+        <!--Inspect Seminar View Controller - Title-->
+        <scene sceneID="nKV-GW-5vo">
+            <objects>
+                <viewController id="rj7-Ph-Dgx" customClass="InspectSeminarViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EoR-LD-cfZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ss1-pN-Ytm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="00s-lV-EXY">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il7-FK-yeR">
+                                <rect key="frame" x="124" y="100" width="233" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="n5Q-IR-GVb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afN-BY-Ach">
+                                <rect key="frame" x="129" y="129" width="222" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="QHV-BZ-R55"/>
+                                    <constraint firstAttribute="height" constant="21" id="Wgn-TW-zev"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvu-qP-mFH">
+                                <rect key="frame" x="299" y="307" width="61" height="30"/>
+                                <state key="normal" title="Check In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkInButtonClicked:" destination="rj7-Ph-Dgx" eventType="touchUpInside" id="oRY-KD-ztc"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" appearanceType="aqua" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Io-pj-AVe">
+                                <rect key="frame" x="230" y="72" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWa-fU-fSz">
+                                <rect key="frame" x="120" y="158" width="240" height="141"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="2sC-px-Pcj"/>
+                                    <constraint firstAttribute="width" constant="240" id="V6g-kX-UDx"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Io-pj-AVe" firstAttribute="centerX" secondItem="Il7-FK-yeR" secondAttribute="centerX" id="6Wd-iP-1i0"/>
+                            <constraint firstItem="6Io-pj-AVe" firstAttribute="top" secondItem="EoR-LD-cfZ" secondAttribute="bottom" constant="20" symbolic="YES" id="9B5-ed-h8B"/>
+                            <constraint firstItem="afN-BY-Ach" firstAttribute="top" secondItem="Il7-FK-yeR" secondAttribute="bottom" constant="8" symbolic="YES" id="9Lp-AO-UFG"/>
+                            <constraint firstItem="vvu-qP-mFH" firstAttribute="top" secondItem="AWa-fU-fSz" secondAttribute="bottom" constant="8" symbolic="YES" id="HLg-q4-Vz8"/>
+                            <constraint firstItem="vvu-qP-mFH" firstAttribute="trailing" secondItem="AWa-fU-fSz" secondAttribute="trailing" id="RCX-oV-HW6"/>
+                            <constraint firstItem="AWa-fU-fSz" firstAttribute="top" secondItem="afN-BY-Ach" secondAttribute="bottom" constant="8" symbolic="YES" id="WHO-th-yvM"/>
+                            <constraint firstItem="Il7-FK-yeR" firstAttribute="centerX" secondItem="afN-BY-Ach" secondAttribute="centerX" id="XW4-hG-B4f"/>
+                            <constraint firstItem="Il7-FK-yeR" firstAttribute="top" secondItem="6Io-pj-AVe" secondAttribute="bottom" constant="8" symbolic="YES" id="dni-fG-C71"/>
+                            <constraint firstItem="Il7-FK-yeR" firstAttribute="centerX" secondItem="00s-lV-EXY" secondAttribute="centerX" id="ndB-Ih-hzG"/>
+                            <constraint firstItem="afN-BY-Ach" firstAttribute="centerX" secondItem="AWa-fU-fSz" secondAttribute="centerX" id="rfE-bc-X6K"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="RZ9-Ja-Ziw"/>
+                    <connections>
+                        <outlet property="activityMoniter" destination="6Io-pj-AVe" id="PWZ-WB-Lkb"/>
+                        <outlet property="checkInButton" destination="vvu-qP-mFH" id="KDD-Lc-B77"/>
+                        <outlet property="descriptionView" destination="AWa-fU-fSz" id="AD5-Rp-Cu7"/>
+                        <outlet property="locationLabel" destination="afN-BY-Ach" id="vjn-d0-ojQ"/>
+                        <outlet property="timeLabel" destination="Il7-FK-yeR" id="lxb-VX-umC"/>
+                        <segue destination="ncO-7G-gFC" kind="show" identifier="CheckIn" id="80L-DD-RE3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVn-rr-4HS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2602" y="475"/>
+        </scene>
         <!--In Seminar View Controller - Welcome to the Seminar-->
         <scene sceneID="hdx-YE-0UZ">
             <objects>
@@ -837,7 +921,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L21-nj-fPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2535" y="432"/>
+            <point key="canvasLocation" x="3369" y="432"/>
         </scene>
         <!--Left Seminar View Controller - You have left-->
         <scene sceneID="WvK-ZS-m7F">
@@ -874,7 +958,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHL-Nz-5bQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2180" y="1046"/>
+            <point key="canvasLocation" x="3369" y="1092"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i6n-zt-uYy">

@@ -18,10 +18,26 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var seminarTable : UITableView = nil
     
     @IBOutlet var underLabel : UILabel = nil
+    
+    var displayedSeminar:InspectSeminarViewController?
     var email:String = ""
     var currRegion:NSDictionary? = nil
     var spoof:NSDictionary[] = []{
         didSet{
+            if(displayedSeminar){
+                println(displayedSeminar!.id)
+                var id = displayedSeminar!.id
+                for dic in searchSeminarArray{
+                    if((dic.valueForKey("ID") as String).compare(id) == 0){
+                        if(dic.valueForKey("count") as Int > 0){
+                            displayedSeminar!.inRange()
+                        }
+                        else{
+                            displayedSeminar!.outRange()
+                        }
+                    }
+                }
+            }
             var x = 0
             for dic in searchSeminarArray{
                 if dic.valueForKey("count") as Int > 0{
@@ -101,6 +117,15 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
             (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
             
         }
+        if(segue.destinationViewController is InspectSeminarViewController){
+            var destVC  = segue.destinationViewController as InspectSeminarViewController
+            var mDic:NSMutableDictionary = currRegion!.mutableCopy() as NSMutableDictionary
+            mDic.setValue(email, forKey:"Email")
+            destVC.seminar = mDic
+            (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
+            displayedSeminar = destVC
+            
+        }
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
@@ -110,16 +135,9 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ident)
         }
         var title = searchSeminarArray[indexPath.row].valueForKey("Title") as String
-        if(searchSeminarArray[indexPath.row].valueForKey("count") as Int == 0){
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
-            cell.accessoryType = UITableViewCellAccessoryType.None
-        }
-        else{
-            cell.selectionStyle = UITableViewCellSelectionStyle.Blue
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.selectionStyle = UITableViewCellSelectionStyle.Blue
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
-
-        }
         
         cell.textLabel.text = title
         println("req")
@@ -139,10 +157,6 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
-        var cell = tableView.cellForRowAtIndexPath(indexPath)
-        if(cell.selectionStyle == UITableViewCellSelectionStyle.None){
-            return
-        }
         selectSeminar(searchSeminarArray[indexPath.row])
     }
     
@@ -150,23 +164,8 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
     
     
     func selectSeminar(selSem:NSDictionary){
-        self.activityMoniter.startAnimating()
-
-        searchTitle.text = "Checking you in, please wait..."
         currRegion = selSem
-        var seminarID:String = selSem.valueForKey("ID") as String;
-        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/authenticate.php?SeminarID=\(seminarID)&Email=\(email)");
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
-            dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
-                
-                self.performSegueWithIdentifier("CheckIn", sender: self)
-                self.activityMoniter.stopAnimating()
-
-                });
-        }
-        task.resume()
-        
-        
+        self.performSegueWithIdentifier("inspectSem", sender: self)
     }
 
     

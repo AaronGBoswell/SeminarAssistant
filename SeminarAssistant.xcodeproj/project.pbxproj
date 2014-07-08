@@ -19,6 +19,7 @@
 		BD8E99B5195B3B8A003BAED1 /* SeminarAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99B4195B3B8A003BAED1 /* SeminarAssistantTests.swift */; };
 		BD8E99BF195B4750003BAED1 /* PleaseWaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */; };
 		BD96C72E1962262700107A85 /* CreateSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C72D1962262700107A85 /* CreateSeminarViewController.swift */; };
+		BDBD6EB8196C5EBF0023BFD2 /* InspectSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBD6EB7196C5EBF0023BFD2 /* InspectSeminarViewController.swift */; };
 		BDC446021961F2F900D103F1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC446011961F2F900D103F1 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		BD8E99B4195B3B8A003BAED1 /* SeminarAssistantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeminarAssistantTests.swift; sourceTree = "<group>"; };
 		BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PleaseWaitViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		BD96C72D1962262700107A85 /* CreateSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSeminarViewController.swift; sourceTree = "<group>"; };
+		BDBD6EB7196C5EBF0023BFD2 /* InspectSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectSeminarViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		BDC446011961F2F900D103F1 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */,
 				BD1EFD1D195B8E04001A026A /* InSeminarViewController.swift */,
 				BD8E99A5195B3B8A003BAED1 /* Main.storyboard */,
+				BDBD6EB7196C5EBF0023BFD2 /* InspectSeminarViewController.swift */,
 				BDC446011961F2F900D103F1 /* SignUpViewController.swift */,
 				BD526B06195E15AC00932E82 /* AccountViewController.swift */,
 				BD526B08195E170100932E82 /* SeminarViewController.swift */,
@@ -241,6 +244,7 @@
 				BD96C72E1962262700107A85 /* CreateSeminarViewController.swift in Sources */,
 				BD239511195CFFB700AAA401 /* LeftSeminarViewController.swift in Sources */,
 				BD6E0DE8195F29E0002D6219 /* BeaconNotificationDelegate.swift in Sources */,
+				BDBD6EB8196C5EBF0023BFD2 /* InspectSeminarViewController.swift in Sources */,
 				BD526B07195E15AC00932E82 /* AccountViewController.swift in Sources */,
 				BD1EFD1E195B8E04001A026A /* InSeminarViewController.swift in Sources */,
 				BD8E99A4195B3B8A003BAED1 /* WelcomeViewController.swift in Sources */,
