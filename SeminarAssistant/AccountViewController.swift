@@ -13,6 +13,7 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
     
     var seminars:NSDictionary[] = []
     @IBOutlet var tableView : UITableView = nil
+    @IBOutlet var accountSubTitleText : UILabel
     var clickedSeminar:NSDictionary = NSDictionary()
     var email:String = ""
 

@@ -417,6 +417,12 @@
                                     <segue destination="MPA-EB-Vlv" kind="show" identifier="CreateSeminar" id="hIV-QW-PZu"/>
                                 </connections>
                             </button>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rl-GS-Yvp">
+                                <rect key="frame" x="219" y="102" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -440,6 +446,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="accountSubTitleText" destination="jbp-B9-5di" id="j1V-iO-l8f"/>
                         <outlet property="tableView" destination="fyg-mv-Tah" id="PP2-eq-cfA"/>
                         <segue destination="ULc-w3-8Zs" kind="show" identifier="seminarData" id="tQ1-oX-1iu"/>
                     </connections>
@@ -540,7 +547,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="giE-Ae-hwu">
+                            <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="giE-Ae-hwu">
                                 <rect key="frame" x="0.0" y="232" width="480" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -571,7 +578,7 @@
                                     <outlet property="delegate" destination="ULc-w3-8Zs" id="ot0-BS-IBD"/>
                                 </connections>
                             </tableView>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invitees" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtJ-2G-PvD">
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Invitees" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtJ-2G-PvD">
                                 <rect key="frame" x="20" y="203" width="66" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="5fW-5a-Cru"/>
@@ -580,7 +587,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz4-2u-1E1">
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz4-2u-1E1">
                                 <rect key="frame" x="94" y="202" width="22" height="22"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -589,7 +596,7 @@
                                     <action selector="addInvites:" destination="ULc-w3-8Zs" eventType="touchUpInside" id="euK-Yn-TIs"/>
                                 </connections>
                             </button>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad7-lg-AnH">
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad7-lg-AnH">
                                 <rect key="frame" x="379" y="194" width="81" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="dRt-vx-ZcV"/>
@@ -619,13 +626,13 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFn-0Z-xCa">
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFn-0Z-xCa">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaG-ea-A7E">
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaG-ea-A7E">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -636,7 +643,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="VOn-Yp-OBO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -650,7 +656,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVO-Of-BOh">
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVO-Of-BOh">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -676,9 +682,7 @@
                             </constraint>
                             <constraint firstItem="giE-Ae-hwu" firstAttribute="top" secondItem="ad7-lg-AnH" secondAttribute="bottom" constant="8" symbolic="YES" id="X6H-N6-fVH"/>
                             <constraint firstItem="gz4-2u-1E1" firstAttribute="leading" secondItem="FtJ-2G-PvD" secondAttribute="trailing" constant="8" symbolic="YES" id="X6U-gL-v0I"/>
-                            <constraint firstItem="kVO-Of-BOh" firstAttribute="leading" secondItem="AFn-0Z-xCa" secondAttribute="leading" id="eXK-r7-8xr">
-                                <variation key="heightClass=regular"/>
-                            </constraint>
+                            <constraint firstItem="kVO-Of-BOh" firstAttribute="leading" secondItem="AFn-0Z-xCa" secondAttribute="leading" id="eXK-r7-8xr"/>
                             <constraint firstItem="iAj-Rz-Tq8" firstAttribute="centerX" secondItem="AFn-0Z-xCa" secondAttribute="centerX" id="h6M-2Q-0h1"/>
                             <constraint firstItem="AFn-0Z-xCa" firstAttribute="top" secondItem="5nJ-vU-zKd" secondAttribute="bottom" constant="11" id="hOr-GP-3oA"/>
                             <constraint firstItem="i24-SH-E0B" firstAttribute="top" secondItem="QaG-ea-A7E" secondAttribute="bottom" constant="8" symbolic="YES" id="kde-1M-ls5"/>
@@ -686,9 +690,7 @@
                             <constraint firstItem="giE-Ae-hwu" firstAttribute="top" secondItem="gz4-2u-1E1" secondAttribute="bottom" constant="8" symbolic="YES" id="oJO-MM-LLr"/>
                             <constraint firstItem="giE-Ae-hwu" firstAttribute="top" secondItem="FtJ-2G-PvD" secondAttribute="bottom" constant="8" symbolic="YES" id="tEW-KB-K5c"/>
                             <constraint firstItem="iAj-Rz-Tq8" firstAttribute="centerX" secondItem="giE-Ae-hwu" secondAttribute="centerX" id="v0Y-yx-IeW"/>
-                            <constraint firstItem="iAj-Rz-Tq8" firstAttribute="centerX" secondItem="kVO-Of-BOh" secondAttribute="centerX" id="xTO-QH-5QJ">
-                                <variation key="heightClass=regular"/>
-                            </constraint>
+                            <constraint firstItem="iAj-Rz-Tq8" firstAttribute="centerX" secondItem="kVO-Of-BOh" secondAttribute="centerX" id="xTO-QH-5QJ"/>
                             <constraint firstAttribute="trailing" secondItem="ad7-lg-AnH" secondAttribute="trailing" constant="20" symbolic="YES" id="yqq-8g-nch"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -700,11 +702,6 @@
                                 <exclude reference="kVO-Of-BOh"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="DSZ-Ft-yv2"/>
-                                <exclude reference="VQz-1u-YOK"/>
-                                <exclude reference="h6M-2Q-0h1"/>
-                                <exclude reference="v0Y-yx-IeW"/>
-                                <exclude reference="xTO-QH-5QJ"/>
                                 <exclude reference="hOr-GP-3oA"/>
                                 <exclude reference="2hn-yz-Ty6"/>
                                 <exclude reference="G9l-pv-Fme"/>
@@ -713,6 +710,11 @@
                                 <exclude reference="mfF-Ml-WTE"/>
                                 <exclude reference="AIq-tD-igr"/>
                                 <exclude reference="eXK-r7-8xr"/>
+                                <exclude reference="DSZ-Ft-yv2"/>
+                                <exclude reference="VQz-1u-YOK"/>
+                                <exclude reference="h6M-2Q-0h1"/>
+                                <exclude reference="v0Y-yx-IeW"/>
+                                <exclude reference="xTO-QH-5QJ"/>
                                 <exclude reference="BsD-aI-x4L"/>
                             </mask>
                         </variation>
@@ -724,11 +726,6 @@
                                 <include reference="kVO-Of-BOh"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="DSZ-Ft-yv2"/>
-                                <include reference="VQz-1u-YOK"/>
-                                <include reference="h6M-2Q-0h1"/>
-                                <include reference="v0Y-yx-IeW"/>
-                                <include reference="xTO-QH-5QJ"/>
                                 <include reference="hOr-GP-3oA"/>
                                 <include reference="2hn-yz-Ty6"/>
                                 <include reference="G9l-pv-Fme"/>
@@ -737,6 +734,11 @@
                                 <include reference="mfF-Ml-WTE"/>
                                 <include reference="AIq-tD-igr"/>
                                 <include reference="eXK-r7-8xr"/>
+                                <include reference="DSZ-Ft-yv2"/>
+                                <include reference="VQz-1u-YOK"/>
+                                <include reference="h6M-2Q-0h1"/>
+                                <include reference="v0Y-yx-IeW"/>
+                                <include reference="xTO-QH-5QJ"/>
                                 <include reference="BsD-aI-x4L"/>
                             </mask>
                         </variation>
