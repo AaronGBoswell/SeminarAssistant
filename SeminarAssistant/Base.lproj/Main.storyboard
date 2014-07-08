@@ -432,7 +432,13 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Account" id="dTc-4I-1EX"/>
+                    <navigationItem key="navigationItem" title="Account" id="dTc-4I-1EX">
+                        <barButtonItem key="rightBarButtonItem" title="My Invites" id="ppt-6A-a1s">
+                            <connections>
+                                <segue destination="Qf1-Dt-rnW" kind="show" identifier="showPWVC" id="nKf-w4-I3A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="fyg-mv-Tah" id="PP2-eq-cfA"/>
                         <segue destination="ULc-w3-8Zs" kind="show" identifier="seminarData" id="tQ1-oX-1iu"/>
@@ -888,6 +894,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MVm-KN-YIL"/>
+        <segue reference="nKf-w4-I3A"/>
+        <segue reference="tQ1-oX-1iu"/>
     </inferredMetricsTieBreakers>
 </document>

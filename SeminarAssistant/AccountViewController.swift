@@ -160,6 +160,17 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
             var bbbi = UIBarButtonItem()
             bbbi.title = "Account"
             navigationItem.backBarButtonItem = bbbi
+        } else if(segue.destinationViewController is PleaseWaitViewController){
+            var destVC  = segue.destinationViewController as PleaseWaitViewController
+            destVC.email = email
+            (UIApplication.sharedApplication().delegate as AppDelegate).bND = destVC
+            (UIApplication.sharedApplication().delegate as AppDelegate).email = email
+            (UIApplication.sharedApplication().delegate as AppDelegate).startFetches()
+            (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
+            var bbbi = UIBarButtonItem()
+            bbbi.title = "Account"
+            navigationItem.backBarButtonItem = bbbi
+
         }
         else{
             var bbbi = UIBarButtonItem()
