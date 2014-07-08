@@ -778,6 +778,7 @@
                                         <include reference="aQw-3t-cS4"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular"/>
                             </label>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVO-Of-BOh">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -993,15 +994,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvu-qP-mFH">
-                                <rect key="frame" x="299" y="307" width="61" height="30"/>
-                                <state key="normal" title="Check In">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="checkInButtonClicked:" destination="rj7-Ph-Dgx" eventType="touchUpInside" id="oRY-KD-ztc"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView hidden="YES" appearanceType="aqua" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Io-pj-AVe">
                                 <rect key="frame" x="230" y="72" width="20" height="20"/>
                             </activityIndicatorView>
@@ -1022,8 +1014,6 @@
                             <constraint firstItem="6Io-pj-AVe" firstAttribute="centerX" secondItem="Il7-FK-yeR" secondAttribute="centerX" id="6Wd-iP-1i0"/>
                             <constraint firstItem="6Io-pj-AVe" firstAttribute="top" secondItem="EoR-LD-cfZ" secondAttribute="bottom" constant="20" symbolic="YES" id="9B5-ed-h8B"/>
                             <constraint firstItem="afN-BY-Ach" firstAttribute="top" secondItem="Il7-FK-yeR" secondAttribute="bottom" constant="8" symbolic="YES" id="9Lp-AO-UFG"/>
-                            <constraint firstItem="vvu-qP-mFH" firstAttribute="top" secondItem="AWa-fU-fSz" secondAttribute="bottom" constant="8" symbolic="YES" id="HLg-q4-Vz8"/>
-                            <constraint firstItem="vvu-qP-mFH" firstAttribute="trailing" secondItem="AWa-fU-fSz" secondAttribute="trailing" id="RCX-oV-HW6"/>
                             <constraint firstItem="AWa-fU-fSz" firstAttribute="top" secondItem="afN-BY-Ach" secondAttribute="bottom" constant="8" symbolic="YES" id="WHO-th-yvM"/>
                             <constraint firstItem="Il7-FK-yeR" firstAttribute="centerX" secondItem="afN-BY-Ach" secondAttribute="centerX" id="XW4-hG-B4f"/>
                             <constraint firstItem="Il7-FK-yeR" firstAttribute="top" secondItem="6Io-pj-AVe" secondAttribute="bottom" constant="8" symbolic="YES" id="dni-fG-C71"/>
@@ -1032,7 +1022,20 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="RZ9-Ja-Ziw"/>
+                    <navigationItem key="navigationItem" title="Title" id="RZ9-Ja-Ziw">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="lkU-ZT-8bP">
+                            <button key="customView" appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vvu-qP-mFH">
+                                <rect key="frame" x="299" y="307" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Check In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkInButtonClicked:" destination="rj7-Ph-Dgx" eventType="touchUpInside" id="oRY-KD-ztc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityMoniter" destination="6Io-pj-AVe" id="PWZ-WB-Lkb"/>
                         <outlet property="checkInButton" destination="vvu-qP-mFH" id="KDD-Lc-B77"/>
