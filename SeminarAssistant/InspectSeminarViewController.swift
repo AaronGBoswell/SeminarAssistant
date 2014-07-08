@@ -60,6 +60,7 @@ class InspectSeminarViewController: UIViewController {
         }
         if(segue.destinationViewController is InSeminarViewController){
             var destVC  = segue.destinationViewController as InSeminarViewController
+            destVC.regDic = seminar!
             (UIApplication.sharedApplication().delegate as AppDelegate).nextVC = destVC
             
         }

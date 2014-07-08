@@ -186,17 +186,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegat
                 break
             }
         }
-        if((reg!.valueForKey("count") as Int) < beacons.count){
-            var inRange:Int = 0;
-            reg!.setValue(beacons.count, forKey: "count")
-            locationManager(locationManager,didEnterRegion:region)
-        }
-        if((reg!.valueForKey("count") as Int) > beacons.count){
-            reg!.setValue(beacons.count, forKey: "count")
-            locationManager(locationManager,didExitRegion:region)
+        if(reg){
+            if((reg!.valueForKey("count") as Int) < beacons.count){
+                var inRange:Int = 0;
+                reg!.setValue(beacons.count, forKey: "count")
+                locationManager(locationManager,didEnterRegion:region)
+            }
+            if((reg!.valueForKey("count") as Int) > beacons.count){
+                reg!.setValue(beacons.count, forKey: "count")
+                locationManager(locationManager,didExitRegion:region)
             
+            }
         }
-        
     }
     
     
