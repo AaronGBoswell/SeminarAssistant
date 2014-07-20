@@ -771,7 +771,6 @@
                                         <exclude reference="aQw-3t-cS4"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular"/>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
                                         <include reference="HQ1-nZ-OiF"/>
