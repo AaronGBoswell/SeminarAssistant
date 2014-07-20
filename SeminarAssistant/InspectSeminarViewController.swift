@@ -25,7 +25,7 @@ class InspectSeminarViewController: UIViewController {
         navigationItem.title = seminar!.valueForKey("Title") as String
         println(seminar!.valueForKey("Title") as String)
         
-        locationLabel.text = seminar!.valueForKey("Location") as String
+        locationLabel.text = "Location: " + (seminar!.valueForKey("Location") as String)
         descriptionView.text = seminar!.valueForKey("DIS") as String
         
         
@@ -37,7 +37,7 @@ class InspectSeminarViewController: UIViewController {
         var f = NSDateFormatter()
         f.dateStyle = NSDateFormatterStyle.MediumStyle
         f.timeStyle = NSDateFormatterStyle.ShortStyle
-        timeLabel.text = f.stringFromDate(date)
+        timeLabel.text = "Date/Time: " + f.stringFromDate(date)
         
         if(seminar!.valueForKey("count") as Int > 0){
             inRange()
