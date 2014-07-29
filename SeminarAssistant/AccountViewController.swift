@@ -73,7 +73,7 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
       
             var jsonArray:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary[]
-
+            println(jsonArray.count)
         
             for obj in jsonArray{
                 var dic = obj as NSDictionary

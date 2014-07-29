@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A283o" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GXR-sG-1yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GXR-sG-1yN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
@@ -224,7 +224,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="iBeacon UUID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-lf-pFD">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="iBeacon UUID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-lf-pFD">
                                 <rect key="frame" x="115" y="101" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="btB-DT-kJW"/>
@@ -232,12 +232,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Content URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="51M-u0-glO">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Content URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="51M-u0-glO">
                                 <rect key="frame" x="115" y="139" width="250" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Seminar Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78L-Q3-zQy">
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Seminar Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78L-Q3-zQy">
                                 <rect key="frame" x="139" y="72" width="201" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="GbW-1O-Ekv"/>
@@ -247,7 +247,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXM-sh-b2o">
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXM-sh-b2o">
                                 <rect key="frame" x="77" y="101" width="30" height="30"/>
                                 <state key="normal" title="G">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -261,7 +261,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description:" translatesAutoresizingMaskIntoConstraints="NO" id="9Sd-cr-X4z">
+                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Description:" translatesAutoresizingMaskIntoConstraints="NO" id="9Sd-cr-X4z">
                                 <rect key="frame" x="120" y="215" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -271,17 +271,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seminar Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gix-tJ-ET1">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seminar Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gix-tJ-ET1">
                                 <rect key="frame" x="115" y="177" width="250" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker appearanceType="aqua" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-GV-kN1">
-                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="426458362.57344198">
-                                    <!--<__NSDate Class=2014-07-07 20:39:22 +0000 timeInterval=426458362.573442 ISO8601=2014-07-07T16:39:22.573-0400>-->
-                                </date>
-                            </datePicker>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkP-Jg-JsU">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal">
@@ -328,6 +322,12 @@
                                     <action selector="locInfo:" destination="MPA-EB-Vlv" eventType="touchUpInside" id="Vd7-zZ-gSs"/>
                                 </connections>
                             </button>
+                            <datePicker appearanceType="aqua" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-GV-kN1">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="426458362.57344198">
+                                    <!--<__NSDate Class=2014-07-07 20:39:22 +0000 timeInterval=426458362.573442 ISO8601=2014-07-07T16:39:22.573-0400>-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -370,12 +370,12 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="RBc-Y3-OfD"/>
-                                <exclude reference="4wH-GV-kN1"/>
                                 <exclude reference="pkP-Jg-JsU"/>
                                 <exclude reference="mjh-01-PVT"/>
                                 <exclude reference="XhZ-dk-Xas"/>
                                 <exclude reference="Xt5-Yh-uH3"/>
                                 <exclude reference="8Pw-13-1ia"/>
+                                <exclude reference="4wH-GV-kN1"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="GRG-JN-rrK"/>
@@ -399,12 +399,12 @@
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="RBc-Y3-OfD"/>
-                                <include reference="4wH-GV-kN1"/>
                                 <include reference="pkP-Jg-JsU"/>
                                 <include reference="mjh-01-PVT"/>
                                 <include reference="XhZ-dk-Xas"/>
                                 <include reference="Xt5-Yh-uH3"/>
                                 <include reference="8Pw-13-1ia"/>
+                                <include reference="4wH-GV-kN1"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="GRG-JN-rrK"/>
@@ -442,12 +442,207 @@
                         <outlet property="titleText" destination="gix-tJ-ET1" id="rgA-yI-5bE"/>
                         <outlet property="urlText" destination="51M-u0-glO" id="Yt6-QL-wA1"/>
                         <outlet property="uuidText" destination="CX1-lf-pFD" id="m9u-9H-khp"/>
-                        <segue destination="ULc-w3-8Zs" kind="show" identifier="creatingNewSeminar" id="MVm-KN-YIL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwW-ES-DZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2316" y="-908.25"/>
+            <point key="canvasLocation" x="2218" y="-1097"/>
+        </scene>
+        <!--Title Description View Controller - New Seminar-->
+        <scene sceneID="VcI-Gb-1AW">
+            <objects>
+                <viewController id="fkf-dG-ciy" customClass="TitleDescriptionViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="glT-vr-mSf"/>
+                        <viewControllerLayoutGuide type="bottom" id="IhO-Ut-jcn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="map-wz-mSX">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYV-1N-Gdu">
+                                <rect key="frame" x="130" y="108" width="220" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="Fu1-Fs-rKc"/>
+                                    <constraint firstAttribute="height" constant="140" id="rmb-68-ZTF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wv0-ZD-LTG">
+                                <rect key="frame" x="150" y="72" width="180" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="UED-Kv-8pE"/>
+                                    <constraint firstAttribute="height" constant="28" id="XoE-Xm-WL6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wv0-ZD-LTG" firstAttribute="top" secondItem="glT-vr-mSf" secondAttribute="bottom" constant="20" symbolic="YES" id="RmE-6u-jxq"/>
+                            <constraint firstItem="CYV-1N-Gdu" firstAttribute="top" secondItem="wv0-ZD-LTG" secondAttribute="bottom" constant="8" symbolic="YES" id="jpr-8K-QTU"/>
+                            <constraint firstAttribute="centerX" secondItem="wv0-ZD-LTG" secondAttribute="centerX" id="maP-9I-CDW"/>
+                            <constraint firstAttribute="centerX" secondItem="CYV-1N-Gdu" secondAttribute="centerX" id="qDr-Yj-46c"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Seminar" id="c2c-sa-WKO">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="whG-Zh-gDn">
+                            <connections>
+                                <segue destination="8Js-oz-2mQ" kind="show" identifier="addDateTime" id="bhP-2M-OM6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTF" destination="CYV-1N-Gdu" id="7cz-vT-36f"/>
+                        <outlet property="titleTF" destination="wv0-ZD-LTG" id="TFr-Nh-oSC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a3D-PU-Y2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2942" y="-909"/>
+        </scene>
+        <!--Time Location View Controller - New Seminar-->
+        <scene sceneID="c5Z-kr-RqH">
+            <objects>
+                <viewController id="8Js-oz-2mQ" customClass="TimeLocationViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uhf-8P-9Np"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ye3-DB-A8b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SFF-qC-JC2">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker appearanceType="aqua" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="owp-SF-IBa">
+                                <rect key="frame" x="0.0" y="318" width="480" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="428344068.86200398">
+                                    <!--<__NSDate Class=2014-07-29 16:27:48 +0000 timeInterval=428344068.862004 ISO8601=2014-07-29T12:27:48.862-0400>-->
+                                </date>
+                            </datePicker>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dyl-RV-kQ3">
+                                <rect key="frame" x="147" y="238" width="186" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="Mbd-kf-Yxw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="owp-SF-IBa" secondAttribute="bottom" id="72C-EB-fN4"/>
+                            <constraint firstAttribute="trailing" secondItem="owp-SF-IBa" secondAttribute="trailing" id="7ko-7A-qWI"/>
+                            <constraint firstItem="owp-SF-IBa" firstAttribute="centerX" secondItem="Dyl-RV-kQ3" secondAttribute="centerX" id="I9p-8h-teu"/>
+                            <constraint firstItem="owp-SF-IBa" firstAttribute="leading" secondItem="SFF-qC-JC2" secondAttribute="leading" id="Xad-ms-Sal"/>
+                            <constraint firstItem="owp-SF-IBa" firstAttribute="top" secondItem="Dyl-RV-kQ3" secondAttribute="bottom" constant="50" id="qM6-eW-jwE"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Seminar" id="GJs-qR-DY7">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="aOo-hE-GK5">
+                            <connections>
+                                <segue destination="jUB-FZ-slc" kind="show" id="YRj-05-O78"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="owp-SF-IBa" id="iuY-xV-msQ"/>
+                        <outlet property="locationTF" destination="Dyl-RV-kQ3" id="sbm-MA-nYV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qS2-us-rDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3564" y="-909"/>
+        </scene>
+        <!--Content View Controller - New Seminar-->
+        <scene sceneID="Tmh-QF-FJQ">
+            <objects>
+                <viewController id="jUB-FZ-slc" customClass="UUIDContentViewController" customModule="SeminarAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BYW-br-9Xs"/>
+                        <viewControllerLayoutGuide type="bottom" id="d8B-eZ-9wq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UNM-h8-fuw">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="iBeacon UUID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ww-Vk-UcS">
+                                <rect key="frame" x="115" y="72" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="wVB-Cz-2E9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyA-Kd-gn5">
+                                <rect key="frame" x="373" y="76" width="22" height="22"/>
+                                <connections>
+                                    <action selector="uuidInfo:" destination="jUB-FZ-slc" eventType="touchUpInside" id="Cma-Y6-sZ9"/>
+                                </connections>
+                            </button>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocr-sd-8NE">
+                                <rect key="frame" x="373" y="152" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="urlInfo:" destination="jUB-FZ-slc" eventType="touchUpInside" id="S03-uv-kPH"/>
+                                </connections>
+                            </button>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azu-1f-ixP">
+                                <rect key="frame" x="208.5" y="110" width="63" height="30"/>
+                                <state key="normal" title="Generate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="genButtonClicked:" destination="jUB-FZ-slc" eventType="touchUpInside" id="zGa-xG-6LK"/>
+                                </connections>
+                            </button>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Content URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZCB-1L-wDm">
+                                <rect key="frame" x="115" y="148" width="250" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ocr-sd-8NE" firstAttribute="centerY" secondItem="ZCB-1L-wDm" secondAttribute="centerY" id="5IV-NL-gwV"/>
+                            <constraint firstItem="azu-1f-ixP" firstAttribute="top" secondItem="7ww-Vk-UcS" secondAttribute="bottom" constant="8" symbolic="YES" id="CX3-RH-Fih"/>
+                            <constraint firstItem="ocr-sd-8NE" firstAttribute="leading" secondItem="ZCB-1L-wDm" secondAttribute="trailing" constant="8" symbolic="YES" id="Pr6-Iq-dju"/>
+                            <constraint firstItem="7ww-Vk-UcS" firstAttribute="top" secondItem="BYW-br-9Xs" secondAttribute="bottom" constant="20" symbolic="YES" id="ViV-Hi-5da"/>
+                            <constraint firstItem="gyA-Kd-gn5" firstAttribute="centerY" secondItem="7ww-Vk-UcS" secondAttribute="centerY" id="VlN-py-jtg"/>
+                            <constraint firstItem="gyA-Kd-gn5" firstAttribute="leading" secondItem="7ww-Vk-UcS" secondAttribute="trailing" constant="8" symbolic="YES" id="ang-ld-FWu"/>
+                            <constraint firstItem="ZCB-1L-wDm" firstAttribute="top" secondItem="azu-1f-ixP" secondAttribute="bottom" constant="8" symbolic="YES" id="e32-VW-dG1"/>
+                            <constraint firstItem="7ww-Vk-UcS" firstAttribute="trailing" secondItem="ZCB-1L-wDm" secondAttribute="trailing" id="kqw-S3-bKL"/>
+                            <constraint firstAttribute="centerX" secondItem="azu-1f-ixP" secondAttribute="centerX" id="oTQ-ss-zt5"/>
+                            <constraint firstItem="ZCB-1L-wDm" firstAttribute="centerX" secondItem="UNM-h8-fuw" secondAttribute="centerX" id="qHz-Xh-RU9"/>
+                            <constraint firstItem="ZCB-1L-wDm" firstAttribute="leading" secondItem="7ww-Vk-UcS" secondAttribute="leading" id="ucl-d2-6Mu"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Seminar" id="1zh-Uu-Jp2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Pte-SI-sTQ">
+                            <connections>
+                                <action selector="doneButtonClicked:" destination="jUB-FZ-slc" id="gVS-jo-PJk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentURLText" destination="ZCB-1L-wDm" id="Zqh-JH-eQ8"/>
+                        <outlet property="doneButton" destination="Pte-SI-sTQ" id="AAE-LV-hNs"/>
+                        <outlet property="genButton" destination="azu-1f-ixP" id="nab-Js-ngM"/>
+                        <outlet property="infoButton" destination="ocr-sd-8NE" id="HMJ-gQ-82N"/>
+                        <outlet property="infoButton2" destination="gyA-Kd-gn5" id="bj5-vz-aYn"/>
+                        <outlet property="uuidText" destination="7ww-Vk-UcS" id="Mtr-Fs-Ka9"/>
+                        <segue destination="ULc-w3-8Zs" kind="show" identifier="creatingNewSeminar" id="XCT-il-jLE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="glV-EJ-UQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4138" y="-909"/>
         </scene>
         <!--Account View Controller - Account-->
         <scene sceneID="VxA-8U-V2K">
@@ -500,7 +695,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MPA-EB-Vlv" kind="show" identifier="CreateSeminar" id="hIV-QW-PZu"/>
+                                    <segue destination="fkf-dG-ciy" kind="show" identifier="CreateSeminar" id="clX-jE-Y1y"/>
                                 </connections>
                             </button>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rl-GS-Yvp">
@@ -538,12 +733,12 @@
                         <outlet property="accountSubTitleText" destination="jbp-B9-5di" id="j1V-iO-l8f"/>
                         <outlet property="tableView" destination="fyg-mv-Tah" id="PP2-eq-cfA"/>
                         <outlet property="textForAccVw" destination="3Rl-GS-Yvp" id="RRo-C7-LqF"/>
-                        <segue destination="ULc-w3-8Zs" kind="show" identifier="seminarData" id="tQ1-oX-1iu"/>
+                        <segue destination="ULc-w3-8Zs" kind="show" identifier="seminarData" id="PdW-UP-vGg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhA-VJ-ouY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1843" y="-201"/>
+            <point key="canvasLocation" x="2153" y="-212"/>
         </scene>
         <!--Please Wait View Controller - showSingleSem-->
         <scene sceneID="6aL-WV-NDd">
@@ -959,7 +1154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXH-zn-bg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2791" y="-201"/>
+            <point key="canvasLocation" x="2926" y="-204"/>
         </scene>
         <!--Inspect Seminar View Controller - Title-->
         <scene sceneID="nKV-GW-5vo">
@@ -1165,6 +1360,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="nKf-w4-I3A"/>
-        <segue reference="MVm-KN-YIL"/>
+        <segue reference="XCT-il-jLE"/>
     </inferredMetricsTieBreakers>
 </document>

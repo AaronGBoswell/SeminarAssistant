@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD116B921988050200FE5CCB /* TitleDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD116B911988050200FE5CCB /* TitleDescriptionViewController.swift */; };
+		BD116B941988059000FE5CCB /* TimeLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD116B931988059000FE5CCB /* TimeLocationViewController.swift */; };
+		BD116B96198805BE00FE5CCB /* UUIDContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD116B95198805BE00FE5CCB /* UUIDContentViewController.swift */; };
 		BD1EFD1E195B8E04001A026A /* InSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EFD1D195B8E04001A026A /* InSeminarViewController.swift */; };
 		BD239511195CFFB700AAA401 /* LeftSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */; };
 		BD526B07195E15AC00932E82 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526B06195E15AC00932E82 /* AccountViewController.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD116B911988050200FE5CCB /* TitleDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleDescriptionViewController.swift; sourceTree = "<group>"; };
+		BD116B931988059000FE5CCB /* TimeLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLocationViewController.swift; sourceTree = "<group>"; };
+		BD116B95198805BE00FE5CCB /* UUIDContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UUIDContentViewController.swift; sourceTree = "<group>"; };
 		BD1EFD1D195B8E04001A026A /* InSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InSeminarViewController.swift; sourceTree = "<group>"; };
 		BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSeminarViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		BD526B06195E15AC00932E82 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD116B90198804E500FE5CCB /* CreateSeminar */ = {
+			isa = PBXGroup;
+			children = (
+				BD116B911988050200FE5CCB /* TitleDescriptionViewController.swift */,
+				BD116B931988059000FE5CCB /* TimeLocationViewController.swift */,
+				BD116B95198805BE00FE5CCB /* UUIDContentViewController.swift */,
+			);
+			name = CreateSeminar;
+			sourceTree = "<group>";
+		};
 		BD8E9993195B3B89003BAED1 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +121,7 @@
 				BDC446011961F2F900D103F1 /* SignUpViewController.swift */,
 				BD526B06195E15AC00932E82 /* AccountViewController.swift */,
 				BD526B08195E170100932E82 /* SeminarViewController.swift */,
+				BD116B90198804E500FE5CCB /* CreateSeminar */,
 				BD8E99A8195B3B8A003BAED1 /* Images.xcassets */,
 				BD8E999F195B3B8A003BAED1 /* Supporting Files */,
 			);
@@ -241,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8E99BF195B4750003BAED1 /* PleaseWaitViewController.swift in Sources */,
+				BD116B921988050200FE5CCB /* TitleDescriptionViewController.swift in Sources */,
 				BD96C72E1962262700107A85 /* CreateSeminarViewController.swift in Sources */,
 				BD239511195CFFB700AAA401 /* LeftSeminarViewController.swift in Sources */,
 				BD6E0DE8195F29E0002D6219 /* BeaconNotificationDelegate.swift in Sources */,
@@ -248,7 +266,9 @@
 				BD526B07195E15AC00932E82 /* AccountViewController.swift in Sources */,
 				BD1EFD1E195B8E04001A026A /* InSeminarViewController.swift in Sources */,
 				BD8E99A4195B3B8A003BAED1 /* WelcomeViewController.swift in Sources */,
+				BD116B941988059000FE5CCB /* TimeLocationViewController.swift in Sources */,
 				BDC446021961F2F900D103F1 /* SignUpViewController.swift in Sources */,
+				BD116B96198805BE00FE5CCB /* UUIDContentViewController.swift in Sources */,
 				BD8E99A2195B3B8A003BAED1 /* AppDelegate.swift in Sources */,
 				BD526B09195E170100932E82 /* SeminarViewController.swift in Sources */,
 			);
