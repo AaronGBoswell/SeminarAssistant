@@ -1,8 +1,8 @@
 //
-//  PleaseWaitViewController.swift
+//  PWViewController.swift
 //  SeminarAssistant
 //
-//  Created by Aaron Boswell on 6/25/14.
+//  Created by Aaron Boswell on 8/1/14.
 //  Copyright (c) 2014 Aaron Boswell. All rights reserved.
 //
 
@@ -13,96 +13,97 @@ import CoreBluetooth
 
 class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,BeaconNotificationDelegate {
     
-    @IBOutlet var searchTitle : UILabel = nil
-    @IBOutlet var activityMoniter : UIActivityIndicatorView = nil
-    @IBOutlet var seminarTable : UITableView = nil
+    @IBOutlet var searchTitle : UILabel! = nil
+    @IBOutlet var activityMoniter : UIActivityIndicatorView! = nil
+    @IBOutlet var seminarTable : UITableView! = nil
     
-    @IBOutlet var underLabel : UILabel = nil
+    @IBOutlet var underLabel : UILabel! = nil
     
-    var displayedSeminar:InspectSeminarViewController?
+    var displayedSeminar:InspectSeminarViewController? = nil
     var email:String = ""
     var currRegion:NSDictionary? = nil
-    var spoof:NSDictionary[] = []{
-        didSet{
-            if(displayedSeminar){
-                println(displayedSeminar!.id)
-                var id = displayedSeminar!.id
-                for dic in searchSeminarArray{
-                    if((dic.valueForKey("ID") as String).compare(id) == 0){
-                        if(dic.valueForKey("count") as Int > 0){
-                            displayedSeminar!.inRange()
-                        }
-                        else{
-                            displayedSeminar!.outRange()
-                        }
+    var spoof:[NSDictionary] = []{
+    didSet{
+        if(displayedSeminar != nil){
+            println(displayedSeminar!.id)
+            var id = displayedSeminar!.id
+            for dic in searchSeminarArray{
+                if((dic.valueForKey("ID") as String) == id){
+                    if(dic.valueForKey("count") as Int > 0){
+                        displayedSeminar!.inRange()
+                    }
+                    else{
+                        displayedSeminar!.outRange()
                     }
                 }
             }
-            var x = 0
-            for dic in searchSeminarArray{
-                if dic.valueForKey("count") as Int > 0{
-                    x++
-                }
+        }
+        var x = 0
+        for dic in searchSeminarArray{
+            if dic.valueForKey("count") as Int > 0{
+                x++
             }
-            var ulText = ""
-            var titleText = "No seminars are nearby"
-            if(x == 0){
-                
-            }else if (x == 1){
-                ulText = "Tap the seminar to check in."
-                titleText = "You are in range of 1 seminar"
-                
-            }else{
-                ulText = "Tap a seminar to check in."
-                titleText = "You are in range of \(x) seminar"
-            }
-
-            dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
-                self.searchTitle.text = titleText
-                self.underLabel.text = ulText
-            });
         }
-    }
-
-    var searchSeminarArray:NSDictionary[]{
-        get{
-            return spoof
+        var ulText = ""
+        var titleText = "No seminars are nearby"
+        if(x == 0){
+            
+        }else if (x == 1){
+            ulText = "Tap the seminar to check in."
+            titleText = "You are in range of 1 seminar"
+            
+        }else{
+            ulText = "Tap a seminar to check in."
+            titleText = "You are in range of \(x) seminar"
         }
-        set{
-            spoof = sort(newValue, { (d1: NSDictionary, d2: NSDictionary) -> Bool in
-                if(d1.valueForKey("count") as Int > d2.valueForKey("count") as Int ){
-                    return true
-                }
-                else if((d1.valueForKey("count") as Int) < (d2.valueForKey("count") as Int) ){
-                    return false
-                }
-                return (d1.valueForKey("Title") as String) < (d2.valueForKey("Title") as String)
-                })
-        }
-    }
-    
         
+        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
+            self.searchTitle.text = titleText
+            self.underLabel.text = ulText
+            });
+    }
+    }
     
-    var nearBySeminars:NSDictionary[] = []
-
-
+    var searchSeminarArray:[NSDictionary]{
+    get{
+        return spoof
+    }
+    set{
+        spoof = newValue
+        //            spoof = sort(newValue, { (d1: NSDictionary, d2: NSDictionary) -> Bool in
+        //                if(d1.valueForKey("count") as Int > d2.valueForKey("count") as Int ){
+        //                    return true
+        //                }
+        //                else if((d1.valueForKey("count") as Int) < (d2.valueForKey("count") as Int) ){
+        //                    return false
+        //                }
+        //                return (d1.valueForKey("Title") as String) < (d2.valueForKey("Title") as String)
+        //                })
+    }
+    }
+    
+    
+    
+    var nearBySeminars:[NSDictionary] = []
+    
+    
     override func viewDidLoad() {
         activityMoniter.hidesWhenStopped = true
         super.viewDidLoad()
         println(email)
         self.underLabel.text = ""
-
+        
     }
     override func viewDidAppear(animated: Bool){
         println(email)
         seminarTable.reloadData()
         (UIApplication.sharedApplication().delegate as AppDelegate).regionFetch(nil)
         self.activityMoniter.startAnimating()
-
+        
     }
-
+    
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
-        if(identifier.compare("LeaveSeminar") == 0){
+        if(identifier == "LeaveSeminar"){
             return false
         }
         return true
@@ -137,7 +138,7 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
         var title = searchSeminarArray[indexPath.row].valueForKey("Title") as String
         cell.selectionStyle = UITableViewCellSelectionStyle.Blue
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-
+        
         
         cell.textLabel.text = title
         println("req")
@@ -167,34 +168,34 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
         currRegion = selSem
         self.performSegueWithIdentifier("inspectSem", sender: self)
     }
-
     
-    func didEnterSeminar(seminar:NSDictionary, seminarArray:NSDictionary[]){
-       searchTitle.text = "Please select nearby seminar"
-
+    
+    func didEnterSeminar(seminar:NSDictionary, seminarArray:[NSDictionary]){
+        searchTitle.text = "Please select nearby seminar"
+        
         searchSeminarArray = seminarArray
         seminarTable.reloadData()
     }
-    func didExitSeminar(seminar:NSDictionary,seminarArray:NSDictionary[]){
+    func didExitSeminar(seminar:NSDictionary,seminarArray:[NSDictionary]){
         searchTitle.text = "Searching for nearby seminars"
         searchSeminarArray = seminarArray
         seminarTable.reloadData()
-
+        
     }
-    func didUpdateSeminarList(seminarArray:NSDictionary[]){
+    func didUpdateSeminarList(seminarArray:[NSDictionary]){
         
         searchSeminarArray = seminarArray
         dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
             self.activityMoniter.stopAnimating()
             self.seminarTable.reloadData()
-        });
+            });
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
 }

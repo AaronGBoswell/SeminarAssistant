@@ -10,6 +10,7 @@
 		BD116B921988050200FE5CCB /* TitleDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD116B911988050200FE5CCB /* TitleDescriptionViewController.swift */; };
 		BD116B941988059000FE5CCB /* TimeLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD116B931988059000FE5CCB /* TimeLocationViewController.swift */; };
 		BD116B96198805BE00FE5CCB /* UUIDContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD116B95198805BE00FE5CCB /* UUIDContentViewController.swift */; };
+		BD14FBBC198C36920005D71D /* PWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD14FBBB198C36920005D71D /* PWViewController.swift */; };
 		BD1EFD1E195B8E04001A026A /* InSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EFD1D195B8E04001A026A /* InSeminarViewController.swift */; };
 		BD239511195CFFB700AAA401 /* LeftSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */; };
 		BD526B07195E15AC00932E82 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526B06195E15AC00932E82 /* AccountViewController.swift */; };
@@ -20,7 +21,6 @@
 		BD8E99A7195B3B8A003BAED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8E99A5195B3B8A003BAED1 /* Main.storyboard */; };
 		BD8E99A9195B3B8A003BAED1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8E99A8195B3B8A003BAED1 /* Images.xcassets */; };
 		BD8E99B5195B3B8A003BAED1 /* SeminarAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99B4195B3B8A003BAED1 /* SeminarAssistantTests.swift */; };
-		BD8E99BF195B4750003BAED1 /* PleaseWaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */; };
 		BD96C72E1962262700107A85 /* CreateSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96C72D1962262700107A85 /* CreateSeminarViewController.swift */; };
 		BDBD6EB8196C5EBF0023BFD2 /* InspectSeminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBD6EB7196C5EBF0023BFD2 /* InspectSeminarViewController.swift */; };
 		BDC446021961F2F900D103F1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC446011961F2F900D103F1 /* SignUpViewController.swift */; };
@@ -40,6 +40,7 @@
 		BD116B911988050200FE5CCB /* TitleDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleDescriptionViewController.swift; sourceTree = "<group>"; };
 		BD116B931988059000FE5CCB /* TimeLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLocationViewController.swift; sourceTree = "<group>"; };
 		BD116B95198805BE00FE5CCB /* UUIDContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UUIDContentViewController.swift; sourceTree = "<group>"; };
+		BD14FBBB198C36920005D71D /* PWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PWViewController.swift; sourceTree = "<group>"; };
 		BD1EFD1D195B8E04001A026A /* InSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InSeminarViewController.swift; sourceTree = "<group>"; };
 		BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSeminarViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		BD526B06195E15AC00932E82 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +55,6 @@
 		BD8E99AE195B3B8A003BAED1 /* SeminarAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeminarAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8E99B3195B3B8A003BAED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD8E99B4195B3B8A003BAED1 /* SeminarAssistantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeminarAssistantTests.swift; sourceTree = "<group>"; };
-		BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PleaseWaitViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		BD96C72D1962262700107A85 /* CreateSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSeminarViewController.swift; sourceTree = "<group>"; };
 		BDBD6EB7196C5EBF0023BFD2 /* InspectSeminarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectSeminarViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		BDC446011961F2F900D103F1 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -114,11 +114,11 @@
 				BD8E99A3195B3B8A003BAED1 /* WelcomeViewController.swift */,
 				BD239510195CFFB700AAA401 /* LeftSeminarViewController.swift */,
 				BD96C72D1962262700107A85 /* CreateSeminarViewController.swift */,
-				BD8E99BE195B4750003BAED1 /* PleaseWaitViewController.swift */,
 				BD1EFD1D195B8E04001A026A /* InSeminarViewController.swift */,
 				BD8E99A5195B3B8A003BAED1 /* Main.storyboard */,
 				BDBD6EB7196C5EBF0023BFD2 /* InspectSeminarViewController.swift */,
 				BDC446011961F2F900D103F1 /* SignUpViewController.swift */,
+				BD14FBBB198C36920005D71D /* PWViewController.swift */,
 				BD526B06195E15AC00932E82 /* AccountViewController.swift */,
 				BD526B08195E170100932E82 /* SeminarViewController.swift */,
 				BD116B90198804E500FE5CCB /* CreateSeminar */,
@@ -202,6 +202,7 @@
 				TargetAttributes = {
 					BD8E999B195B3B89003BAED1 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 27RHNLCLG4;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -257,11 +258,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD8E99BF195B4750003BAED1 /* PleaseWaitViewController.swift in Sources */,
 				BD116B921988050200FE5CCB /* TitleDescriptionViewController.swift in Sources */,
 				BD96C72E1962262700107A85 /* CreateSeminarViewController.swift in Sources */,
 				BD239511195CFFB700AAA401 /* LeftSeminarViewController.swift in Sources */,
 				BD6E0DE8195F29E0002D6219 /* BeaconNotificationDelegate.swift in Sources */,
+				BD14FBBC198C36920005D71D /* PWViewController.swift in Sources */,
 				BDBD6EB8196C5EBF0023BFD2 /* InspectSeminarViewController.swift in Sources */,
 				BD526B07195E15AC00932E82 /* AccountViewController.swift in Sources */,
 				BD1EFD1E195B8E04001A026A /* InSeminarViewController.swift in Sources */,
@@ -341,6 +342,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -363,7 +365,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -376,6 +379,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--deep";
+				PROVISIONING_PROFILE = "1D53B337-4628-46A8-9C99-5C2E0DEA162B";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -386,9 +391,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SeminarAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -397,9 +404,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SeminarAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--deep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1D53B337-4628-46A8-9C99-5C2E0DEA162B";
 			};
 			name = Release;
 		};

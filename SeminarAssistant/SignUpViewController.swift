@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class SignUpViewController: UIViewController {
-    @IBOutlet var firstNameText : UITextField = nil
-    @IBOutlet var lastNameText : UITextField = nil
-    @IBOutlet var emailText : UITextField = nil
-    @IBOutlet var passwordText : UITextField = nil
-    @IBOutlet var confirmPasswordText : UITextField = nil
-    @IBOutlet var signUpButton : UIButton = nil
-    @IBOutlet var titleLabel : UILabel = nil
+    @IBOutlet var firstNameText : UITextField! = nil
+    @IBOutlet var lastNameText : UITextField! = nil
+    @IBOutlet var emailText : UITextField! = nil
+    @IBOutlet var passwordText : UITextField! = nil
+    @IBOutlet var confirmPasswordText : UITextField! = nil
+    @IBOutlet var signUpButton : UIButton! = nil
+    @IBOutlet var titleLabel : UILabel! = nil
     
     var wel:WelcomeViewController?
     
@@ -47,7 +47,7 @@ class SignUpViewController: UIViewController {
 
             return
         }
-        if(confirmPasswordText.text.compare(passwordText.text) != 0){
+        if(confirmPasswordText.text != passwordText.text){
             titleLabel.text = "Passwords do not match"
 
             return
@@ -75,7 +75,7 @@ class SignUpViewController: UIViewController {
             var s = NSString(data: data, encoding: NSUTF8StringEncoding)
             var str:String = s
             println(str)
-            if(str.compare("good") == 0){
+            if(str == "good"){
                 println("g")
 
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {

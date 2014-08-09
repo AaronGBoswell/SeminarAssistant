@@ -14,8 +14,8 @@ class TimeLocationViewController: UIViewController  {
     
     var seminarInfo = NSDictionary()
     
-    @IBOutlet var locationTF : UITextField = nil
-    @IBOutlet var datePicker : UIDatePicker = nil
+    @IBOutlet var locationTF : UITextField! = nil
+    @IBOutlet var datePicker : UIDatePicker! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

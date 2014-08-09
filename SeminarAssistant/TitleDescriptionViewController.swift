@@ -14,8 +14,8 @@ import UIKit
 
 class TitleDescriptionViewController: UIViewController  {
     
-    @IBOutlet var titleTF : UITextField = nil
-    @IBOutlet var descriptionTF : UITextField = nil
+    @IBOutlet var titleTF : UITextField! = nil
+    @IBOutlet var descriptionTF : UITextField! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

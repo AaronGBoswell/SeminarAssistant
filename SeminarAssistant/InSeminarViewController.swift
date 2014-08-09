@@ -15,10 +15,10 @@ import UIKit
 
 class InSeminarViewController: UIViewController  {
     
-    @IBOutlet var titleLabel : UILabel = nil
-    @IBOutlet var descriptionLabel : UILabel = nil
+    @IBOutlet var titleLabel : UILabel! = nil
+    @IBOutlet var descriptionLabel : UILabel! = nil
    
-    @IBOutlet var web : UIWebView
+    @IBOutlet var web : UIWebView!
     var regDic:NSDictionary = NSDictionary()
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,12 +12,12 @@ import UIKit
 
 class UUIDContentViewController: UIViewController  {
     
-    @IBOutlet var uuidText : UITextField = nil
-    @IBOutlet var contentURLText : UITextField = nil
-    @IBOutlet var doneButton : UIBarButtonItem = nil
-    @IBOutlet var genButton : UIButton = nil
-    @IBOutlet var infoButton : UIButton = nil
-    @IBOutlet var infoButton2 : UIButton = nil
+    @IBOutlet var uuidText : UITextField! = nil
+    @IBOutlet var contentURLText : UITextField! = nil
+    @IBOutlet var doneButton : UIBarButtonItem! = nil
+    @IBOutlet var genButton : UIButton! = nil
+    @IBOutlet var infoButton : UIButton! = nil
+    @IBOutlet var infoButton2 : UIButton! = nil
     
     var seminarInfo = NSDictionary()
     var clickedSeminar : NSDictionary?
@@ -79,7 +79,7 @@ class UUIDContentViewController: UIViewController  {
         println(dis)
         var loc = seminarInfo.valueForKey("Location") as String
         println(loc)
-        var date = seminarInfo.valueForKey("dateTime")
+        var date: AnyObject! = seminarInfo.valueForKey("dateTime")
         println(date)
         var title = seminarInfo.valueForKey("Title") as String
         println(title)
@@ -97,7 +97,7 @@ class UUIDContentViewController: UIViewController  {
             var s = NSString(data: data, encoding: NSUTF8StringEncoding)
             var str:String = s
             //finish line below
-            var responseDic:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary[]
+            var responseDic:[NSDictionary] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as [NSDictionary]
             
             
             
@@ -106,7 +106,7 @@ class UUIDContentViewController: UIViewController  {
             }
             
             println(responseDic)
-            if(str.compare("") != 0){
+            if(str != ""){
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
                     
                     self.clickedSeminar = responseDic[0]

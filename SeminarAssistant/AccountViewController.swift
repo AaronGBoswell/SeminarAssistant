@@ -11,12 +11,12 @@ import UIKit
 
 class AccountViewController: UIViewController,BeaconNotificationDelegate {
     
-    var seminars:NSDictionary[] = []
-    @IBOutlet var tableView : UITableView = nil
-    @IBOutlet var accountSubTitleText : UILabel
+    var seminars:[NSDictionary] = []
+    @IBOutlet var tableView : UITableView! = nil
+    @IBOutlet var accountSubTitleText : UILabel!
     var clickedSeminar:NSDictionary = NSDictionary()
     var email:String = ""
-    @IBOutlet var textForAccVw : UILabel
+    @IBOutlet var textForAccVw : UILabel!
 
     
     
@@ -72,7 +72,7 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
         textForAccVw.text = "Hello \n \(email)"
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
       
-            var jsonArray:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary[]
+            var jsonArray:[NSDictionary] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as [NSDictionary]
             println(jsonArray.count)
         
             for obj in jsonArray{
@@ -187,11 +187,11 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
 
     
 
-    func didEnterSeminar(seminar:NSDictionary, seminarArray:NSDictionary[]){
+    func didEnterSeminar(seminar:NSDictionary, seminarArray:[NSDictionary]){
     }
-    func didExitSeminar(seminar:NSDictionary,seminarArray:NSDictionary[]){
+    func didExitSeminar(seminar:NSDictionary,seminarArray:[NSDictionary]){
     }
-    func didUpdateSeminarList(seminarArray:NSDictionary[]){
+    func didUpdateSeminarList(seminarArray:[NSDictionary]){
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

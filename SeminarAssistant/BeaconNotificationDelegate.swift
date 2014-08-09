@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 protocol BeaconNotificationDelegate {
-    func didEnterSeminar(seminar:NSDictionary, seminarArray:NSDictionary[]);
-    func didExitSeminar(seminar:NSDictionary,seminarArray:NSDictionary[]);
-    func didUpdateSeminarList(seminarArray:NSDictionary[]);
+    func didEnterSeminar(seminar:NSDictionary, seminarArray:[NSDictionary]);
+    func didExitSeminar(seminar:NSDictionary,seminarArray:[NSDictionary]);
+    func didUpdateSeminarList(seminarArray:[NSDictionary]);
 
 
 }

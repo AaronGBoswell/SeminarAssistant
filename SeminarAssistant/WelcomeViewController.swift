@@ -9,13 +9,13 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    @IBOutlet var emailTextView : UITextField = nil
-    @IBOutlet var emailLabel : UILabel = nil
-    @IBOutlet var loginButton : UIButton = nil
-    @IBOutlet var submitButton : UIButton = nil
-    @IBOutlet var passwordText : UITextField = nil
-    @IBOutlet var adminButton : UIButton = nil
-    @IBOutlet var signUpButton : UIButton = nil
+    @IBOutlet var emailTextView : UITextField! = nil
+    @IBOutlet var emailLabel : UILabel! = nil
+    @IBOutlet var loginButton : UIButton! = nil
+    @IBOutlet var submitButton : UIButton! = nil
+    @IBOutlet var passwordText : UITextField! = nil
+    @IBOutlet var adminButton : UIButton! = nil
+    @IBOutlet var signUpButton : UIButton! = nil
     
     var adminMode = 0
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class WelcomeViewController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         dismisss()
-        if(emailTextView.text.compare("") != 0){
+        if(emailTextView.text != ""){
             adminButton.hidden = true
             signUpButton.hidden = false
             passwordText.hidden = false
@@ -47,10 +47,10 @@ class WelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
-        if(identifier.compare("LeaveSeminar") == 0){
+        if(identifier == "LeaveSeminar"){
             return false
         }
-        else if(identifier.compare("showSignUp") == 0){
+        else if(identifier == "showSignUp"){
             return true
         }
         else if(stringIsValidEmail(emailTextView.text)){
@@ -90,7 +90,7 @@ class WelcomeViewController: UIViewController {
             var s = NSString(data: data, encoding: NSUTF8StringEncoding)
             var str:String = s
             println(str)
-            if(str.compare("good") == 0){
+            if(str == "good"){
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
                     self.performSegueWithIdentifier("accountData", sender: self)
                 });

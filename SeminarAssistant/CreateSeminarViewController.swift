@@ -12,15 +12,15 @@ class CreateSeminarViewController: UIViewController {
 
     var x:Int?
 
-    @IBOutlet var newSeminarLabel : UILabel = nil
-    @IBOutlet var uuidText : UITextField = nil
-    @IBOutlet var urlText : UITextField = nil
-    @IBOutlet var titleText : UITextField = nil
-    @IBOutlet var disText : UITextView = nil
-    @IBOutlet var dateDecider : UIDatePicker
-    @IBOutlet var locationText : UITextField
+    @IBOutlet var newSeminarLabel : UILabel! = nil
+    @IBOutlet var uuidText : UITextField! = nil
+    @IBOutlet var urlText : UITextField! = nil
+    @IBOutlet var titleText : UITextField! = nil
+    @IBOutlet var disText : UITextView! = nil
+    @IBOutlet var dateDecider : UIDatePicker!
+    @IBOutlet var locationText : UITextField!
     
-    @IBOutlet var doneButton : UIBarButtonItem = nil
+    @IBOutlet var doneButton : UIBarButtonItem! = nil
     var clickedSeminar : NSDictionary?
     
     override func viewDidLoad() {
@@ -133,7 +133,7 @@ class CreateSeminarViewController: UIViewController {
             var s = NSString(data: data, encoding: NSUTF8StringEncoding)
             var str:String = s
             //finish line below
-            var responseDic:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary[]
+            var responseDic:[NSDictionary] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as [NSDictionary]
 
             
             
@@ -142,7 +142,7 @@ class CreateSeminarViewController: UIViewController {
             }
     
             println(responseDic)
-            if(str.compare("") != 0){
+            if(str != ""){
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
 
                     self.clickedSeminar = responseDic[0]

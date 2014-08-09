@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 class InspectSeminarViewController: UIViewController {
     
-    @IBOutlet var activityMoniter : UIActivityIndicatorView = nil
-    @IBOutlet var locationLabel : UILabel = nil
-    @IBOutlet var timeLabel : UILabel = nil
-    @IBOutlet var descriptionView : UITextView = nil
-    @IBOutlet var checkInButton : UIButton = nil
+    @IBOutlet var activityMoniter : UIActivityIndicatorView! = nil
+    @IBOutlet var locationLabel : UILabel! = nil
+    @IBOutlet var timeLabel : UILabel! = nil
+    @IBOutlet var descriptionView : UITextView! = nil
+    @IBOutlet var checkInButton : UIButton! = nil
     var seminar:NSDictionary?
     var id = ""
     

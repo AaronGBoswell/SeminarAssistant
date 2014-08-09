@@ -16,9 +16,9 @@ import CoreBluetooth
 class SeminarViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate,CBPeripheralManagerDelegate {
     
     
-    @IBOutlet var UUIDLabel : UILabel
-    @IBOutlet var dataLocLabel : UILabel
-    @IBOutlet var textFieldDis : UITextView
+    @IBOutlet var UUIDLabel : UILabel!
+    @IBOutlet var dataLocLabel : UILabel!
+    @IBOutlet var textFieldDis : UITextView!
     var email:String = "henry@lakejoe.com"
     var ID:String = "1"
     var titlePassed:String = "Invitees"
@@ -28,15 +28,15 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     var Location:String = " "
     var dateTime:String = " "
     //var Time:String = " "
-    @IBOutlet var tableView : UITableView = nil
-    var invites:NSDictionary[] = []
+    @IBOutlet var tableView : UITableView!
+    var invites:[NSDictionary] = []
     var checkcount = 0
     var peripheralManager : CBPeripheralManager? = nil
     var delete = false
     var checkinRow = -1
-    @IBOutlet var broadcastButton : UIButton
-    @IBOutlet var dateAndTime : UILabel
-    @IBOutlet var LocationField : UILabel
+    @IBOutlet var broadcastButton : UIButton!
+    @IBOutlet var dateAndTime : UILabel!
+    @IBOutlet var LocationField : UILabel!
     
     
  
@@ -128,7 +128,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         
         
         // The people picker will enable selection of persons that have at least one email address.
-        picker.predicateForEnablingPerson = NSPredicate(format: "emailAddresses.@count > 0", nil)
+        picker.predicateForEnablingPerson = NSPredicate(format: "emailAddresses.@count > 0", argumentArray: nil)
         // The people picker will select a person that has exactly one email address and call peoplePickerNavigationController:didSelectPerson:,
         // otherwise the people picker will present an ABPersonViewController for the user to pick one of the email addresses.
 
@@ -187,7 +187,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     func peoplePickerNavigationControllerDidCancel(peoplePicker:ABPeoplePickerNavigationController!)
     {
         println( "here")
-        self.dismissModalViewControllerAnimated(true)
+        //self.dismissModalViewControllerAnimated(true)
         
     }
     func peoplePickerNavigationController(peoplePicker:ABPeoplePickerNavigationController!,didSelectPerson didSelectPerson:ABRecordRef!,property property:ABPropertyID!,identifier identifier:ABMultiValueIdentifier!){
@@ -196,31 +196,21 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     }
     
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!,didSelectPerson person: ABRecordRef!) {
-        println( "here")
-        //displayPerson(person)
-        
-    
-        var emailAddress = "no email address"
-        
-       // ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
+
         var used = false;
         
-        //var emails:ABMultiValueRef? = ABRecordCopyValue(person, kABPersonEmailProperty)
-        
-        var emails:ABMultiValueRef? = ABRecordCopyValue(person, kABPersonEmailProperty)
-
-        println(ABMultiValueGetCount(emails))
-        
-        if (emails){
-            if (ABMultiValueGetCount(emails) > 0){
+        var unmanagedEmails = ABRecordCopyValue(person, kABPersonEmailProperty)
+        let emailObj: ABMultiValueRef = Unmanaged.fromOpaque(unmanagedEmails.toOpaque()).takeUnretainedValue() as NSObject as ABMultiValueRef
+        if(true){
+            if(true){
                 var index = 0 as CFIndex
-
-                emailAddress = CFBridgingRelease(ABMultiValueCopyValueAtIndex(emails, index)) as String
-                
+                var unmanagedEmail = ABMultiValueCopyValueAtIndex(emailObj, index)
+                var emailAddress:String = Unmanaged.fromOpaque(unmanagedEmail.toOpaque()).takeUnretainedValue() as NSObject as String
                 println(emailAddress)
                 
                 
                 for obj in invites{
+                    
                     print("check: ")
                     var dic = obj as NSDictionary
                     var Email:String = dic.valueForKey("Email") as String
@@ -318,7 +308,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         var url = NSURL(string: "http://www.seminarassistant.com/appinterac/returninvitees.php?ID=\(ID)");
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             
-            var jsonArray:NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary[]
+            var jsonArray:[NSDictionary] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as [NSDictionary]
             
             var same = true
             for obj1 in jsonArray{
@@ -360,7 +350,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
             }
            
             if(self.isViewLoaded()){
-                if(self.view.window){
+                if(self.view.window == nil){
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
                         self.getInvites()
                         self.checkcount++
@@ -392,13 +382,12 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         var checked = invites[indexPath.row].valueForKey("CheckedIn") as String
         var dataReceived = invites[indexPath.row].valueForKey("DataRecieved") as String
         cell.detailTextLabel.text = ""
-
-        if(checked.compare("yes") == 0){
+        if(checked == "yes"){
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             
         }
-        else if(dataReceived.compare("no") == 0){
+        else if(dataReceived == "no"){
             cell.accessoryType = UITableViewCellAccessoryType.None
             cell.selectionStyle = UITableViewCellSelectionStyle.Blue
             cell.detailTextLabel.text = "Tap to check in"
