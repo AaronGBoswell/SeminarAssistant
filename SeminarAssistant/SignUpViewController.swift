@@ -67,8 +67,8 @@ class SignUpViewController: UIViewController {
         var email = emailText.text
 
         var password = passwordText.text
-        
-        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/signup.php?Email=\(email)&pass=\(password)&fname=\(fname)&lname=\(lname)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding))
+        var urlstring = "http://www.seminarassistant.com/appinterac/signup.php?Email=\(email)&pass=\(password)&fname=\(fname)&lname=\(lname)"
+        var url = NSURL(string: urlstring.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)!)
 
         println(url)
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
@@ -81,7 +81,7 @@ class SignUpViewController: UIViewController {
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(), {
                     self.wel!.emailTextView.text = email
                     self.wel!.passwordText.text = password
-                    self.navigationController.popViewControllerAnimated(true)
+                    self.navigationController!.popViewControllerAnimated(true)
                 });
             }
             else{

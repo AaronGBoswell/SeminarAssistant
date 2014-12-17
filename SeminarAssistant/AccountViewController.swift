@@ -108,14 +108,14 @@ class AccountViewController: UIViewController,BeaconNotificationDelegate {
         
         
         var ident = "SeminarCell";
-        var cell = self.tableView.dequeueReusableCellWithIdentifier(ident) as UITableViewCell
+        var cell = self.tableView.dequeueReusableCellWithIdentifier(ident) as? UITableViewCell
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ident)
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
         var title = seminars[indexPath.row].valueForKey("Title") as String
-        cell.textLabel.text = title
-        return cell
+        cell!.textLabel!.text = title
+        return cell!
         
         
         

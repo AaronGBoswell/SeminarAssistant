@@ -21,9 +21,9 @@ class LeftSeminarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func leaveButtonClicked(sender : AnyObject) {
-        for vc in navigationController.viewControllers{
+        for vc in navigationController!.viewControllers{
             if vc is PleaseWaitViewController{
-                navigationController.popToViewController(vc as UIViewController, animated: true)
+                navigationController!.popToViewController(vc as UIViewController, animated: true)
             }
         }
     }

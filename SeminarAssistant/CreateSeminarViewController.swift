@@ -123,7 +123,7 @@ class CreateSeminarViewController: UIViewController {
         var email =  (UIApplication.sharedApplication().delegate as AppDelegate).email
         println(email)
         var ur = "http://www.seminarassistant.com/appinterac/addseminar.php?Email=\(email)&URL=\(urltxt)&UUID=\(uuid)&Title=\(title)&DIS=\(dis)&LOC=\(loc)&DT=\(date) "
-        ur = ur.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
+        ur = ur.stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)!
         var url = NSURL(string: ur)
         println(ur)
 

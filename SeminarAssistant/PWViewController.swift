@@ -102,13 +102,13 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
         if(identifier == "LeaveSeminar"){
             return false
         }
         return true
     }
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if(segue.destinationViewController is InSeminarViewController){
             var destVC  = segue.destinationViewController as InSeminarViewController
@@ -129,22 +129,22 @@ class PleaseWaitViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var ident = "nearbySeminar";
-        var cell = seminarTable.dequeueReusableCellWithIdentifier(ident) as UITableViewCell
+        var cell = seminarTable.dequeueReusableCellWithIdentifier(ident) as? UITableViewCell
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ident)
         }
         var title = searchSeminarArray[indexPath.row].valueForKey("Title") as String
-        cell.selectionStyle = UITableViewCellSelectionStyle.Blue
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell!.selectionStyle = UITableViewCellSelectionStyle.Blue
+        cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         
-        cell.textLabel.text = title
+        cell!.textLabel!.text = title
         println("req")
-        return cell
+        return cell!
     }
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int{
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int)  -> Int {
         var x = 0
         nearBySeminars = []
         for dic in searchSeminarArray{

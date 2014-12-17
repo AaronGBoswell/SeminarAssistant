@@ -85,7 +85,7 @@ class WelcomeViewController: UIViewController {
         loginButton.enabled = false
         var email = emailTextView.text
         
-        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/login.php?Email=\(email)&pass=\(passwordText.text)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding));
+        var url = NSURL(string: "http://www.seminarassistant.com/appinterac/login.php?Email=\(email)&pass=\(passwordText.text)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)!);
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             var s = NSString(data: data, encoding: NSUTF8StringEncoding)
             var str:String = s

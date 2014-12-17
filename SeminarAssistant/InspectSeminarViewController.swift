@@ -37,7 +37,7 @@ class InspectSeminarViewController: UIViewController {
         var f = NSDateFormatter()
         f.dateStyle = NSDateFormatterStyle.MediumStyle
         f.timeStyle = NSDateFormatterStyle.ShortStyle
-        timeLabel.text = "Date/Time: " + f.stringFromDate(date)
+        timeLabel.text = "Date/Time: " + f.stringFromDate(date!)
         
         if(seminar!.valueForKey("count") as Int > 0){
             inRange()

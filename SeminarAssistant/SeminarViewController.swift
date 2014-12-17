@@ -103,7 +103,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         println(dateTime)
         
         
-        dateAndTime.text = "Date : \(f.stringFromDate(date))"
+        dateAndTime.text = "Date : \(f.stringFromDate(date!))"
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -111,9 +111,9 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         getInvites()
     }
     @IBAction func doneButtonClicked(sender : AnyObject) {
-        for vc in navigationController.viewControllers{
+        for vc in navigationController!.viewControllers{
             if vc is AccountViewController{
-                navigationController.popToViewController(vc as UIViewController, animated: true)
+                navigationController!.popToViewController(vc as UIViewController, animated: true)
             }
         }
     }
@@ -374,33 +374,33 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
         
         
         var ident = "inviteCell";
-        var cell = self.tableView.dequeueReusableCellWithIdentifier(ident) as UITableViewCell
+        var cell = self.tableView.dequeueReusableCellWithIdentifier(ident) as? UITableViewCell
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ident)
         }
         var title = invites[indexPath.row].valueForKey("Email") as String
         var checked = invites[indexPath.row].valueForKey("CheckedIn") as String
         var dataReceived = invites[indexPath.row].valueForKey("DataRecieved") as String
-        cell.detailTextLabel.text = ""
+        cell!.detailTextLabel!.text = ""
         if(checked == "yes"){
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell!.selectionStyle = UITableViewCellSelectionStyle.None
             
         }
         else if(dataReceived == "no"){
-            cell.accessoryType = UITableViewCellAccessoryType.None
-            cell.selectionStyle = UITableViewCellSelectionStyle.Blue
-            cell.detailTextLabel.text = "Tap to check in"
+            cell!.accessoryType = UITableViewCellAccessoryType.None
+            cell!.selectionStyle = UITableViewCellSelectionStyle.Blue
+            cell!.detailTextLabel!.text = "Tap to check in"
         }
         else{
-            cell.accessoryType = UITableViewCellAccessoryType.None
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
-            cell.detailTextLabel.text = "Invitation received, waiting for check in..."
+            cell!.accessoryType = UITableViewCellAccessoryType.None
+            cell!.selectionStyle = UITableViewCellSelectionStyle.None
+            cell!.detailTextLabel!.text = "Invitation received, waiting for check in..."
         }
         if(checkinRow == indexPath.row){
-            cell.detailTextLabel.text = "Checking in, please wait..."
+            cell!.detailTextLabel!.text = "Checking in, please wait..."
         }
-        cell.textLabel.text = title
+        cell!.textLabel!.text = title
         
 
 
@@ -413,7 +413,7 @@ class SeminarViewController: UIViewController, ABPeoplePickerNavigationControlle
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         var cell = tableView.cellForRowAtIndexPath(indexPath)
-        if(cell.selectionStyle == UITableViewCellSelectionStyle.None){
+        if(cell!.selectionStyle == UITableViewCellSelectionStyle.None){
             return
         }
         checkinRow = indexPath.row

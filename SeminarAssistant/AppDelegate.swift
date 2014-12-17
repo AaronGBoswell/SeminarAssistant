@@ -69,8 +69,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegat
         
         
     }
-    func URLSession( session: NSURLSession!, downloadTask: NSURLSessionDownloadTask!, didFinishDownloadingToURL location: NSURL!){
-        if(locationManager != nil){
+    func URLSession(session: NSURLSession!, downloadTask: NSURLSessionDownloadTask!, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64)
+    {
+    }
+    
+    func URLSession(_ session: NSURLSession, downloadTask downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL){
+        
+    if(locationManager != nil){
             print("good")
         }
         else{
@@ -151,7 +156,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegat
         let noty:UILocalNotification? = UILocalNotification()
         noty!.alertBody = "You are in range of the seminar"
         noty!.fireDate = NSDate.date()
-        UIApplication.sharedApplication().scheduleLocalNotification(noty)
+        UIApplication.sharedApplication().scheduleLocalNotification(noty!)
         if(bND != nil){
             bND!.didEnterSeminar(reg!, seminarArray: seminarArray)
         }
@@ -169,7 +174,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , CLLocationManagerDelegat
         let noty:UILocalNotification? = UILocalNotification()
         noty!.alertBody = "You left the seminar"
         noty!.fireDate = NSDate.date()
-        UIApplication.sharedApplication().scheduleLocalNotification(noty)
+        UIApplication.sharedApplication().scheduleLocalNotification(noty!)
         if(bND != nil){
             bND!.didExitSeminar(reg!, seminarArray: seminarArray)
         }
